@@ -31,13 +31,30 @@ module animation
 	assign resetn = KEY[0];
 	//assign enable = ~KEY[1];
 	
-	// Create the color, x, y and writeEn wires that are inputs to the controller.
-
+	
+	//Declaring Ports
+	
 	reg [2:0] color;
+	wire [2:0]DuckColor;
+	wire [2:0]colorBackground;
 	wire [7:0] x;
 	wire [6:0] y;
 	wire writeEn;
+	wire [2:0]Ynext, yCurrent;
+	wire [7:0]intialInputX;
+	wire [6:0]intialInputY;
 	
+	wire start;
+	reg enable;
+	
+	reg [7:0]finalX;
+	reg [6:0]finalY;
+	
+	wire [9:0]address;
+	wire [14:0]addressBackground;
+	
+	assign intialInputX = SW[7:0];
+	assign intialInputY = SW[14:8];
 	//assign color = SW[17:15];
 	
 	
@@ -63,53 +80,44 @@ module animation
 		defparam VGA.RESOLUTION = "160x120";
 		defparam VGA.MONOCHROME = "FALSE";
 		defparam VGA.BITS_PER_COLOUR_CHANNEL = 1;
-		defparam VGA.BACKGROUND_IMAGE = "";
+		defparam VGA.BACKGROUND_IMAGE = "background2";
 			
 	// Put your code here. Your code should produce signals x,y,color and writeEn
 	// for the VGA controller, in addition to any other functionality your design may require.
 	
 	
-	wire [2:0]Ynext, yCurrent;
-	wire [7:0]intialInputX;
-	wire [6:0]intialInputY;
+	
+	BackgroundROM	BackgroundROM_inst (160*y+x, CLOCK_50, colorBackground);
 	
 	
+	parameter sizeX = 34;
+	parameter sizeY = 24;
 	
-	wire start;
-	
-	reg [7:0]finalX;
-	reg [6:0]finalY;
-	
-	wire [9:0]address;
-	
-	assign intialInputX = SW[7:0];
-	assign intialInputY = SW[14:8];
 
 	always@(enable)
 	begin
-	if(inputX + 10 <= 159)
-		finalX = inputX + 10;
+	if(inputX + sizeX <= 159)
+		finalX = inputX + sizeX - 2;
 	else
 		finalX = 159;
 	
-	if(inputY + 10 <= 119)
-		finalY = inputY + 10;
+	if(inputY + sizeY <= 119)
+		finalY = inputY + sizeY;
 	else
 		finalY = 119;
 	end
 
 	
-	//DuckROM1	DuckROM1_inst (address, CLOCK_50, color);
+	DuckROM1	DuckROM1_inst (address + 2, CLOCK_50, DuckColor);
 
 	
 	NextState stage2(Ynext, yCurrent, CLOCK_50, enable, start, finalX, finalY, x, y);
 	flipflop stage3(resetn, yCurrent, Ynext, CLOCK_50);
 	changeCoordinate stage4(x, y, yCurrent, CLOCK_50, inputX, inputY, address);
 	
-	reg enable;
 	wire [25:0]CYCLES;
 	
-	counter_modk C0 (CLOCK_50, 1, CYCLES);
+	main_clock C0 (CLOCK_50, 1, CYCLES);
 	defparam C0.n = 26;
 	defparam C0.k = 50000000;
 	 
@@ -117,7 +125,9 @@ module animation
 	reg [6:0]inputY;
 	reg firstTime = 1;
 	 
-	 parameter movementsPerSec = 35;
+	 
+	 parameter eraseCount = sizeX * sizeY + 100;
+	 parameter movementsPerSec = 15;
 		parameter speed = 50000000/movementsPerSec;
 	  reg [25:0]currentCYCLE = 0;
 	 
@@ -129,7 +139,7 @@ module animation
 			inputX = intialInputX;
 			inputY = intialInputY;
 		end
-	  	if((CYCLES >= currentCYCLE) && CYCLES <= (currentCYCLE + speed - 5))
+		if((CYCLES >= currentCYCLE) && CYCLES <= (currentCYCLE + speed - 5))
 			enable = 1;
 		else
 			enable = 0;
@@ -141,13 +151,15 @@ module animation
 			//currentCYCLE = currentCYCLE + speed;
 		end
 		*/
-		if(CYCLES >= (currentCYCLE + speed - 140))
+		if(CYCLES >= (currentCYCLE + speed - eraseCount))
 		begin
-			color = 3'b000;
+			color = colorBackground;
 			//inputY = inputY + 1;
 		end
-		else
-			color = 3'b011;
+		else if(inputX >= 159 - sizeX)
+			color = colorBackground;
+	  	else
+			color = DuckColor;
 		if (CYCLES == (currentCYCLE + speed - 1))
 		begin
 			currentCYCLE = currentCYCLE + speed;
@@ -178,7 +190,7 @@ endmodule
 	
 module NextState(Y, yCurrent, CLOCK_50, enable, start, finalX, finalY, x, y);
 	output reg [1:0]Y;
-	inout reg [1:0]yCurrent = D;
+	inout reg [1:0]yCurrent = IDLE;
 	input CLOCK_50;
 	input enable;
 	output reg start;
@@ -186,32 +198,38 @@ module NextState(Y, yCurrent, CLOCK_50, enable, start, finalX, finalY, x, y);
 	input [6:0]finalY, y;
 	
 	
-	parameter [1:0]A = 2'b00,
-						B = 2'b01,
-						C = 2'b10,
-						D = 2'b11;
-						
+	parameter [1:0]MOVE_X = 2'b00,
+						MOVE_Y = 2'b01,
+						DELAY = 2'b10,
+						IDLE = 2'b11;
+		
+		reg counter = 1;
+	
 	always@(yCurrent,x,y,enable)
 	begin
 	case(yCurrent)
-		A:
+		MOVE_X:
 			if(x < finalX && y <= finalY)
-				Y=A;
+				Y=MOVE_X;
 			else if(x >= finalX && y < finalY)
-				Y=B;
+				Y=MOVE_Y;
 			else if(y > finalY)
-				Y=D;
-		B:
-			Y=A;
-		D:
+				Y=IDLE;
+		MOVE_Y:
+			Y=MOVE_X;
+		DELAY: 
+			begin
+				Y=MOVE_X;
+			end
+		IDLE:
 			if(enable)
 			begin
-				Y=A;
+				Y=DELAY;
 				start <= 1;
 			end
 			else
 			begin	
-				Y=D;
+				Y=IDLE;
 				start <= 0;
 			end
 	endcase
@@ -229,44 +247,37 @@ module changeCoordinate(x, y, yCurrent, CLOCK_50, inputX, inputY, address);
 	input CLOCK_50;
 	output reg [9:0]address;
 	
-	parameter [1:0]A = 2'b00,
-						B = 2'b01,
-						C = 2'b10,
-						D = 2'b11;
+	parameter [1:0]MOVE_X = 2'b00,
+						MOVE_Y = 2'b01,
+						DELAY = 2'b10,
+						IDLE = 2'b11;
 						
 	always@(posedge CLOCK_50)
 	begin
 	case(yCurrent)
-		A:
+		MOVE_X:
 			begin
 			x = x + 1;
 			address = address + 1;
 			end
-		B:	
+		MOVE_Y:	
 			begin
 			x = inputX;
 			y = y + 1;
 			address = address + 1;
 			end
-		D:
+		IDLE:
 			begin
 			x = inputX;
 			y = inputY;
 			address = 0;
 			end
-		/*
-		default:
-			begin
-			x = inputX;
-			y = inputY;
-			end
-		*/
-	endcase
+			endcase
 	end
-						
+	
 endmodule
 
-module counter_modk(clock, reset_n, Q);
+module main_clock(clock, reset_n, Q);
   parameter n = 4;
   parameter k = 16;
   input clock, reset_n;
