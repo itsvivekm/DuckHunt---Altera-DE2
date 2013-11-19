@@ -1,0 +1,5 @@
+
+State Machine - |animation|moveInstances:stage5|ID
+Name ID.0010 
+ID.0001 0 
+ID.0010 1 

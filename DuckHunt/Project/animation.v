@@ -34,18 +34,21 @@ module animation
 	
 	//Declaring Ports
 	
-	reg [2:0] color;
+	wire [2:0] color;
 	wire [2:0]DuckColor;
 	wire [2:0]colorBackground;
 	wire [7:0] x;
 	wire [6:0] y;
-	wire writeEn;
 	wire [2:0]Ynext, yCurrent;
 	wire [7:0]intialInputX;
 	wire [6:0]intialInputY;
 	
 	wire start;
-	reg enable;
+	wire enable;
+	
+	wire [7:0]inputX;
+	wire [6:0]inputY;
+	
 	
 	reg [7:0]finalX;
 	reg [6:0]finalY;
@@ -85,13 +88,12 @@ module animation
 	// Put your code here. Your code should produce signals x,y,color and writeEn
 	// for the VGA controller, in addition to any other functionality your design may require.
 	
-	
+	wire [2:0]colorBackgroundDUCK;
 	
 	BackgroundROM	BackgroundROM_inst (160*y+x, CLOCK_50, colorBackground);
 	
-	
 	parameter sizeX = 34;
-	parameter sizeY = 24;
+	parameter sizeY = 23;
 	
 
 	always@(enable)
@@ -111,9 +113,36 @@ module animation
 	DuckROM1	DuckROM1_inst (address + 2, CLOCK_50, DuckColor);
 
 	
+	moveInstances stage5(inputX, inputY, DuckColor, colorBackground, color, CLOCK_50, enable);
+	defparam stage5.sizeX = sizeX;
+	defparam stage5.sizeY = sizeY;
+	
 	NextState stage2(Ynext, yCurrent, CLOCK_50, enable, start, finalX, finalY, x, y);
 	flipflop stage3(resetn, yCurrent, Ynext, CLOCK_50);
 	changeCoordinate stage4(x, y, yCurrent, CLOCK_50, inputX, inputY, address);
+	
+	
+endmodule
+
+
+module moveInstances(inputX, inputY, DuckColor, colorBackground, color, CLOCK_50, enable);
+	
+	parameter sizeX;
+	parameter sizeY;
+	
+	
+	
+	output reg [7:0]inputX;
+	output reg [6:0]inputY;
+	
+	input [2:0]DuckColor, colorBackground;
+	output reg [2:0]color;
+	
+	input CLOCK_50;
+	output reg enable;
+	
+	
+	parameter objectCount = 1;
 	
 	wire [25:0]CYCLES;
 	
@@ -121,49 +150,82 @@ module animation
 	defparam C0.n = 26;
 	defparam C0.k = 50000000;
 	 
-	reg [7:0]inputX;
-	reg [6:0]inputY;
 	reg firstTime = 1;
 	 
+	 reg [3:0]ID;
 	 
-	 parameter eraseCount = sizeX * sizeY + 100;
-	 parameter movementsPerSec = 15;
-		parameter speed = 50000000/movementsPerSec;
-	  reg [25:0]currentCYCLE = 0;
+	//Duck 1 declaration
+	parameter Duck_1_initialInputX = 0;
+	parameter Duck_1_initialInputY = 0;
+	
+	reg [7:0]Duck_1_inputX;
+	reg [6:0]Duck_1_inputY;
+	
+	
+	//Duck 2 declaration
+	parameter Duck_2_initialInputX = 0;
+	parameter [6:0]Duck_2_initialInputY = 90;
+	
+	reg [7:0]Duck_2_inputX;
+	reg [6:0]Duck_2_inputY;
+	
+	 
+	parameter eraseCount = sizeX * sizeY + 100;
+	parameter movementsPerSec = 32;
+	parameter speed = 50000000/movementsPerSec * objectCount;
+	reg [25:0]currentCYCLE = 0;
 	 
 	 always @ (posedge CLOCK_50)
 	  begin
 		if(firstTime == 1)
 		begin
 			firstTime = 0;
-			inputX = intialInputX;
-			inputY = intialInputY;
+			Duck_1_inputX = Duck_1_initialInputX;
+			Duck_1_inputY = Duck_1_initialInputY;
+			Duck_2_inputX = Duck_2_initialInputX;
+			Duck_2_inputY = Duck_2_initialInputY;
+			
+			ID = 1;
+			inputX = Duck_1_initialInputX;
+			inputY = Duck_1_initialInputY;
 		end
-		if((CYCLES >= currentCYCLE) && CYCLES <= (currentCYCLE + speed - 5))
+		if((CYCLES >= currentCYCLE))// && CYCLES <= (currentCYCLE + speed - 5))
 			enable = 1;
 		else
 			enable = 0;
-		/*
-		if(CYCLES == currentCYCLE)
+		if(inputX >= 159 - sizeX)
 		begin
-			inputX = inputX + 1;
-			//inputY = inputY + 1;
-			//currentCYCLE = currentCYCLE + speed;
+			enable = 0;
+			color = colorBackground;
 		end
-		*/
-		if(CYCLES >= (currentCYCLE + speed - eraseCount))
+		else if(CYCLES <= (currentCYCLE + eraseCount))
 		begin
 			color = colorBackground;
-			//inputY = inputY + 1;
 		end
-		else if(inputX >= 159 - sizeX)
+		
+		else if(DuckColor == 3'b001)
 			color = colorBackground;
-	  	else
+		else
 			color = DuckColor;
 		if (CYCLES == (currentCYCLE + speed - 1))
 		begin
 			currentCYCLE = currentCYCLE + speed;
-			inputX = inputX + 1;
+			
+			if(ID == 1)
+			begin
+				ID = 2;
+				Duck_1_inputX  = Duck_1_inputX  + 1;
+				inputX = Duck_1_inputX ;
+				inputY = Duck_1_inputY;
+			end
+			
+			else if(ID == 2)
+			begin
+				ID = 1;
+				Duck_2_inputX  = Duck_2_inputX  + 1;
+				inputX = Duck_2_inputX ;
+				inputY = Duck_2_inputY;
+			end
 		end
 		if(CYCLES == 49999999)
 			currentCYCLE = 0;
@@ -203,7 +265,7 @@ module NextState(Y, yCurrent, CLOCK_50, enable, start, finalX, finalY, x, y);
 						DELAY = 2'b10,
 						IDLE = 2'b11;
 		
-		reg counter = 1;
+	reg counter = 1;
 	
 	always@(yCurrent,x,y,enable)
 	begin
