@@ -90,7 +90,6 @@ module animation
 	
 	wire [2:0]colorBackgroundDUCK;
 	
-	BackgroundROM	BackgroundROM_inst (160*y+x, CLOCK_50, colorBackground);
 	
 	parameter sizeX = 34;
 	parameter sizeY = 23;
@@ -111,7 +110,7 @@ module animation
 
 	
 	DuckROM1	DuckROM1_inst (address + 2, CLOCK_50, DuckColor);
-
+	BackgroundROM	BackgroundROM_inst (addressBackground /*160*y+x*/, CLOCK_50, colorBackground);
 	
 	moveInstances stage5(inputX, inputY, DuckColor, colorBackground, color, CLOCK_50, enable);
 	defparam stage5.sizeX = sizeX;
@@ -119,7 +118,7 @@ module animation
 	
 	NextState stage2(Ynext, yCurrent, CLOCK_50, enable, start, finalX, finalY, x, y);
 	flipflop stage3(resetn, yCurrent, Ynext, CLOCK_50);
-	changeCoordinate stage4(x, y, yCurrent, CLOCK_50, inputX, inputY, address);
+	changeCoordinate stage4(x, y, yCurrent, CLOCK_50, inputX, inputY, address, addressBackground, finalX, finalY);
 	
 	
 endmodule
@@ -189,18 +188,19 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, CLOCK_50
 			inputX = Duck_1_initialInputX;
 			inputY = Duck_1_initialInputY;
 		end
-		if((CYCLES >= currentCYCLE) && CYCLES <= (currentCYCLE + eraseCount + 5))
+		if((CYCLES >= currentCYCLE && CYCLES <= currentCYCLE + 1) || (CYCLES >= currentCYCLE + eraseCount && CYCLES <= currentCYCLE + eraseCount + 1))
 			enable = 1;
 		else
 			enable = 0;
 		
-		/*
-		if(CYCLES == currentCYCLE + 1)
+		
+		if(CYCLES == currentCYCLE)
 			if(ID == 1)
-				inputX = Duck_1_inputX - 1;
+				inputX = Duck_1_inputX;
 			else if(ID == 2)
-				inputX = Duck_2_inputX - 1;
-		else if(CYCLES == currentCYCLE + eraseCount + 1)
+				inputX = Duck_2_inputX;
+		/*
+		else if(CYCLES == currentCYCLE + eraseCount)
 			if(ID == 1)
 			begin
 				//ID = 2;
@@ -209,27 +209,27 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, CLOCK_50
 			else if(ID == 2)
 			begin
 				//ID = 1;
-				inputX = Duck_2_inputX + 3;
+				inputX = Duck_2_inputX + 1;
 			end
 		*/
 
-		if(CYCLES <= (currentCYCLE + eraseCount))
+		if(CYCLES < (currentCYCLE + eraseCount))
 		begin
 			color = colorBackground;
 		end
-		else if(DuckColor == 3'b001)
-			color = colorBackground;
-		else
-			color = DuckColor;
-		
+		else if(CYCLES >= currentCYCLE + eraseCount)
 			
-		
-		if(CYCLES >= currentCYCLE + eraseCount)
 			if(inputX >= 159 - sizeX)
 			begin
 				//enable = 0;
 				color = colorBackground;
 			end
+			
+			else if(DuckColor == 3'b001)
+				color = colorBackground;
+			else
+				color = DuckColor;
+		
 			
 		if (CYCLES == (currentCYCLE + speed - 1))
 		begin
@@ -277,7 +277,7 @@ endmodule
 	
 module NextState(Y, yCurrent, CLOCK_50, enable, start, finalX, finalY, x, y);
 	output reg [1:0]Y;
-	inout reg [1:0]yCurrent = IDLE;
+	inout reg [1:0]yCurrent;
 	input CLOCK_50;
 	input enable;
 	output reg start;
@@ -289,7 +289,7 @@ module NextState(Y, yCurrent, CLOCK_50, enable, start, finalX, finalY, x, y);
 						MOVE_Y = 2'b01,
 						DELAY = 2'b10,
 						IDLE = 2'b11;
-		
+	
 	reg counter = 1;
 	
 	always@(yCurrent,x,y,enable)
@@ -325,14 +325,15 @@ module NextState(Y, yCurrent, CLOCK_50, enable, start, finalX, finalY, x, y);
 endmodule
 
 
-module changeCoordinate(x, y, yCurrent, CLOCK_50, inputX, inputY, address);
-	input [7:0]inputX;
-	input [6:0]inputY;
+module changeCoordinate(x, y, yCurrent, CLOCK_50, inputX, inputY, address, addressBackground, finalX, finalY);
+	input [7:0]inputX, finalX;
+	input [6:0]inputY, finalY;
 	output reg [7:0]x;
 	output reg [6:0]y;
 	input [1:0]yCurrent;
 	input CLOCK_50;
 	output reg [9:0]address;
+	output reg [14:0]addressBackground;
 	
 	parameter [1:0]MOVE_X = 2'b00,
 						MOVE_Y = 2'b01,
@@ -346,17 +347,25 @@ module changeCoordinate(x, y, yCurrent, CLOCK_50, inputX, inputY, address);
 			begin
 			x = x + 1;
 			address = address + 1;
+			//address = 34*(y-inputY)+ x-inputX;
+			if(x == inputX + finalX - inputX && y < inputY + finalY - inputY)
+				addressBackground = 160*(y+1) + inputX - 1;
+			else 
+				addressBackground = 160*(y) + x + 1;
 			end
 		MOVE_Y:	
 			begin
 			x = inputX;
 			y = y + 1;
+			addressBackground = 160*(y) + x + 1;
 			address = address + 1;
+			//address = 34*(y-inputY)+ x-inputX;
 			end
 		IDLE:
 			begin
 			x = inputX;
 			y = inputY;
+			addressBackground = 160*y + x;
 			address = 0;
 			end
 			endcase
