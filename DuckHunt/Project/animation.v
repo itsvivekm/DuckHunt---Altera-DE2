@@ -164,7 +164,7 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, CLOCK_50
 	
 	//Duck 2 declaration
 	parameter Duck_2_initialInputX = 0;
-	parameter [6:0]Duck_2_initialInputY = 90;
+	parameter [6:0]Duck_2_initialInputY = 60;
 	
 	reg [7:0]Duck_2_inputX;
 	reg [6:0]Duck_2_inputY;
@@ -189,24 +189,48 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, CLOCK_50
 			inputX = Duck_1_initialInputX;
 			inputY = Duck_1_initialInputY;
 		end
-		if((CYCLES >= currentCYCLE))// && CYCLES <= (currentCYCLE + speed - 5))
+		if((CYCLES >= currentCYCLE) && CYCLES <= (currentCYCLE + eraseCount + 5))
 			enable = 1;
 		else
 			enable = 0;
-		if(inputX >= 159 - sizeX)
-		begin
-			enable = 0;
-			color = colorBackground;
-		end
-		else if(CYCLES <= (currentCYCLE + eraseCount))
-		begin
-			color = colorBackground;
-		end
 		
+		/*
+		if(CYCLES == currentCYCLE + 1)
+			if(ID == 1)
+				inputX = Duck_1_inputX - 1;
+			else if(ID == 2)
+				inputX = Duck_2_inputX - 1;
+		else if(CYCLES == currentCYCLE + eraseCount + 1)
+			if(ID == 1)
+			begin
+				//ID = 2;
+				inputX = Duck_1_inputX + 1;
+			end
+			else if(ID == 2)
+			begin
+				//ID = 1;
+				inputX = Duck_2_inputX + 3;
+			end
+		*/
+
+		if(CYCLES <= (currentCYCLE + eraseCount))
+		begin
+			color = colorBackground;
+		end
 		else if(DuckColor == 3'b001)
 			color = colorBackground;
 		else
 			color = DuckColor;
+		
+			
+		
+		if(CYCLES >= currentCYCLE + eraseCount)
+			if(inputX >= 159 - sizeX)
+			begin
+				//enable = 0;
+				color = colorBackground;
+			end
+			
 		if (CYCLES == (currentCYCLE + speed - 1))
 		begin
 			currentCYCLE = currentCYCLE + speed;
@@ -215,7 +239,7 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, CLOCK_50
 			begin
 				ID = 2;
 				Duck_1_inputX  = Duck_1_inputX  + 1;
-				inputX = Duck_1_inputX ;
+				inputX = Duck_1_inputX;
 				inputY = Duck_1_inputY;
 			end
 			
@@ -223,13 +247,14 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, CLOCK_50
 			begin
 				ID = 1;
 				Duck_2_inputX  = Duck_2_inputX  + 1;
-				inputX = Duck_2_inputX ;
+				//Duck_2_inputY  = Duck_2_inputY  + 1;
+				inputX = Duck_2_inputX;
 				inputY = Duck_2_inputY;
 			end
 		end
 		if(CYCLES == 49999999)
 			currentCYCLE = 0;
-		end
+	end
 	
 endmodule
 
