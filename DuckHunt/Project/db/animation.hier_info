@@ -4,10 +4,10 @@ KEY[0] => resetn.IN2
 KEY[1] => ~NO_FANOUT~
 KEY[2] => ~NO_FANOUT~
 KEY[3] => ~NO_FANOUT~
-SW[0] => ~NO_FANOUT~
-SW[1] => ~NO_FANOUT~
-SW[2] => ~NO_FANOUT~
-SW[3] => ~NO_FANOUT~
+SW[0] => down.IN1
+SW[1] => up.IN1
+SW[2] => right.IN1
+SW[3] => left.IN1
 SW[4] => ~NO_FANOUT~
 SW[5] => ~NO_FANOUT~
 SW[6] => ~NO_FANOUT~
@@ -1611,6 +1611,10 @@ colorBackground[2] => color.DATAB
 colorBackground[2] => color.DATAB
 colorBackground[2] => color.DATAB
 CLOCK_50 => CLOCK_50.IN1
+up => always0.IN1
+down => always0.IN1
+left => always0.IN1
+right => always0.IN1
 
 
 |animation|moveInstances:stage5|main_clock:C0

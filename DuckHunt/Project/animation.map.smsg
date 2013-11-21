@@ -1,3 +1,3 @@
-Info (10281): Verilog HDL Declaration information at animation.v(264): object "y" differs only in case from object "Y" in the same scope
-Warning (10268): Verilog HDL information at animation.v(295): always construct contains both blocking and non-blocking assignments
-Info (10281): Verilog HDL Declaration information at animation.v(279): object "Y" differs only in case from object "y" in the same scope
+Info (10281): Verilog HDL Declaration information at animation.v(310): object "y" differs only in case from object "Y" in the same scope
+Warning (10268): Verilog HDL information at animation.v(341): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at animation.v(325): object "Y" differs only in case from object "y" in the same scope
