@@ -29,7 +29,7 @@ module animation
 	
 	wire resetn;
 	assign resetn = KEY[0];
-	//assign enable = ~KEY[1];
+	
 	
 	
 	//Declaring Ports
@@ -53,6 +53,10 @@ module animation
 	wire [6:0]inputY;
 	
 	
+	wire kill;
+	assign kill = KEY[3];
+	
+	
 	reg [7:0]finalX;
 	reg [6:0]finalY;
 	
@@ -61,13 +65,14 @@ module animation
 	
 	assign intialInputX = SW[7:0];
 	assign intialInputY = SW[14:8];
-	//assign color = SW[17:15];
 	
 	wire up, down, left, right;
 	assign down = SW[0];
 	assign up = SW[1];
 	assign right = SW[2];
 	assign left = SW[3];
+	
+	
 	
 	
 	// Create an Instance of a VGA controller - there can be only one!
@@ -98,32 +103,58 @@ module animation
 	// for the VGA controller, in addition to any other functionality your design may require.
 	
 	wire [2:0]colorBackgroundDUCK;
+	wire [3:0]ID;
 	
+	reg [7:0]sizeX = 34;
+	reg [6:0]sizeY = 23;
 	
-	parameter sizeX = 34;
-	parameter sizeY = 23;
+	reg [7:0]duckSizeX = 34;
+	reg [6:0]duckSizeY = 23;
 	
-
+	reg [7:0]targetSizeX = 10;
+	reg [6:0]targetSizeY = 09;
+	
 	always@(enable)
 	begin
-	if(inputX + sizeX <= 159)
-		finalX = inputX + sizeX - 2;
-	else
-		finalX = 159;
-	
-	if(inputY + sizeY <= 119)
-		finalY = inputY + sizeY;
-	else
-		finalY = 119;
+		if(ID == 1 || ID == 2)
+		begin
+			sizeX = duckSizeX;
+			sizeY = duckSizeY;
+			if(inputX + sizeX <= 159)
+				finalX = inputX + sizeX - 2;
+			else
+				finalX = 159;
+			
+			if(inputY + sizeY <= 119)
+				finalY = inputY + sizeY;
+			else
+				finalY = 119;
+		end
+		else if(ID == 3)
+		begin
+			sizeX = targetSizeX;
+			sizeY = targetSizeY;
+			if(inputX + sizeX <= 159)
+				finalX = inputX + sizeX - 2;
+			else
+				finalX = 159;
+			
+			if(inputY + sizeY <= 119)
+				finalY = inputY + sizeY;
+			else
+				finalY = 119;
+		end
 	end
-
 	
 	DuckROM1	DuckROM1_inst (address + 2, CLOCK_50, DuckColor);
 	BackgroundROM	BackgroundROM_inst (addressBackground /*160*y+x*/, CLOCK_50, colorBackground);
+	TargetROM	TargetROM_inst (address + 2, CLOCK_50, colorTarget);
 	
-	moveInstances stage5(inputX, inputY, DuckColor, colorBackground, color, CLOCK_50, enable, up, down, left, right);
-	defparam stage5.sizeX = sizeX;
-	defparam stage5.sizeY = sizeY;
+	
+	
+	moveInstances stage5(inputX, inputY, DuckColor, colorBackground, color, colorTarget, CLOCK_50, enable, up, down, left, right, ID, sizeX, sizeY, kill);
+	//defparam stage5.sizeX = sizeX;
+	//defparam stage5.sizeY = sizeY;
 	
 	NextState stage2(Ynext, yCurrent, CLOCK_50, enable, start, finalX, finalY, x, y);
 	flipflop stage3(resetn, yCurrent, Ynext, CLOCK_50);
@@ -133,35 +164,37 @@ module animation
 endmodule
 
 
-module moveInstances(inputX, inputY, DuckColor, colorBackground, color, CLOCK_50, enable, up, down, left, right);
+module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTarget, CLOCK_50, enable, up, down, left, right, ID, sizeX, sizeY, kill);
 	
-	parameter sizeX;
-	parameter sizeY;
+	input [7:0]sizeX;
+	input [6:0]sizeY;
 	
 	input up, down, left, right;
 	
+	input kill;
 	
 	output reg [7:0]inputX;
 	output reg [6:0]inputY;
 	
-	input [2:0]DuckColor, colorBackground;
+	input [2:0]DuckColor, colorBackground, colorTarget;
 	output reg [2:0]color;
 	
 	input CLOCK_50;
 	output reg enable;
 	
+	reg resetCYCLE;
 	
 	parameter objectCount = 1;
 	
 	wire [25:0]CYCLES;
 	
-	main_clock C0 (CLOCK_50, 1, CYCLES);
+	main_clock C0 (CLOCK_50, 1, CYCLES, currentCYCLE, resetCYCLE);
 	defparam C0.n = 26;
 	defparam C0.k = 50000000;
 	 
 	reg firstTime = 1;
 	 
-	 reg [3:0]ID;
+	output reg [3:0]ID;
 	 
 	//Duck 1 declaration
 	parameter Duck_1_initialInputX = 0;
@@ -170,10 +203,11 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, CLOCK_50
 	reg [7:0]Duck_1_inputX;
 	reg [6:0]Duck_1_inputY;
 	
+	reg Duck_1_alive = 1;
 	
 	//Duck 2 declaration
 	parameter Duck_2_initialInputX = 0;
-	parameter [6:0]Duck_2_initialInputY = 60;
+	parameter [6:0]Duck_2_initialInputY = 90;
 	
 	reg [7:0]Duck_2_inputX;
 	reg [6:0]Duck_2_inputY;
@@ -185,8 +219,13 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, CLOCK_50
 	reg [7:0]Target_inputX;
 	reg [6:0]Target_inputY;
 	
-	parameter eraseCount = sizeX * sizeY + 100;
-	parameter movementsPerSec = 32;
+	reg Duck_2_alive = 1;
+	
+	reg enterAgain;
+	//sreg reverseErase = 0;
+	
+	wire [25:0]eraseCount = sizeX * sizeY + 100;
+	parameter movementsPerSec = 48;
 	parameter speed = 50000000/movementsPerSec * objectCount;
 	reg [25:0]currentCYCLE = 0;
 	 
@@ -202,6 +241,8 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, CLOCK_50
 			Target_inputX = Target_initialInputX;
 			Target_inputY = Target_initialInputY; 
 			
+			
+			enterAgain = 1;
 			ID = 1;
 			inputX = Duck_1_initialInputX;
 			inputY = Duck_1_initialInputY;
@@ -211,8 +252,39 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, CLOCK_50
 		else
 			enable = 0;
 		
+		resetCYCLE = 0;
+		
+		if(ID == 1 && Duck_1_alive == 1)
+			if(Target_inputX + 5 >= Duck_1_inputX && Target_inputX + 5 <= Duck_1_inputX  + 34)
+				if(Target_inputY + 5 >= Duck_1_inputY && Target_inputY + 5 <= Duck_1_inputY  + 23)
+					if(kill == 1)
+						Duck_1_alive = 0;
+		if(ID == 2 && Duck_2_alive == 1)
+			if(Target_inputX + 5 >= Duck_2_inputX && Target_inputX + 5 <= Duck_2_inputX  + 34)
+				if(Target_inputY + 5 >= Duck_2_inputY && Target_inputY + 5 <= Duck_2_inputY  + 23)
+					if(kill == 1)
+						Duck_2_alive = 0;
+		
+		
+		if(ID == 1 && Duck_1_alive == 0)
+			begin
+				enable = 0;
+				resetCYCLE = 1;
+				ID = 2;
+			end
+		if(ID == 2 && Duck_2_alive == 0)
+		begin	
+			enable = 0;
+			resetCYCLE = 1;
+			if(Duck_2_alive == 1)
+				ID = 2;
+			else
+				ID = 3;
+		end
+		
 		
 		if(CYCLES == currentCYCLE)
+		begin
 			if(ID == 1)
 			begin
 				inputX = Duck_1_inputX;
@@ -228,42 +300,104 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, CLOCK_50
 				inputX = Target_inputX;
 				inputY = Target_inputY;
 			end
-		/*
-		else if(CYCLES == currentCYCLE + eraseCount)
-			if(ID == 1)
+		end
+		
+		
+		
+	
+		
+		
+		if(CYCLES == currentCYCLE + eraseCount)
+		begin	
+			if(ID == 1  && Duck_1_alive == 1)
 			begin
 				//ID = 2;
-				inputX = Duck_1_inputX + 1;
+				Duck_1_inputX = Duck_1_inputX  + 1;
+				inputX = Duck_1_inputX;
+				inputY = Duck_1_inputY;
 			end
-			else if(ID == 2)
+			
+			else if(ID == 2  && Duck_2_alive == 1)
+			begin
+				//ID = 3;
+				Duck_2_inputX = Duck_2_inputX  + 1;
+				Duck_2_inputY = Duck_2_inputY;
+				inputX = Duck_2_inputX;
+				inputY = Duck_2_inputY;
+			end
+			else if(ID == 3)
 			begin
 				//ID = 1;
-				inputX = Duck_2_inputX + 1;
+				
+				if(left == 1 && Target_inputX > 0)
+				begin
+					Target_inputX = Target_inputX - 1;
+					//reverseErase = 1;
+				end
+				else if(right == 1 && Target_inputX < 159 - 10)
+				begin	
+					Target_inputX = Target_inputX + 1;
+					//reverseErase = 0;
+				end
+				if(up == 1 && Target_inputY > 0)
+				begin
+					Target_inputY = Target_inputY - 1;
+					//reverseErase = 1;
+				end
+				else if(down == 1 && Target_inputY < 119 - 9)
+				begin
+					Target_inputY = Target_inputY + 1;
+					//reverseErase = 0;
+				end
+				
+				inputX = Target_inputX;
+				inputY = Target_inputY;
 			end
-		*/
-
+		end
+		
 		if(CYCLES < (currentCYCLE + eraseCount))
 		begin
 			color = colorBackground;
 		end
 		else if(CYCLES >= currentCYCLE + eraseCount)
 			
-			if(inputX >= 159 - sizeX)
+
+			if((ID == 1 || ID == 2) && inputX >= 159 - sizeX)
 			begin
 				//enable = 0;
 				color = colorBackground;
 			end
 			
-			else if(DuckColor == 3'b001)
+			else if((ID == 1 || ID == 2) && DuckColor == 3'b001)
 				color = colorBackground;
-			else
+			else if(ID == 1 || ID == 2)
 				color = DuckColor;
+			else if(ID == 3)
+				color = colorTarget;
 		
 			
 		if (CYCLES == (currentCYCLE + speed - 1))
 		begin
 			currentCYCLE = currentCYCLE + speed;
 			
+			if(ID == 1)
+			begin
+				ID = 2;
+			end
+			else if(ID == 2)
+			begin
+				ID = 3;
+			end
+			else if(ID == 3)
+			begin
+				ID = 1;
+			end
+		end
+
+			
+			
+			
+			/*
 			if(ID == 1)
 			begin
 				ID = 2;
@@ -284,20 +418,32 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, CLOCK_50
 			begin
 				ID = 1;
 				
-				if(left == 1 && Target_inputX >= 0)
+				if(left == 1 && Target_inputX > 0)
+				begin
 					Target_inputX = Target_inputX - 1;
-				else if(right == 1 && Target_inputX <= 159 - 10)
+					reverseErase = 1;
+				end
+				else if(right == 1 && Target_inputX < 159 - 34)
+				begin	
 					Target_inputX = Target_inputX + 1;
-				
-				if(up == 1 && Target_inputY >= 0)
+					reverseErase = 0;
+				end
+				if(up == 1 && Target_inputY > 0)
+				begin
 					Target_inputY = Target_inputY - 1;
-				else if(down == 1 && Target_inputY <=119 - 10)
+					reverseErase = 1;
+				end
+				else if(down == 1 && Target_inputY < 119 - 23)
+				begin
 					Target_inputY = Target_inputY + 1;
+					reverseErase = 0;
+				end
 				
 				inputX = Target_inputX;
 				inputY = Target_inputY;
 			end
-		end
+			*/
+	
 		if(CYCLES == 49999999)
 			currentCYCLE = 0;
 	end
@@ -419,20 +565,23 @@ module changeCoordinate(x, y, yCurrent, CLOCK_50, inputX, inputY, address, addre
 	
 endmodule
 
-module main_clock(clock, reset_n, Q);
+module main_clock(clock, reset_n, CYCLES, currentCYCLE, resetCYCLE);
   parameter n = 4;
   parameter k = 16;
-  input clock, reset_n;
-  output [n-1:0] Q;
-  reg [n-1:0] Q;
+  input clock, reset_n, resetCYCLE;
+  output [n-1:0] CYCLES;
+  input [n-1:0]currentCYCLE;
+  reg [n-1:0] CYCLES;
   always @(posedge clock or negedge reset_n)
   begin
     if (~reset_n)
-      Q <= 'd0;
+      CYCLES <= 'd0;
+	else if(resetCYCLE)
+		CYCLES <= currentCYCLE;
     else begin
-      Q <= Q + 1'b1;
-      if (Q == k-1)
-        Q <= 'd0;
+      CYCLES <= CYCLES + 1'b1;
+      if (CYCLES == k-1)
+        CYCLES <= 'd0;
     end
   end
 endmodule

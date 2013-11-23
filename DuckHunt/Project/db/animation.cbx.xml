@@ -1,8 +1,10 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="animation">
+		<CBX_INST_ENTRY INSTANCE_NAME="|animation|moveInstances:stage5|lpm_mult:Mult0" CBX_FILE_NAME="mult_e5t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|animation|vga_adapter:VGA|altsyncram:VideoMemory" CBX_FILE_NAME="altsyncram_v2g1.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|animation|BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_jd81.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|animation|DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_is81.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|animation|vga_adapter:VGA|altsyncram:VideoMemory" CBX_FILE_NAME="altsyncram_v2g1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|animation|TargetROM:TargetROM_inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_aq71.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
