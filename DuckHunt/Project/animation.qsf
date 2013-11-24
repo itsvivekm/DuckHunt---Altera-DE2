@@ -549,4 +549,5 @@ set_global_assignment -name QIP_FILE DuckROM1.qip
 set_global_assignment -name QIP_FILE ROMColorTest.qip
 set_global_assignment -name QIP_FILE BackgroundROM.qip
 set_global_assignment -name QIP_FILE TargetROM.qip
+set_global_assignment -name QIP_FILE FallingDuckROM.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

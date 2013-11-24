@@ -1,5 +1,5 @@
 Analysis & Synthesis report for animation
-Sat Nov 23 03:19:34 2013
+Sat Nov 23 22:50:39 2013
 Quartus II 32-bit Version 11.1 Build 216 11/23/2011 Service Pack 1 SJ Web Edition
 
 
@@ -16,43 +16,47 @@ Quartus II 32-bit Version 11.1 Build 216 11/23/2011 Service Pack 1 SJ Web Editio
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis DSP Block Usage Summary
  10. Analysis & Synthesis IP Cores Summary
- 11. User-Specified and Inferred Latches
- 12. Registers Removed During Synthesis
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_v2g1:auto_generated
- 17. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_v2g1:auto_generated|altsyncram_vsq1:altsyncram1
- 18. Source assignments for DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component|altsyncram_is81:auto_generated
- 19. Source assignments for BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component|altsyncram_jd81:auto_generated
- 20. Source assignments for TargetROM:TargetROM_inst|altsyncram:altsyncram_component|altsyncram_aq71:auto_generated
- 21. Parameter Settings for User Entity Instance: vga_adapter:VGA
- 22. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
- 23. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
- 24. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
- 25. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
- 26. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
- 27. Parameter Settings for User Entity Instance: DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component
- 28. Parameter Settings for User Entity Instance: BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component
- 29. Parameter Settings for User Entity Instance: TargetROM:TargetROM_inst|altsyncram:altsyncram_component
- 30. Parameter Settings for User Entity Instance: moveInstances:stage5
- 31. Parameter Settings for User Entity Instance: moveInstances:stage5|main_clock:C0
- 32. Parameter Settings for User Entity Instance: NextState:stage2
- 33. Parameter Settings for User Entity Instance: flipflop:stage3
- 34. Parameter Settings for User Entity Instance: changeCoordinate:stage4
- 35. Parameter Settings for Inferred Entity Instance: moveInstances:stage5|lpm_mult:Mult0
- 36. altsyncram Parameter Settings by Entity Instance
- 37. altpll Parameter Settings by Entity Instance
- 38. lpm_mult Parameter Settings by Entity Instance
- 39. Port Connectivity Checks: "changeCoordinate:stage4"
- 40. Port Connectivity Checks: "NextState:stage2"
- 41. Port Connectivity Checks: "moveInstances:stage5|main_clock:C0"
- 42. Port Connectivity Checks: "moveInstances:stage5"
- 43. Port Connectivity Checks: "TargetROM:TargetROM_inst"
- 44. Port Connectivity Checks: "DuckROM1:DuckROM1_inst"
- 45. Elapsed Time Per Partition
- 46. Analysis & Synthesis Messages
- 47. Analysis & Synthesis Suppressed Messages
+ 11. State Machine - |animation|moveInstances:stage5|ID
+ 12. User-Specified and Inferred Latches
+ 13. Registers Removed During Synthesis
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_v2g1:auto_generated
+ 18. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_v2g1:auto_generated|altsyncram_vsq1:altsyncram1
+ 19. Source assignments for DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component|altsyncram_is81:auto_generated
+ 20. Source assignments for BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component|altsyncram_jd81:auto_generated
+ 21. Source assignments for TargetROM:TargetROM_inst|altsyncram:altsyncram_component|altsyncram_aq71:auto_generated
+ 22. Source assignments for FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component|altsyncram_5d81:auto_generated
+ 23. Parameter Settings for User Entity Instance: vga_adapter:VGA
+ 24. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
+ 25. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
+ 26. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
+ 27. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
+ 28. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
+ 29. Parameter Settings for User Entity Instance: DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component
+ 30. Parameter Settings for User Entity Instance: BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component
+ 31. Parameter Settings for User Entity Instance: TargetROM:TargetROM_inst|altsyncram:altsyncram_component
+ 32. Parameter Settings for User Entity Instance: FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component
+ 33. Parameter Settings for User Entity Instance: moveInstances:stage5
+ 34. Parameter Settings for User Entity Instance: moveInstances:stage5|main_clock:C0
+ 35. Parameter Settings for User Entity Instance: NextState:stage2
+ 36. Parameter Settings for User Entity Instance: flipflop:stage3
+ 37. Parameter Settings for User Entity Instance: changeCoordinate:stage4
+ 38. Parameter Settings for Inferred Entity Instance: moveInstances:stage5|lpm_mult:Mult0
+ 39. altsyncram Parameter Settings by Entity Instance
+ 40. altpll Parameter Settings by Entity Instance
+ 41. lpm_mult Parameter Settings by Entity Instance
+ 42. Port Connectivity Checks: "changeCoordinate:stage4"
+ 43. Port Connectivity Checks: "NextState:stage2"
+ 44. Port Connectivity Checks: "moveInstances:stage5|main_clock:C0"
+ 45. Port Connectivity Checks: "moveInstances:stage5"
+ 46. Port Connectivity Checks: "FallingDuckROM:FallingDuckROM_inst"
+ 47. Port Connectivity Checks: "TargetROM:TargetROM_inst"
+ 48. Port Connectivity Checks: "DuckROM1:DuckROM1_inst"
+ 49. Elapsed Time Per Partition
+ 50. Analysis & Synthesis Messages
+ 51. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -78,18 +82,18 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Nov 23 03:19:34 2013         ;
+; Analysis & Synthesis Status        ; Successful - Sat Nov 23 22:50:38 2013         ;
 ; Quartus II 32-bit Version          ; 11.1 Build 216 11/23/2011 SP 1 SJ Web Edition ;
 ; Revision Name                      ; animation                                     ;
 ; Top-level Entity Name              ; animation                                     ;
 ; Family                             ; Cyclone II                                    ;
-; Total logic elements               ; 1,140                                         ;
-;     Total combinational functions  ; 1,130                                         ;
-;     Dedicated logic registers      ; 184                                           ;
-; Total registers                    ; 184                                           ;
+; Total logic elements               ; 1,325                                         ;
+;     Total combinational functions  ; 1,315                                         ;
+;     Dedicated logic registers      ; 203                                           ;
+; Total registers                    ; 203                                           ;
 ; Total pins                         ; 58                                            ;
 ; Total virtual pins                 ; 0                                             ;
-; Total memory bits                  ; 159,360                                       ;
+; Total memory bits                  ; 165,504                                       ;
 ; Embedded Multiplier 9-bit elements ; 1                                             ;
 ; Total PLLs                         ; 1                                             ;
 +------------------------------------+-----------------------------------------------+
@@ -202,6 +206,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; DuckROM1.v                           ; yes             ; User Wizard-Generated File             ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/DuckROM1.v                           ;
 ; BackgroundROM.v                      ; yes             ; User Wizard-Generated File             ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/BackgroundROM.v                      ;
 ; TargetROM.v                          ; yes             ; User Wizard-Generated File             ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/TargetROM.v                          ;
+; FallingDuckROM.v                     ; yes             ; User Wizard-Generated File             ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/FallingDuckROM.v                     ;
 ; altsyncram.tdf                       ; yes             ; Megafunction                           ; c:/altera/11.1sp1/quartus/libraries/megafunctions/altsyncram.tdf                              ;
 ; stratix_ram_block.inc                ; yes             ; Megafunction                           ; c:/altera/11.1sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                       ;
 ; lpm_mux.inc                          ; yes             ; Megafunction                           ; c:/altera/11.1sp1/quartus/libraries/megafunctions/lpm_mux.inc                                 ;
@@ -227,6 +232,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; db/mux_kib.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/db/mux_kib.tdf                       ;
 ; db/altsyncram_aq71.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/db/altsyncram_aq71.tdf               ;
 ; target.mif                           ; yes             ; Auto-Found Memory Initialization File  ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/target.mif                           ;
+; db/altsyncram_5d81.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/db/altsyncram_5d81.tdf               ;
+; fallingduck.mif                      ; yes             ; Auto-Found Memory Initialization File  ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/fallingduck.mif                      ;
 ; lpm_mult.tdf                         ; yes             ; Megafunction                           ; c:/altera/11.1sp1/quartus/libraries/megafunctions/lpm_mult.tdf                                ;
 ; lpm_add_sub.inc                      ; yes             ; Megafunction                           ; c:/altera/11.1sp1/quartus/libraries/megafunctions/lpm_add_sub.inc                             ;
 ; multcore.inc                         ; yes             ; Megafunction                           ; c:/altera/11.1sp1/quartus/libraries/megafunctions/multcore.inc                                ;
@@ -241,32 +248,32 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimated Total logic elements              ; 1,140    ;
+; Estimated Total logic elements              ; 1,325    ;
 ;                                             ;          ;
-; Total combinational functions               ; 1130     ;
+; Total combinational functions               ; 1315     ;
 ; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 317      ;
-;     -- 3 input functions                    ; 384      ;
-;     -- <=2 input functions                  ; 429      ;
+;     -- 4 input functions                    ; 443      ;
+;     -- 3 input functions                    ; 419      ;
+;     -- <=2 input functions                  ; 453      ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 590      ;
-;     -- arithmetic mode                      ; 540      ;
+;     -- normal mode                          ; 706      ;
+;     -- arithmetic mode                      ; 609      ;
 ;                                             ;          ;
-; Total registers                             ; 184      ;
-;     -- Dedicated logic registers            ; 184      ;
+; Total registers                             ; 203      ;
+;     -- Dedicated logic registers            ; 203      ;
 ;     -- I/O registers                        ; 0        ;
 ;                                             ;          ;
 ; I/O pins                                    ; 58       ;
-; Total memory bits                           ; 159360   ;
+; Total memory bits                           ; 165504   ;
 ; Embedded Multiplier 9-bit elements          ; 1        ;
 ; Total PLLs                                  ; 1        ;
 ;     -- PLLs                                 ; 1        ;
 ;                                             ;          ;
 ; Maximum fan-out node                        ; CLOCK_50 ;
-; Maximum fan-out                             ; 198      ;
-; Total fan-out                               ; 4610     ;
-; Average fan-out                             ; 3.25     ;
+; Maximum fan-out                             ; 220      ;
+; Total fan-out                               ; 5303     ;
+; Average fan-out                             ; 3.26     ;
 +---------------------------------------------+----------+
 
 
@@ -275,25 +282,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                               ; Library Name ;
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |animation                                              ; 1130 (118)        ; 184 (0)      ; 159360      ; 1            ; 1       ; 0         ; 58   ; 0            ; |animation                                                                                                                        ;              ;
-;    |BackgroundROM:BackgroundROM_inst|                   ; 20 (0)            ; 3 (0)        ; 98304       ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|BackgroundROM:BackgroundROM_inst                                                                                       ;              ;
-;       |altsyncram:altsyncram_component|                 ; 20 (0)            ; 3 (0)        ; 98304       ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component                                                       ;              ;
-;          |altsyncram_jd81:auto_generated|               ; 20 (0)            ; 3 (3)        ; 98304       ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component|altsyncram_jd81:auto_generated                        ;              ;
+; |animation                                              ; 1315 (26)         ; 203 (0)      ; 165504      ; 1            ; 1       ; 0         ; 58   ; 0            ; |animation                                                                                                                        ;              ;
+;    |BackgroundROM:BackgroundROM_inst|                   ; 23 (0)            ; 3 (0)        ; 98304       ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|BackgroundROM:BackgroundROM_inst                                                                                       ;              ;
+;       |altsyncram:altsyncram_component|                 ; 23 (0)            ; 3 (0)        ; 98304       ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component                                                       ;              ;
+;          |altsyncram_jd81:auto_generated|               ; 23 (0)            ; 3 (3)        ; 98304       ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component|altsyncram_jd81:auto_generated                        ;              ;
 ;             |decode_9oa:deep_decode|                    ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component|altsyncram_jd81:auto_generated|decode_9oa:deep_decode ;              ;
-;             |mux_kib:mux2|                              ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component|altsyncram_jd81:auto_generated|mux_kib:mux2           ;              ;
+;             |mux_kib:mux2|                              ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component|altsyncram_jd81:auto_generated|mux_kib:mux2           ;              ;
 ;    |DuckROM1:DuckROM1_inst|                             ; 0 (0)             ; 0 (0)        ; 3072        ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|DuckROM1:DuckROM1_inst                                                                                                 ;              ;
 ;       |altsyncram:altsyncram_component|                 ; 0 (0)             ; 0 (0)        ; 3072        ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component                                                                 ;              ;
 ;          |altsyncram_is81:auto_generated|               ; 0 (0)             ; 0 (0)        ; 3072        ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component|altsyncram_is81:auto_generated                                  ;              ;
+;    |FallingDuckROM:FallingDuckROM_inst|                 ; 0 (0)             ; 0 (0)        ; 6144        ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|FallingDuckROM:FallingDuckROM_inst                                                                                     ;              ;
+;       |altsyncram:altsyncram_component|                 ; 0 (0)             ; 0 (0)        ; 6144        ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component                                                     ;              ;
+;          |altsyncram_5d81:auto_generated|               ; 0 (0)             ; 0 (0)        ; 6144        ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component|altsyncram_5d81:auto_generated                      ;              ;
 ;    |NextState:stage2|                                   ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|NextState:stage2                                                                                                       ;              ;
 ;    |TargetROM:TargetROM_inst|                           ; 0 (0)             ; 0 (0)        ; 384         ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|TargetROM:TargetROM_inst                                                                                               ;              ;
 ;       |altsyncram:altsyncram_component|                 ; 0 (0)             ; 0 (0)        ; 384         ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|TargetROM:TargetROM_inst|altsyncram:altsyncram_component                                                               ;              ;
 ;          |altsyncram_aq71:auto_generated|               ; 0 (0)             ; 0 (0)        ; 384         ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|TargetROM:TargetROM_inst|altsyncram:altsyncram_component|altsyncram_aq71:auto_generated                                ;              ;
 ;    |changeCoordinate:stage4|                            ; 188 (188)         ; 40 (40)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|changeCoordinate:stage4                                                                                                ;              ;
 ;    |flipflop:stage3|                                    ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|flipflop:stage3                                                                                                        ;              ;
-;    |moveInstances:stage5|                               ; 666 (605)         ; 107 (81)     ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |animation|moveInstances:stage5                                                                                                   ;              ;
+;    |moveInstances:stage5|                               ; 940 (888)         ; 126 (100)    ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |animation|moveInstances:stage5                                                                                                   ;              ;
 ;       |lpm_mult:Mult0|                                  ; 0 (0)             ; 0 (0)        ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |animation|moveInstances:stage5|lpm_mult:Mult0                                                                                    ;              ;
 ;          |mult_e5t:auto_generated|                      ; 0 (0)             ; 0 (0)        ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |animation|moveInstances:stage5|lpm_mult:Mult0|mult_e5t:auto_generated                                                            ;              ;
-;       |main_clock:C0|                                   ; 61 (61)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|moveInstances:stage5|main_clock:C0                                                                                     ;              ;
+;       |main_clock:C0|                                   ; 52 (52)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|moveInstances:stage5|main_clock:C0                                                                                     ;              ;
 ;    |vga_adapter:VGA|                                    ; 105 (3)           ; 32 (0)       ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|vga_adapter:VGA                                                                                                        ;              ;
 ;       |altsyncram:VideoMemory|                          ; 24 (0)            ; 6 (0)        ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|vga_adapter:VGA|altsyncram:VideoMemory                                                                                 ;              ;
 ;          |altsyncram_v2g1:auto_generated|               ; 24 (0)            ; 6 (0)        ; 57600       ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_v2g1:auto_generated                                                  ;              ;
@@ -318,6 +328,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+----------------------+
 ; BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component|altsyncram_jd81:auto_generated|ALTSYNCRAM   ; AUTO ; ROM            ; 32768        ; 3            ; --           ; --           ; 98304 ; background2.mif      ;
 ; DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component|altsyncram_is81:auto_generated|ALTSYNCRAM             ; AUTO ; ROM            ; 1024         ; 3            ; --           ; --           ; 3072  ; Duck transparent.mif ;
+; FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component|altsyncram_5d81:auto_generated|ALTSYNCRAM ; AUTO ; ROM            ; 2048         ; 3            ; --           ; --           ; 6144  ; FallingDuck.mif      ;
 ; TargetROM:TargetROM_inst|altsyncram:altsyncram_component|altsyncram_aq71:auto_generated|ALTSYNCRAM           ; AUTO ; ROM            ; 128          ; 3            ; --           ; --           ; 384   ; Target.mif           ;
 ; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_v2g1:auto_generated|altsyncram_vsq1:altsyncram1|ALTSYNCRAM ; AUTO ; True Dual Port ; 19200        ; 3            ; 19200        ; 3            ; 57600 ; background2          ;
 +--------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+----------------------+
@@ -341,68 +352,54 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                                        ;
-+--------+--------------+---------+--------------+--------------+---------------------------------------------+--------------------------------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                             ; IP Include File                                                                ;
-+--------+--------------+---------+--------------+--------------+---------------------------------------------+--------------------------------------------------------------------------------+
-; Altera ; ROM: 1-PORT  ; 11.1    ; N/A          ; N/A          ; |animation|BackgroundROM:BackgroundROM_inst ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/BackgroundROM.v       ;
-; Altera ; ROM: 1-PORT  ; 11.1    ; N/A          ; N/A          ; |animation|DuckROM1:DuckROM1_inst           ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/DuckROM1.v            ;
-; Altera ; ROM: 1-PORT  ; 11.1    ; N/A          ; N/A          ; |animation|TargetROM:TargetROM_inst         ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/TargetROM.v           ;
-; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |animation|vga_adapter:VGA|vga_pll:mypll    ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/vga_adapter/vga_pll.v ;
-+--------+--------------+---------+--------------+--------------+---------------------------------------------+--------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                          ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------+--------------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                               ; IP Include File                                                                ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------+--------------------------------------------------------------------------------+
+; Altera ; ROM: 1-PORT  ; 11.1    ; N/A          ; N/A          ; |animation|BackgroundROM:BackgroundROM_inst   ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/BackgroundROM.v       ;
+; Altera ; ROM: 1-PORT  ; 11.1    ; N/A          ; N/A          ; |animation|DuckROM1:DuckROM1_inst             ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/DuckROM1.v            ;
+; Altera ; ROM: 1-PORT  ; 11.1    ; N/A          ; N/A          ; |animation|FallingDuckROM:FallingDuckROM_inst ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/FallingDuckROM.v      ;
+; Altera ; ROM: 1-PORT  ; 11.1    ; N/A          ; N/A          ; |animation|TargetROM:TargetROM_inst           ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/TargetROM.v           ;
+; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |animation|vga_adapter:VGA|vga_pll:mypll      ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/vga_adapter/vga_pll.v ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------+--------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                      ;
-+-----------------------------------------------------+---------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal       ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------------+------------------------+
-; NextState:stage2|start                              ; NextState:stage2|Decoder0 ; yes                    ;
-; sizeX[5]                                            ; GND                       ; yes                    ;
-; sizeY[1]                                            ; GND                       ; yes                    ;
-; sizeX[3]                                            ; GND                       ; yes                    ;
-; NextState:stage2|Y[0]                               ; NextState:stage2|Mux2     ; yes                    ;
-; NextState:stage2|Y[1]                               ; NextState:stage2|Mux2     ; yes                    ;
-; finalY[6]                                           ; finalX[7]                 ; yes                    ;
-; finalY[5]                                           ; finalX[7]                 ; yes                    ;
-; finalY[4]                                           ; finalX[7]                 ; yes                    ;
-; finalY[3]                                           ; finalX[7]                 ; yes                    ;
-; finalY[2]                                           ; finalX[7]                 ; yes                    ;
-; finalY[1]                                           ; finalX[7]                 ; yes                    ;
-; finalY[0]                                           ; finalX[7]                 ; yes                    ;
-; finalX[7]                                           ; finalX[7]                 ; yes                    ;
-; finalX[6]                                           ; finalX[7]                 ; yes                    ;
-; finalX[5]                                           ; finalX[7]                 ; yes                    ;
-; finalX[4]                                           ; finalX[7]                 ; yes                    ;
-; finalX[3]                                           ; finalX[7]                 ; yes                    ;
-; finalX[2]                                           ; finalX[7]                 ; yes                    ;
-; finalX[1]                                           ; finalX[7]                 ; yes                    ;
-; finalX[0]                                           ; finalX[7]                 ; yes                    ;
-; sizeY[2]                                            ; GND                       ; yes                    ;
-; sizeY[3]                                            ; GND                       ; yes                    ;
-; sizeY[4]                                            ; GND                       ; yes                    ;
-; Number of user-specified and inferred latches = 24  ;                           ;                        ;
-+-----------------------------------------------------+---------------------------+------------------------+
+Encoding Type:  One-Hot
++----------------------------------------------------+
+; State Machine - |animation|moveInstances:stage5|ID ;
++---------+---------+---------+----------------------+
+; Name    ; ID.0011 ; ID.0001 ; ID.0010              ;
++---------+---------+---------+----------------------+
+; ID.0001 ; 0       ; 0       ; 0                    ;
+; ID.0010 ; 0       ; 1       ; 1                    ;
+; ID.0011 ; 1       ; 1       ; 0                    ;
++---------+---------+---------+----------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                     ;
++----------------------------------------------------+---------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal       ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------------+------------------------+
+; NextState:stage2|start                             ; NextState:stage2|Decoder0 ; yes                    ;
+; NextState:stage2|Y[0]                              ; NextState:stage2|Mux2     ; yes                    ;
+; NextState:stage2|Y[1]                              ; NextState:stage2|Mux2     ; yes                    ;
+; Number of user-specified and inferred latches = 3  ;                           ;                        ;
++----------------------------------------------------+---------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+--------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                               ;
-+----------------------------------------------+---------------------------------------------------+
-; Register name                                ; Reason for Removal                                ;
-+----------------------------------------------+---------------------------------------------------+
-; moveInstances:stage5|currentCYCLE[0]         ; Stuck at GND due to stuck port data_in            ;
-; moveInstances:stage5|ID[3]                   ; Merged with moveInstances:stage5|ID[2]            ;
-; moveInstances:stage5|Duck_1_inputY[2]        ; Merged with moveInstances:stage5|Duck_2_inputY[0] ;
-; moveInstances:stage5|Duck_2_inputY[2,5]      ; Merged with moveInstances:stage5|Duck_2_inputY[0] ;
-; moveInstances:stage5|Duck_1_inputY[0,1,3..6] ; Merged with moveInstances:stage5|Duck_2_inputY[0] ;
-; moveInstances:stage5|Duck_2_inputY[3,4,6]    ; Merged with moveInstances:stage5|Duck_2_inputY[1] ;
-; moveInstances:stage5|Duck_2_inputY[0]        ; Stuck at GND due to stuck port data_in            ;
-; moveInstances:stage5|Duck_2_inputY[1]        ; Stuck at VCC due to stuck port data_in            ;
-; moveInstances:stage5|ID[2]                   ; Stuck at GND due to stuck port data_in            ;
-; Total Number of Removed Registers = 17       ;                                                   ;
-+----------------------------------------------+---------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; moveInstances:stage5|currentCYCLE[0]  ; Stuck at GND due to stuck port data_in ;
+; moveInstances:stage5|ID~7             ; Lost fanout                            ;
+; moveInstances:stage5|ID~8             ; Lost fanout                            ;
+; Total Number of Removed Registers = 3 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -410,12 +407,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 184   ;
+; Total registers                              ; 203   ;
 ; Number of registers using Synchronous Clear  ; 10    ;
-; Number of registers using Synchronous Load   ; 19    ;
+; Number of registers using Synchronous Load   ; 7     ;
 ; Number of registers using Asynchronous Clear ; 20    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 68    ;
+; Number of registers using Clock Enable       ; 65    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -425,35 +422,40 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; moveInstances:stage5|firstTime         ; 126     ;
+; moveInstances:stage5|Duck_2_alive      ; 15      ;
+; moveInstances:stage5|firstTime         ; 186     ;
 ; moveInstances:stage5|Duck_1_alive      ; 3       ;
-; moveInstances:stage5|Duck_2_alive      ; 1       ;
 ; Total number of inverted registers = 3 ;         ;
 +----------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+----------------------------------------------------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                               ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+----------------------------------------------------------+----------------------------+
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; |animation|changeCoordinate:stage4|y[2]                  ;                            ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; |animation|changeCoordinate:stage4|address[3]            ;                            ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |animation|changeCoordinate:stage4|x[7]                  ;                            ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |animation|moveInstances:stage5|Duck_1_inputX[5]         ;                            ;
-; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; |animation|moveInstances:stage5|currentCYCLE[3]          ;                            ;
-; 3:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; |animation|moveInstances:stage5|main_clock:C0|CYCLES[11] ;                            ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |animation|moveInstances:stage5|Duck_2_inputX[1]         ;                            ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; |animation|changeCoordinate:stage4|addressBackground[14] ;                            ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; |animation|moveInstances:stage5|ID[2]                    ;                            ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 15 LEs               ; 30 LEs                 ; |animation|moveInstances:stage5|Target_inputY[3]         ;                            ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; |animation|moveInstances:stage5|color[0]                 ;                            ;
-; 8:1                ; 7 bits    ; 35 LEs        ; 28 LEs               ; 7 LEs                  ; |animation|moveInstances:stage5|inputY[0]                ;                            ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; |animation|finalX[0]                                     ;                            ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; |animation|finalX[3]                                     ;                            ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; |animation|finalY[0]                                     ;                            ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; |animation|moveInstances:stage5|inputX                   ;                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+----------------------------------------------------------+----------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+---------------------------------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                              ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+---------------------------------------------------------+----------------------------+
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; |animation|moveInstances:stage5|Duck_1_inputX[5]        ;                            ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; |animation|moveInstances:stage5|currentCYCLE[23]        ;                            ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; |animation|moveInstances:stage5|main_clock:C0|CYCLES[2] ;                            ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; |animation|changeCoordinate:stage4|y[0]                 ;                            ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; |animation|changeCoordinate:stage4|address[9]           ;                            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |animation|changeCoordinate:stage4|x[7]                 ;                            ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; |animation|moveInstances:stage5|Duck_2_inputX[4]        ;                            ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; |animation|changeCoordinate:stage4|addressBackground[1] ;                            ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 15 LEs               ; 30 LEs                 ; |animation|moveInstances:stage5|Target_inputX[3]        ;                            ;
+; 9:1                ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; |animation|moveInstances:stage5|inputY[1]               ;                            ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; |animation|moveInstances:stage5|color[2]                ;                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; |animation|moveInstances:stage5|sizeY[3]                ;                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; |animation|moveInstances:stage5|Duck_1_dead             ;                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; |animation|moveInstances:stage5|Duck_2_dead             ;                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; |animation|moveInstances:stage5|Duck_1_falling          ;                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; |animation|moveInstances:stage5|Duck_2_falling          ;                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; |animation|moveInstances:stage5|ID                      ;                            ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; |animation|moveInstances:stage5|finalX[1]               ;                            ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; |animation|moveInstances:stage5|finalX[3]               ;                            ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; |animation|moveInstances:stage5|finalY[1]               ;                            ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; |animation|moveInstances:stage5|inputX                  ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+---------------------------------------------------------+----------------------------+
 
 
 +----------------------------------------------------------------------------------------------+
@@ -499,6 +501,15 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------+--------------------+------+--------------------------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                ;
 +---------------------------------+--------------------+------+--------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component|altsyncram_5d81:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                         ;
++---------------------------------+--------------------+------+------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                          ;
++---------------------------------+--------------------+------+------------------------------------------------------------+
 
 
 +--------------------------------------------------------------+
@@ -1168,6 +1179,66 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-----------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                ;
++------------------------------------+----------------------+-----------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                             ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                        ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                      ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                             ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                             ;
+; WIDTH_A                            ; 3                    ; Signed Integer                                      ;
+; WIDTHAD_A                          ; 11                   ; Signed Integer                                      ;
+; NUMWORDS_A                         ; 2048                 ; Signed Integer                                      ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                             ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                             ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                             ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                             ;
+; WIDTH_B                            ; 1                    ; Untyped                                             ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                             ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                             ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                             ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                             ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                             ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                             ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                             ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                             ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                             ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                             ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                             ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                      ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                             ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                             ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                             ;
+; INIT_FILE                          ; FallingDuck.mif      ; Untyped                                             ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                             ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                             ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                             ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                             ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                             ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                             ;
+; CBXI_PARAMETER                     ; altsyncram_5d81      ; Untyped                                             ;
++------------------------------------+----------------------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: moveInstances:stage5 ;
 +----------------------+---------+----------------------------------+
@@ -1177,7 +1248,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Duck_1_initialInputX ; 0       ; Signed Integer                   ;
 ; Duck_1_initialInputY ; 0       ; Signed Integer                   ;
 ; Duck_2_initialInputX ; 0       ; Signed Integer                   ;
-; Duck_2_initialInputY ; 1011010 ; Unsigned Binary                  ;
+; Duck_2_initialInputY ; 0111100 ; Unsigned Binary                  ;
 ; Target_initialInputX ; 75      ; Signed Integer                   ;
 ; Target_initialInputY ; 0110111 ; Unsigned Binary                  ;
 ; movementsPerSec      ; 48      ; Signed Integer                   ;
@@ -1268,57 +1339,68 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                                             ;
-+-------------------------------------------+------------------------------------------------------------------+
-; Name                                      ; Value                                                            ;
-+-------------------------------------------+------------------------------------------------------------------+
-; Number of entity instances                ; 4                                                                ;
-; Entity Instance                           ; vga_adapter:VGA|altsyncram:VideoMemory                           ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                                                        ;
-;     -- WIDTH_A                            ; 3                                                                ;
-;     -- NUMWORDS_A                         ; 19200                                                            ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                     ;
-;     -- WIDTH_B                            ; 3                                                                ;
-;     -- NUMWORDS_B                         ; 19200                                                            ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                           ;
-;     -- OUTDATA_REG_B                      ; CLOCK1                                                           ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                             ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                        ;
-; Entity Instance                           ; DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component           ;
-;     -- OPERATION_MODE                     ; ROM                                                              ;
-;     -- WIDTH_A                            ; 3                                                                ;
-;     -- NUMWORDS_A                         ; 1024                                                             ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                     ;
-;     -- WIDTH_B                            ; 1                                                                ;
-;     -- NUMWORDS_B                         ; 1                                                                ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                           ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                     ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                             ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                        ;
-; Entity Instance                           ; BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; ROM                                                              ;
-;     -- WIDTH_A                            ; 3                                                                ;
-;     -- NUMWORDS_A                         ; 32768                                                            ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                     ;
-;     -- WIDTH_B                            ; 1                                                                ;
-;     -- NUMWORDS_B                         ; 1                                                                ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                           ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                     ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                             ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                        ;
-; Entity Instance                           ; TargetROM:TargetROM_inst|altsyncram:altsyncram_component         ;
-;     -- OPERATION_MODE                     ; ROM                                                              ;
-;     -- WIDTH_A                            ; 3                                                                ;
-;     -- NUMWORDS_A                         ; 128                                                              ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                     ;
-;     -- WIDTH_B                            ; 1                                                                ;
-;     -- NUMWORDS_B                         ; 1                                                                ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                           ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                     ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                             ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                        ;
-+-------------------------------------------+------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                               ;
++-------------------------------------------+--------------------------------------------------------------------+
+; Name                                      ; Value                                                              ;
++-------------------------------------------+--------------------------------------------------------------------+
+; Number of entity instances                ; 5                                                                  ;
+; Entity Instance                           ; vga_adapter:VGA|altsyncram:VideoMemory                             ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                          ;
+;     -- WIDTH_A                            ; 3                                                                  ;
+;     -- NUMWORDS_A                         ; 19200                                                              ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                       ;
+;     -- WIDTH_B                            ; 3                                                                  ;
+;     -- NUMWORDS_B                         ; 19200                                                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                             ;
+;     -- OUTDATA_REG_B                      ; CLOCK1                                                             ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                          ;
+; Entity Instance                           ; DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component             ;
+;     -- OPERATION_MODE                     ; ROM                                                                ;
+;     -- WIDTH_A                            ; 3                                                                  ;
+;     -- NUMWORDS_A                         ; 1024                                                               ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                       ;
+;     -- WIDTH_B                            ; 1                                                                  ;
+;     -- NUMWORDS_B                         ; 1                                                                  ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                             ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                       ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                          ;
+; Entity Instance                           ; BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component   ;
+;     -- OPERATION_MODE                     ; ROM                                                                ;
+;     -- WIDTH_A                            ; 3                                                                  ;
+;     -- NUMWORDS_A                         ; 32768                                                              ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                       ;
+;     -- WIDTH_B                            ; 1                                                                  ;
+;     -- NUMWORDS_B                         ; 1                                                                  ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                             ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                       ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                          ;
+; Entity Instance                           ; TargetROM:TargetROM_inst|altsyncram:altsyncram_component           ;
+;     -- OPERATION_MODE                     ; ROM                                                                ;
+;     -- WIDTH_A                            ; 3                                                                  ;
+;     -- NUMWORDS_A                         ; 128                                                                ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                       ;
+;     -- WIDTH_B                            ; 1                                                                  ;
+;     -- NUMWORDS_B                         ; 1                                                                  ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                             ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                       ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                          ;
+; Entity Instance                           ; FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                                ;
+;     -- WIDTH_A                            ; 3                                                                  ;
+;     -- NUMWORDS_A                         ; 2048                                                               ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                       ;
+;     -- WIDTH_B                            ; 1                                                                  ;
+;     -- NUMWORDS_B                         ; 1                                                                  ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                             ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                       ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                          ;
++-------------------------------------------+--------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------+
@@ -1387,19 +1469,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------+
-; Port Connectivity Checks: "moveInstances:stage5" ;
-+-------------+-------+----------+-----------------+
-; Port        ; Type  ; Severity ; Details         ;
-+-------------+-------+----------+-----------------+
-; sizeX[7..6] ; Input ; Info     ; Stuck at GND    ;
-; sizeX[4]    ; Input ; Info     ; Stuck at GND    ;
-; sizeX[2]    ; Input ; Info     ; Stuck at GND    ;
-; sizeX[1]    ; Input ; Info     ; Stuck at VCC    ;
-; sizeX[0]    ; Input ; Info     ; Stuck at GND    ;
-; sizeY[6..5] ; Input ; Info     ; Stuck at GND    ;
-; sizeY[0]    ; Input ; Info     ; Stuck at VCC    ;
-+-------------+-------+----------+-----------------+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "moveInstances:stage5"                                                                ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; sizeX ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; sizeY ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FallingDuckROM:FallingDuckROM_inst"                                                                                                                                                   ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                                                             ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; address ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (11 bits) it drives.  The 21 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1425,7 +1511,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:20     ;
+; Top            ; 00:00:27     ;
 +----------------+--------------+
 
 
@@ -1435,7 +1521,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 11.1 Build 216 11/23/2011 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Nov 23 03:19:13 2013
+    Info: Processing started: Sat Nov 23 22:50:14 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off animation -c animation
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 6 design units, including 6 entities, in source file animation.v
@@ -1466,59 +1552,11 @@ Info (12021): Found 1 design units, including 1 entities, in source file backgro
     Info (12023): Found entity 1: BackgroundROM
 Info (12021): Found 1 design units, including 1 entities, in source file targetrom.v
     Info (12023): Found entity 1: TargetROM
+Info (12021): Found 1 design units, including 1 entities, in source file fallingduckrom.v
+    Info (12023): Found entity 1: FallingDuckROM
 Info (12127): Elaborating entity "animation" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at animation.v(46): object "intialInputX" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at animation.v(47): object "intialInputY" assigned a value but never read
-Warning (10235): Verilog HDL Always Construct warning at animation.v(119): variable "ID" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(121): variable "duckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(122): variable "duckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(123): variable "inputX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(124): variable "inputX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10230): Verilog HDL assignment warning at animation.v(124): truncated value with size 32 to match size of target (8)
-Warning (10235): Verilog HDL Always Construct warning at animation.v(128): variable "inputY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(129): variable "inputY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(133): variable "ID" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(135): variable "targetSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(136): variable "targetSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(137): variable "inputX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(138): variable "inputX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10230): Verilog HDL assignment warning at animation.v(138): truncated value with size 32 to match size of target (8)
-Warning (10235): Verilog HDL Always Construct warning at animation.v(142): variable "inputY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(143): variable "inputY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10240): Verilog HDL Always Construct warning at animation.v(117): inferring latch(es) for variable "sizeX", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at animation.v(117): inferring latch(es) for variable "sizeY", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at animation.v(117): inferring latch(es) for variable "finalX", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at animation.v(117): inferring latch(es) for variable "finalY", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "finalY[0]" at animation.v(133)
-Info (10041): Inferred latch for "finalY[1]" at animation.v(133)
-Info (10041): Inferred latch for "finalY[2]" at animation.v(133)
-Info (10041): Inferred latch for "finalY[3]" at animation.v(133)
-Info (10041): Inferred latch for "finalY[4]" at animation.v(133)
-Info (10041): Inferred latch for "finalY[5]" at animation.v(133)
-Info (10041): Inferred latch for "finalY[6]" at animation.v(133)
-Info (10041): Inferred latch for "finalX[0]" at animation.v(133)
-Info (10041): Inferred latch for "finalX[1]" at animation.v(133)
-Info (10041): Inferred latch for "finalX[2]" at animation.v(133)
-Info (10041): Inferred latch for "finalX[3]" at animation.v(133)
-Info (10041): Inferred latch for "finalX[4]" at animation.v(133)
-Info (10041): Inferred latch for "finalX[5]" at animation.v(133)
-Info (10041): Inferred latch for "finalX[6]" at animation.v(133)
-Info (10041): Inferred latch for "finalX[7]" at animation.v(133)
-Info (10041): Inferred latch for "sizeY[0]" at animation.v(133)
-Info (10041): Inferred latch for "sizeY[1]" at animation.v(133)
-Info (10041): Inferred latch for "sizeY[2]" at animation.v(133)
-Info (10041): Inferred latch for "sizeY[3]" at animation.v(133)
-Info (10041): Inferred latch for "sizeY[4]" at animation.v(133)
-Info (10041): Inferred latch for "sizeY[5]" at animation.v(133)
-Info (10041): Inferred latch for "sizeY[6]" at animation.v(133)
-Info (10041): Inferred latch for "sizeX[0]" at animation.v(133)
-Info (10041): Inferred latch for "sizeX[1]" at animation.v(133)
-Info (10041): Inferred latch for "sizeX[2]" at animation.v(133)
-Info (10041): Inferred latch for "sizeX[3]" at animation.v(133)
-Info (10041): Inferred latch for "sizeX[4]" at animation.v(133)
-Info (10041): Inferred latch for "sizeX[5]" at animation.v(133)
-Info (10041): Inferred latch for "sizeX[6]" at animation.v(133)
-Info (10041): Inferred latch for "sizeX[7]" at animation.v(133)
+Warning (10036): Verilog HDL or VHDL warning at animation.v(47): object "intialInputX" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at animation.v(48): object "intialInputY" assigned a value but never read
 Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA"
 Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory"
@@ -1635,45 +1673,130 @@ Info (12133): Instantiated megafunction "TargetROM:TargetROM_inst|altsyncram:alt
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_aq71.tdf
     Info (12023): Found entity 1: altsyncram_aq71
 Info (12128): Elaborating entity "altsyncram_aq71" for hierarchy "TargetROM:TargetROM_inst|altsyncram:altsyncram_component|altsyncram_aq71:auto_generated"
+Info (12128): Elaborating entity "FallingDuckROM" for hierarchy "FallingDuckROM:FallingDuckROM_inst"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component" with the following parameter:
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "FallingDuck.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone II"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "2048"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "widthad_a" = "11"
+    Info (12134): Parameter "width_a" = "3"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_5d81.tdf
+    Info (12023): Found entity 1: altsyncram_5d81
+Info (12128): Elaborating entity "altsyncram_5d81" for hierarchy "FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component|altsyncram_5d81:auto_generated"
 Info (12128): Elaborating entity "moveInstances" for hierarchy "moveInstances:stage5"
-Warning (10036): Verilog HDL or VHDL warning at animation.v(224): object "enterAgain" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at animation.v(227): truncated value with size 32 to match size of target (26)
-Warning (10230): Verilog HDL assignment warning at animation.v(237): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(238): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at animation.v(239): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(241): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(247): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(248): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at animation.v(315): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(323): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(334): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(339): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(344): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at animation.v(349): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at animation.v(381): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at animation.v(180): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at animation.v(190): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(191): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(192): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(194): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(198): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(199): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(290): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(294): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(307): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(311): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(324): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(328): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(332): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(336): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(409): truncated value with size 32 to match size of target (26)
+Warning (10235): Verilog HDL Always Construct warning at animation.v(453): variable "ID" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(455): variable "duckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(456): variable "duckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(458): variable "Duck_1_falling" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(460): variable "fallingDuckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(461): variable "fallingDuckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(464): variable "inputX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(465): variable "inputX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at animation.v(465): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at animation.v(469): variable "inputY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(470): variable "inputY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(474): variable "ID" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(476): variable "duckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(477): variable "duckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(479): variable "Duck_2_falling" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(481): variable "fallingDuckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(482): variable "fallingDuckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(485): variable "inputX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(486): variable "inputX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at animation.v(486): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at animation.v(490): variable "inputY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(491): variable "inputY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(496): variable "ID" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(498): variable "targetSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(499): variable "targetSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(500): variable "inputX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(501): variable "inputX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at animation.v(501): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at animation.v(505): variable "inputY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(506): variable "inputY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at animation.v(451): inferring latch(es) for variable "sizeX", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at animation.v(451): inferring latch(es) for variable "sizeY", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at animation.v(451): inferring latch(es) for variable "finalX", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at animation.v(451): inferring latch(es) for variable "finalY", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "finalY[0]" at animation.v(474)
+Info (10041): Inferred latch for "finalY[1]" at animation.v(474)
+Info (10041): Inferred latch for "finalY[2]" at animation.v(474)
+Info (10041): Inferred latch for "finalY[3]" at animation.v(474)
+Info (10041): Inferred latch for "finalY[4]" at animation.v(474)
+Info (10041): Inferred latch for "finalY[5]" at animation.v(474)
+Info (10041): Inferred latch for "finalY[6]" at animation.v(474)
+Info (10041): Inferred latch for "finalX[0]" at animation.v(474)
+Info (10041): Inferred latch for "finalX[1]" at animation.v(474)
+Info (10041): Inferred latch for "finalX[2]" at animation.v(474)
+Info (10041): Inferred latch for "finalX[3]" at animation.v(474)
+Info (10041): Inferred latch for "finalX[4]" at animation.v(474)
+Info (10041): Inferred latch for "finalX[5]" at animation.v(474)
+Info (10041): Inferred latch for "finalX[6]" at animation.v(474)
+Info (10041): Inferred latch for "finalX[7]" at animation.v(474)
+Info (10041): Inferred latch for "sizeY[0]" at animation.v(474)
+Info (10041): Inferred latch for "sizeY[1]" at animation.v(474)
+Info (10041): Inferred latch for "sizeY[2]" at animation.v(474)
+Info (10041): Inferred latch for "sizeY[3]" at animation.v(474)
+Info (10041): Inferred latch for "sizeY[4]" at animation.v(474)
+Info (10041): Inferred latch for "sizeY[5]" at animation.v(474)
+Info (10041): Inferred latch for "sizeY[6]" at animation.v(474)
+Info (10041): Inferred latch for "sizeX[0]" at animation.v(474)
+Info (10041): Inferred latch for "sizeX[1]" at animation.v(474)
+Info (10041): Inferred latch for "sizeX[2]" at animation.v(474)
+Info (10041): Inferred latch for "sizeX[3]" at animation.v(474)
+Info (10041): Inferred latch for "sizeX[4]" at animation.v(474)
+Info (10041): Inferred latch for "sizeX[5]" at animation.v(474)
+Info (10041): Inferred latch for "sizeX[6]" at animation.v(474)
+Info (10041): Inferred latch for "sizeX[7]" at animation.v(474)
 Info (12128): Elaborating entity "main_clock" for hierarchy "moveInstances:stage5|main_clock:C0"
 Info (12128): Elaborating entity "NextState" for hierarchy "NextState:stage2"
-Warning (10036): Verilog HDL or VHDL warning at animation.v(485): object "counter" assigned a value but never read
-Warning (10235): Verilog HDL Always Construct warning at animation.v(491): variable "finalX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(491): variable "finalY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(493): variable "finalX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(493): variable "finalY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(495): variable "finalY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10240): Verilog HDL Always Construct warning at animation.v(487): inferring latch(es) for variable "Y", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at animation.v(487): inferring latch(es) for variable "start", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "start" at animation.v(487)
-Info (10041): Inferred latch for "Y[0]" at animation.v(487)
-Info (10041): Inferred latch for "Y[1]" at animation.v(487)
+Warning (10036): Verilog HDL or VHDL warning at animation.v(547): object "counter" assigned a value but never read
+Warning (10235): Verilog HDL Always Construct warning at animation.v(553): variable "finalX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(553): variable "finalY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(555): variable "finalX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(555): variable "finalY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(557): variable "finalY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at animation.v(549): inferring latch(es) for variable "Y", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at animation.v(549): inferring latch(es) for variable "start", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "start" at animation.v(549)
+Info (10041): Inferred latch for "Y[0]" at animation.v(549)
+Info (10041): Inferred latch for "Y[1]" at animation.v(549)
 Info (12128): Elaborating entity "flipflop" for hierarchy "flipflop:stage3"
 Info (12128): Elaborating entity "changeCoordinate" for hierarchy "changeCoordinate:stage4"
-Warning (10230): Verilog HDL assignment warning at animation.v(540): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(541): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at animation.v(544): truncated value with size 32 to match size of target (15)
-Warning (10230): Verilog HDL assignment warning at animation.v(546): truncated value with size 32 to match size of target (15)
-Warning (10230): Verilog HDL assignment warning at animation.v(551): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at animation.v(552): truncated value with size 32 to match size of target (15)
-Warning (10230): Verilog HDL assignment warning at animation.v(553): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at animation.v(560): truncated value with size 32 to match size of target (15)
+Warning (10230): Verilog HDL assignment warning at animation.v(602): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(603): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at animation.v(606): truncated value with size 32 to match size of target (15)
+Warning (10230): Verilog HDL assignment warning at animation.v(608): truncated value with size 32 to match size of target (15)
+Warning (10230): Verilog HDL assignment warning at animation.v(613): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(614): truncated value with size 32 to match size of target (15)
+Warning (10230): Verilog HDL assignment warning at animation.v(615): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at animation.v(622): truncated value with size 32 to match size of target (15)
 Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "Ynext[2]" is missing source, defaulting to GND
 Warning (12011): Net is missing source, defaulting to GND
@@ -1686,7 +1809,25 @@ Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "Ynext[2]" is missing source, defaulting to GND
 Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "Ynext[2]" is missing source, defaulting to GND
-Info (13005): Duplicate registers merged to single register
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "Ynext[2]" is missing source, defaulting to GND
+Warning (14026): LATCH primitive "moveInstances:stage5|sizeY[3]" is permanently enabled
+Warning (14026): LATCH primitive "moveInstances:stage5|sizeY[0]" is permanently enabled
+Warning (14026): LATCH primitive "moveInstances:stage5|finalX[7]" is permanently enabled
+Warning (14026): LATCH primitive "moveInstances:stage5|finalX[6]" is permanently enabled
+Warning (14026): LATCH primitive "moveInstances:stage5|finalX[5]" is permanently enabled
+Warning (14026): LATCH primitive "moveInstances:stage5|finalX[4]" is permanently enabled
+Warning (14026): LATCH primitive "moveInstances:stage5|finalX[3]" is permanently enabled
+Warning (14026): LATCH primitive "moveInstances:stage5|finalX[2]" is permanently enabled
+Warning (14026): LATCH primitive "moveInstances:stage5|finalX[1]" is permanently enabled
+Warning (14026): LATCH primitive "moveInstances:stage5|finalX[0]" is permanently enabled
+Warning (14026): LATCH primitive "moveInstances:stage5|finalY[6]" is permanently enabled
+Warning (14026): LATCH primitive "moveInstances:stage5|finalY[5]" is permanently enabled
+Warning (14026): LATCH primitive "moveInstances:stage5|finalY[4]" is permanently enabled
+Warning (14026): LATCH primitive "moveInstances:stage5|finalY[3]" is permanently enabled
+Warning (14026): LATCH primitive "moveInstances:stage5|finalY[2]" is permanently enabled
+Warning (14026): LATCH primitive "moveInstances:stage5|finalY[1]" is permanently enabled
+Warning (14026): LATCH primitive "moveInstances:stage5|finalY[0]" is permanently enabled
 Info (278001): Inferred 1 megafunctions from design logic
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "moveInstances:stage5|Mult0"
 Info (12130): Elaborated megafunction instantiation "moveInstances:stage5|lpm_mult:Mult0"
@@ -1702,43 +1843,16 @@ Info (12133): Instantiated megafunction "moveInstances:stage5|lpm_mult:Mult0" wi
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_e5t.tdf
     Info (12023): Found entity 1: mult_e5t
-Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13012): Latch NextState:stage2|Y[0] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal flipflop:stage3|y[0]
 Warning (13012): Latch NextState:stage2|Y[1] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal flipflop:stage3|y[1]
-Warning (13012): Latch finalY[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal moveInstances:stage5|ID[0]
-Warning (13012): Latch finalY[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal moveInstances:stage5|ID[0]
-Warning (13012): Latch finalY[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal moveInstances:stage5|ID[0]
-Warning (13012): Latch finalY[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal moveInstances:stage5|ID[0]
-Warning (13012): Latch finalY[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal moveInstances:stage5|ID[0]
-Warning (13012): Latch finalY[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal moveInstances:stage5|ID[0]
-Warning (13012): Latch finalY[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal moveInstances:stage5|ID[0]
-Warning (13012): Latch finalX[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal moveInstances:stage5|ID[0]
-Warning (13012): Latch finalX[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal moveInstances:stage5|ID[0]
-Warning (13012): Latch finalX[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal moveInstances:stage5|ID[0]
-Warning (13012): Latch finalX[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal moveInstances:stage5|ID[0]
-Warning (13012): Latch finalX[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal moveInstances:stage5|ID[0]
-Warning (13012): Latch finalX[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal moveInstances:stage5|ID[0]
-Warning (13012): Latch finalX[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal moveInstances:stage5|ID[0]
-Warning (13012): Latch finalX[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal moveInstances:stage5|ID[0]
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "VGA_SYNC" is stuck at VCC
+Info (17049): 2 registers lost all their fanouts during netlist optimizations. The first 2 are displayed below.
+    Info (17050): Register "moveInstances:stage5|ID~7" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "moveInstances:stage5|ID~8" lost all its fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/animation.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding node "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|pll"
@@ -1759,18 +1873,18 @@ Warning (21074): Design contains 16 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[15]"
     Warning (15610): No output dependent on input pin "SW[16]"
     Warning (15610): No output dependent on input pin "SW[17]"
-Info (21057): Implemented 1277 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1446 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 35 output pins
-    Info (21061): Implemented 1172 logic cells
-    Info (21064): Implemented 45 RAM segments
+    Info (21061): Implemented 1338 logic cells
+    Info (21064): Implemented 48 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 1 DSP elements
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 121 warnings
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 125 warnings
     Info: Peak virtual memory: 330 megabytes
-    Info: Processing ended: Sat Nov 23 03:19:34 2013
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Processing ended: Sat Nov 23 22:50:39 2013
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:24
 
 
 +------------------------------------------+

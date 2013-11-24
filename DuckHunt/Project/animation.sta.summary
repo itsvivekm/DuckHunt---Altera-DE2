@@ -2,43 +2,31 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow Model Setup 'moveInstances:stage5|ID[0]'
-Slack : -6.397
-TNS   : -87.654
+Type  : Slow Model Setup 'flipflop:stage3|y[0]'
+Slack : -6.056
+TNS   : -15.310
 
 Type  : Slow Model Setup 'CLOCK_50'
-Slack : -3.665
-TNS   : -148.427
-
-Type  : Slow Model Setup 'flipflop:stage3|y[0]'
-Slack : -2.687
-TNS   : -7.564
+Slack : -2.172
+TNS   : -24.911
 
 Type  : Slow Model Setup 'VGA|mypll|altpll_component|pll|clk[0]'
-Slack : 32.600
+Slack : 33.074
 TNS   : 0.000
 
 Type  : Slow Model Hold 'flipflop:stage3|y[0]'
-Slack : -3.602
-TNS   : -7.075
+Slack : -3.825
+TNS   : -7.476
 
 Type  : Slow Model Hold 'CLOCK_50'
-Slack : -1.847
-TNS   : -41.530
-
-Type  : Slow Model Hold 'moveInstances:stage5|ID[0]'
-Slack : -0.470
-TNS   : -1.335
+Slack : -1.489
+TNS   : -36.989
 
 Type  : Slow Model Hold 'VGA|mypll|altpll_component|pll|clk[0]'
-Slack : 0.513
+Slack : 0.516
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'flipflop:stage3|y[0]'
-Slack : 0.500
-TNS   : 0.000
-
-Type  : Slow Model Minimum Pulse Width 'moveInstances:stage5|ID[0]'
 Slack : 0.500
 TNS   : 0.000
 
@@ -50,43 +38,31 @@ Type  : Slow Model Minimum Pulse Width 'VGA|mypll|altpll_component|pll|clk[0]'
 Slack : 17.873
 TNS   : 0.000
 
-Type  : Fast Model Setup 'moveInstances:stage5|ID[0]'
-Slack : -3.019
-TNS   : -40.989
-
 Type  : Fast Model Setup 'flipflop:stage3|y[0]'
-Slack : -1.281
-TNS   : -2.839
+Slack : -2.265
+TNS   : -6.141
 
 Type  : Fast Model Setup 'CLOCK_50'
-Slack : -0.787
-TNS   : -15.927
+Slack : -0.743
+TNS   : -2.046
 
 Type  : Fast Model Setup 'VGA|mypll|altpll_component|pll|clk[0]'
-Slack : 36.685
+Slack : 36.884
 TNS   : 0.000
 
 Type  : Fast Model Hold 'flipflop:stage3|y[0]'
-Slack : -1.935
-TNS   : -3.806
+Slack : -2.052
+TNS   : -4.024
 
 Type  : Fast Model Hold 'CLOCK_50'
-Slack : -1.037
-TNS   : -49.855
-
-Type  : Fast Model Hold 'moveInstances:stage5|ID[0]'
-Slack : -0.223
-TNS   : -0.837
+Slack : -1.017
+TNS   : -30.844
 
 Type  : Fast Model Hold 'VGA|mypll|altpll_component|pll|clk[0]'
-Slack : 0.236
+Slack : 0.237
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'flipflop:stage3|y[0]'
-Slack : 0.500
-TNS   : 0.000
-
-Type  : Fast Model Minimum Pulse Width 'moveInstances:stage5|ID[0]'
 Slack : 0.500
 TNS   : 0.000
 
