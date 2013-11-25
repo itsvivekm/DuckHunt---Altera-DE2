@@ -28,7 +28,7 @@ module animation
 	output	[9:0]	VGA_B;   				//	VGA Blue[9:0]
 	
 	wire resetn;
-	assign resetn = KEY[0];
+	assign resetn = ~SW[1];
 	
 	
 	
@@ -54,7 +54,7 @@ module animation
 	wire [6:0]inputY;
 	
 	wire kill;
-	assign kill = ~KEY[3];
+	assign kill = SW[0];
 	
 	wire [9:0]address;
 	wire [14:0]addressBackground;
@@ -63,11 +63,13 @@ module animation
 	assign intialInputY = SW[14:8];
 	
 	wire up, down, left, right;
-	assign down = SW[0];
-	assign up = SW[1];
-	assign right = SW[2];
-	assign left = SW[3];
+	assign up = ~KEY[0];
+	assign down = ~KEY[1];
+	assign right = ~KEY[2];
+	assign left = ~KEY[3];
 	
+	wire startGame;
+	assign startGame = SW[17];
 	
 	// Create an Instance of a VGA controller - there can be only one!
 	// Define the number of colours as well as the initial background
@@ -91,7 +93,7 @@ module animation
 		defparam VGA.RESOLUTION = "160x120";
 		defparam VGA.MONOCHROME = "FALSE";
 		defparam VGA.BITS_PER_COLOUR_CHANNEL = 1;
-		defparam VGA.BACKGROUND_IMAGE = "background2";
+		defparam VGA.BACKGROUND_IMAGE = "Welcome1";
 			
 	// Put your code here. Your code should produce signals x,y,color and writeEn
 	// for the VGA controller, in addition to any other functionality your design may require.
@@ -108,7 +110,7 @@ module animation
 	FallingDuckROM	FallingDuckROM_inst (address + 2, CLOCK_50, colorFallingDuck);
 
 	
-	moveInstances stage5(inputX, inputY, DuckColor, colorBackground, color, colorTarget, colorFallingDuck, CLOCK_50, enable, up, down, left, right, sizeX, sizeY, kill, finalX, finalY);
+	moveInstances stage5(inputX, inputY, DuckColor, colorBackground, color, colorTarget, colorFallingDuck, CLOCK_50, enable, up, down, left, right, sizeX, sizeY, kill, finalX, finalY, startGame);
 	
 	NextState stage2(Ynext, yCurrent, CLOCK_50, enable, start, finalX, finalY, x, y);
 	flipflop stage3(resetn, yCurrent, Ynext, CLOCK_50);
@@ -118,10 +120,10 @@ module animation
 endmodule
 
 
-module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTarget, colorFallingDuck, CLOCK_50, enable, up, down, left, right, sizeX, sizeY, kill, finalX, finalY);
+module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTarget, colorFallingDuck, CLOCK_50, enable, up, down, left, right, sizeX, sizeY, kill, finalX, finalY, startGame);
 	
 	input up, down, left, right;
-	input kill;
+	input kill, startGame;
 	
 	output reg [7:0]inputX;
 	output reg [6:0]inputY;
@@ -169,6 +171,19 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 	reg Duck_2_falling = 0;
 	reg Duck_2_dead = 0;
 	
+	//Duck 3 declaration
+	
+	parameter Duck_3_initialInputX = 0;
+	parameter [6:0]Duck_3_initialInputY = 0;
+	
+	reg [7:0]Duck_3_inputX;
+	reg [6:0]Duck_3_inputY;
+	
+	reg Duck_3_alive = 0;
+	reg Duck_3_falling = 0;
+	reg Duck_3_dead = 1;
+	
+	
 	//Target declaration
 	parameter Target_initialInputX = 75;
 	parameter [6:0]Target_initialInputY = 55;
@@ -176,23 +191,55 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 	reg [7:0]Target_inputX;
 	reg [6:0]Target_inputY;
 	
+	reg proceed = 0;
 	
 	wire [25:0]eraseCount = sizeX * sizeY + 100;
 	parameter movementsPerSec = 48;
 	parameter speed = 50000000/movementsPerSec * objectCount;
 	reg [25:0]currentCYCLE = 0;
 	 
+	 
+	 
 	 always @ (posedge CLOCK_50)
 	  begin
+		if(startGame == 1 && proceed == 0)
+		begin
+			if(CYCLES <= 1)
+			begin
+			inputX = 0;
+			inputY = 0;
+			enable = 1;
+			end
+			else
+				enable = 0;
+			
+			color = colorBackground;
+			
+			if(CYCLES == 20000)
+			begin
+				enable = 0;
+				proceed = 1;
+				resetCYCLE = 1;
+			end
+		end
+		if(proceed == 1)
+		begin
 		if(firstTime == 1)
 		begin
 			firstTime = 0;
-			Duck_1_inputX = Duck_1_initialInputX;
-			Duck_1_inputY = Duck_1_initialInputY;
-			Duck_2_inputX = Duck_2_initialInputX;
-			Duck_2_inputY = Duck_2_initialInputY;
+			proceed = 0;
+			
 			Target_inputX = Target_initialInputX;
 			Target_inputY = Target_initialInputY; 
+			
+			Duck_1_inputX = Duck_1_initialInputX;
+			Duck_1_inputY = Duck_1_initialInputY;
+			
+			Duck_2_inputX = Duck_2_initialInputX;
+			Duck_2_inputY = Duck_2_initialInputY;
+			
+			Duck_3_inputX = Duck_3_initialInputX;
+			Duck_3_inputY = Duck_3_initialInputY;
 			
 			ID = 1;
 			inputX = Duck_1_initialInputX;
@@ -216,6 +263,10 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 					begin
 						Duck_1_alive = 0;
 						Duck_1_falling = 1;
+						
+						//Instantiating third duck
+						Duck_3_alive = 1;
+						Duck_3_dead = 0;
 					end
 		if(ID == 1 && Duck_1_falling == 1)
 			if(inputY > 159 - 34)
@@ -250,7 +301,30 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 		begin
 			enable = 0;
 			resetCYCLE = 1;
-			ID = 3;
+			ID = 0;
+		end
+		
+		
+		//Duck 3
+		if(ID == 3 && Duck_3_alive == 1)
+			if(Target_inputX + 5 >= Duck_3_inputX && Target_inputX + 5 <= Duck_3_inputX  + 34)
+				if(Target_inputY + 5 >= Duck_3_inputY && Target_inputY + 5 <= Duck_3_inputY  + 23)
+					if(kill == 1 && Duck_3_inputX < 159 - 34)
+					begin
+						Duck_3_alive = 0;
+						Duck_3_falling = 1;
+					end
+		if(ID == 3 && Duck_3_falling == 1)
+			if(inputY > 159 - 34)
+			begin
+				Duck_3_falling = 0;
+				Duck_3_dead = 1;
+			end
+		if(ID == 3 && Duck_3_dead == 1)
+		begin
+			enable = 0;
+			resetCYCLE = 1;
+			ID = 0;
 		end
 	
 	
@@ -269,6 +343,11 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 				inputY = Duck_2_inputY;
 			end
 			else if(ID == 3)
+			begin
+				inputX = Duck_3_inputX;
+				inputY = Duck_3_inputY;
+			end
+			else if(ID == 0)
 			begin
 				inputX = Target_inputX;
 				inputY = Target_inputY;
@@ -315,8 +394,25 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 				inputY = Duck_2_inputY;
 			end
 			
-			//Target cursor
+			//Duck 3
 			else if(ID == 3)
+			begin
+				if(Duck_3_alive == 1)
+				begin
+					Duck_3_inputX = Duck_3_inputX  + 1;
+				end
+				else if(Duck_3_falling)
+				begin
+					Duck_3_inputY = Duck_3_inputY  + 1;
+				end
+				
+				inputX = Duck_3_inputX;
+				inputY = Duck_3_inputY;
+			end
+			
+			
+			//Target cursor
+			else if(ID == 0)
 			begin
 				
 				if(left == 1 && Target_inputX > 0)
@@ -397,8 +493,33 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 				end
 			end
 			
-			//Target cursor
+			
+			//Duck 3
 			if(ID == 3)
+			begin
+				if(inputX >= 159 - sizeX)
+				begin
+					color = colorBackground;
+				end
+				else if(Duck_3_alive == 1)
+				begin
+					if(DuckColor == 3'b001)
+						color = colorBackground;
+					else
+						color = DuckColor;
+				end
+				else if(Duck_3_alive == 0 && Duck_3_falling == 1)
+				begin
+					if(colorFallingDuck == 3'b001)
+						color = colorBackground;
+					else
+						color = colorFallingDuck;
+				end
+			end
+			
+			
+			//Target cursor
+			if(ID == 0)
 				color = colorTarget;
 		end
 			
@@ -418,6 +539,10 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 			end
 			else if(ID == 3)
 			begin
+				ID = 0;
+			end
+			else if(ID == 0)
+			begin
 				ID = 1;
 			end
 		end
@@ -428,7 +553,7 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 		if(CYCLES == 49999999)
 			currentCYCLE = 0;
 	end
-	
+	end
 	
 	
 	//Final coordinates and size computation
@@ -438,6 +563,9 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 	
 	output reg [7:0]sizeX = 34;
 	output reg [6:0]sizeY = 23;
+	
+	reg [7:0]backgroundSizeX = 160;
+	reg [6:0]backgroundSizeY = 119;
 	
 	reg [7:0]duckSizeX = 34;
 	reg [6:0]duckSizeY = 23;
@@ -450,26 +578,21 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 	
 	always@(enable)
 	begin
-		if(ID == 1)
+		if(proceed == 0)
+		begin
+			sizeX = backgroundSizeX;
+			sizeY = backgroundSizeY;
+		end
+		else if(ID == 1)
 		begin
 			sizeX = duckSizeX;
 			sizeY = duckSizeY;
-		
+	
 			if(Duck_1_falling == 1)
 			begin
 				sizeX = fallingDuckSizeX;
 				sizeY = fallingDuckSizeY;
 			end
-			
-			if(inputX + sizeX <= 159)
-				finalX = inputX + sizeX - 2;
-			else
-				finalX = 159;
-			
-			if(inputY + sizeY <= 119)
-				finalY = inputY + sizeY;
-			else
-				finalY = 119;
 		end
 		else if(ID == 2)
 		begin
@@ -481,34 +604,37 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 				sizeX = fallingDuckSizeX;
 				sizeY = fallingDuckSizeY;
 			end
-			
-			if(inputX + sizeX <= 159)
-				finalX = inputX + sizeX - 2;
-			else
-				finalX = 159;
-			
-			if(inputY + sizeY <= 119)
-				finalY = inputY + sizeY;
-			else
-				finalY = 119;
+		end
+		else if(ID == 3)
+		begin
+			sizeX = duckSizeX;
+			sizeY = duckSizeY;
+		
+			if(Duck_3_falling == 1)
+			begin
+				sizeX = fallingDuckSizeX;
+				sizeY = fallingDuckSizeY;
+			end
 		end
 		
-		else if(ID == 3)
+		else if(ID == 0)
 		begin
 			sizeX = targetSizeX;
 			sizeY = targetSizeY;
-			if(inputX + sizeX <= 159)
-				finalX = inputX + sizeX - 2;
-			else
-				finalX = 159;
-			
-			if(inputY + sizeY <= 119)
-				finalY = inputY + sizeY;
-			else
-				finalY = 119;
 		end
+		
+		if(inputX + sizeX <= 159)
+			finalX = inputX + sizeX - 2;
+		else
+			finalX = 159;
+		
+		if(inputY + sizeY <= 119)
+			finalY = inputY + sizeY;
+		else
+			finalY = 119;
 	end
-	
+		
+			
 	
 endmodule
 
