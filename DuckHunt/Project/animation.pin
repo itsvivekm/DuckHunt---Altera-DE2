@@ -322,7 +322,7 @@ RESERVED_INPUT               : D21       :        :                   :         
 VCCIO4                       : D22       : power  :                   : 3.3V    : 4         :                
 RESERVED_INPUT               : D23       :        :                   :         : 5         :                
 GND                          : D24       : gnd    :                   :         :           :                
-RESERVED_INPUT               : D25       :        :                   :         : 5         :                
+GPIO_0[0]                    : D25       : input  : 3.3-V LVTTL       :         : 5         : Y              
 PS2_CLK                      : D26       : bidir  : 3.3-V LVTTL       :         : 5         : Y              
 RESERVED_INPUT               : E1        :        :                   :         : 2         :                
 RESERVED_INPUT               : E2        :        :                   :         : 2         :                
@@ -348,8 +348,8 @@ GND_PLL2                     : E21       : gnd    :                   :         
 RESERVED_INPUT               : E22       :        :                   :         : 5         :                
 RESERVED_INPUT               : E23       :        :                   :         : 5         :                
 RESERVED_INPUT               : E24       :        :                   :         : 5         :                
-RESERVED_INPUT               : E25       :        :                   :         : 5         :                
-RESERVED_INPUT               : E26       :        :                   :         : 5         :                
+GPIO_0[3]                    : E25       : input  : 3.3-V LVTTL       :         : 5         : Y              
+GPIO_0[2]                    : E26       : input  : 3.3-V LVTTL       :         : 5         : Y              
 RESERVED_INPUT               : F1        :        :                   :         : 2         :                
 RESERVED_INPUT               : F2        :        :                   :         : 2         :                
 RESERVED_INPUT               : F3        :        :                   :         : 2         :                
@@ -449,7 +449,7 @@ RESERVED_INPUT               : J18       :        :                   :         
 VCCIO5                       : J19       : power  :                   : 3.3V    : 5         :                
 RESERVED_INPUT               : J20       :        :                   :         : 5         :                
 RESERVED_INPUT               : J21       :        :                   :         : 5         :                
-RESERVED_INPUT               : J22       :        :                   :         : 5         :                
+GPIO_0[1]                    : J22       : input  : 3.3-V LVTTL       :         : 5         : Y              
 RESERVED_INPUT               : J23       :        :                   :         : 5         :                
 RESERVED_INPUT               : J24       :        :                   :         : 5         :                
 RESERVED_INPUT               : J25       :        :                   :         : 5         :                

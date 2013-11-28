@@ -2,10 +2,17 @@
 <LOG_ROOT>
 	<PROJECT NAME="animation">
 		<CBX_INST_ENTRY INSTANCE_NAME="|animation|moveInstances:stage5|lpm_mult:Mult0" CBX_FILE_NAME="mult_m5t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|animation|timer:timerInstance|twodigit_b2d_ssd:D3|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_35m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|animation|timer:timerInstance|twodigit_b2d_ssd:D7|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_35m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|animation|EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_i181.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|animation|TargetROM:TargetROM_inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_dq71.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|animation|timer:timerInstance|twodigit_b2d_ssd:D5|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_eem.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|animation|timer:timerInstance|twodigit_b2d_ssd:D5|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_35m.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|animation|vga_adapter:VGA|altsyncram:VideoMemory" CBX_FILE_NAME="altsyncram_apf1.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|animation|BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_jd81.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|animation|DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_is81.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|animation|FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_5d81.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|animation|TargetROM:TargetROM_inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_dq71.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|animation|timer:timerInstance|twodigit_b2d_ssd:D3|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_eem.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|animation|timer:timerInstance|twodigit_b2d_ssd:D7|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_eem.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

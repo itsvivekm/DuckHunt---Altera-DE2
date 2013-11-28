@@ -16,6 +16,7 @@ module animation
 		PS2_CLK,
 		PS2_DAT,
 		HEX7, HEX6, HEX5, HEX4, HEX3, HEX2
+		,GPIO_0
 	);
 
 	input				CLOCK_50;				//	50 MHz
@@ -31,6 +32,7 @@ module animation
 	output	[9:0]	VGA_B;   				//	VGA Blue[9:0]
 	inout PS2_CLK;
 	inout PS2_DAT;
+	input [3:0]GPIO_0;
 	
 	output [0:6]HEX7, HEX6, HEX5, HEX4, HEX3, HEX2;
 	
@@ -46,6 +48,7 @@ module animation
 	wire [2:0]colorBackground;
 	wire [2:0]colorTarget;
 	wire [2:0]colorFallingDuck;
+	wire [2:0]colorEnd;	
 	
 	
 	wire [7:0] x;
@@ -120,11 +123,13 @@ module animation
 	BackgroundROM	BackgroundROM_inst (addressBackground /*160*y+x*/, CLOCK_50, colorBackground);
 	TargetROM	TargetROM_inst (address + 2, CLOCK_50, colorTarget);
 	FallingDuckROM	FallingDuckROM_inst (address + 2, CLOCK_50, colorFallingDuck);
+	EndGameROM	EndGameROM_inst (addressBackground, CLOCK_50, colorEnd);
+
 
 	
 	wire startTimer, stopTimer;
 	
-	moveInstances stage5(inputX, inputY, DuckColor, colorBackground, color, colorTarget, colorFallingDuck, CLOCK_50, KEY, SW, enable, sizeX, sizeY, finalX, finalY, startGame, last_data_received, ps2_key_pressed, startTimer, stopTimer);
+	moveInstances stage5(inputX, inputY, DuckColor, colorBackground, color, colorTarget, colorFallingDuck, colorEnd, CLOCK_50, KEY, SW, enable, sizeX, sizeY, finalX, finalY, startGame, last_data_received, ps2_key_pressed, startTimer, stopTimer, GPIO_0);
 	
 	NextState stage2(Ynext, yCurrent, CLOCK_50, enable, start, finalX, finalY, x, y);
 	flipflop stage3(resetn, yCurrent, Ynext, CLOCK_50);
@@ -134,15 +139,20 @@ module animation
 endmodule
 
 
-module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTarget, colorFallingDuck, CLOCK_50, KEY, SW, enable, sizeX, sizeY, finalX, finalY, startGame, last_data_received, ps2_key_pressed, startTimer, stopTimer);
+module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTarget, colorFallingDuck, colorEnd, CLOCK_50, KEY, SW, enable, sizeX, sizeY, finalX, finalY, startGame, last_data_received, ps2_key_pressed, startTimer, stopTimer, GPIO_0);
 	
 	reg up = 0, down = 0, left = 0, right = 0, kill = 0;
 	input startGame;
 	input [3:0]KEY;
 	input [16:0]SW;
 	
+	input [3:0]GPIO_0;
+	
 	wire toggle;
 	assign toggle = SW[16];
+	
+	wire toggleKEYsensor;
+	assign toggleKEYsensor = SW[15];
 	
 	input [7:0]last_data_received;
 	input ps2_key_pressed;
@@ -183,11 +193,26 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 	end
 	else
 	begin
-		up = ~KEY[0];
-		down = ~KEY[1];
-		left = ~KEY[2];
-		right = ~KEY[3];
-		kill = SW[0];
+		
+		//up = GPIO_0[2];
+		//left = GPIO_0[1];
+		//right = GPIO_0[0];
+		if(toggleKEYsensor == 1)
+		begin
+		up = GPIO_0[1];
+		down = GPIO_0[0];
+		left = GPIO_0[2];
+		right = GPIO_0[3];
+		kill = ~KEY[0];
+		end
+		else
+		begin
+			up = ~KEY[0];
+			down = ~KEY[1];
+			left = ~KEY[2];
+			right = ~KEY[3];
+			kill = SW[0];
+		end
 	end
 	end
 	
@@ -195,7 +220,7 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 	output reg [7:0]inputX;
 	output reg [6:0]inputY;
 	
-	input [2:0]DuckColor, colorBackground, colorTarget, colorFallingDuck;
+	input [2:0]DuckColor, colorBackground, colorTarget, colorFallingDuck, colorEnd;
 	output reg [2:0]color;
 	
 	input CLOCK_50;
@@ -305,6 +330,19 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 	reg [6:0]Target_inputY;
 	
 	reg proceed = 0;
+	reg endGame = 0;
+	
+	
+	//EndGame declaration
+	parameter End_initialInputX = 0;
+	parameter [6:0]End_initialInputY = 0;
+	
+	reg [7:0]End_inputX;
+	reg [6:0]End_inputY;
+	
+	
+	
+	
 	
 	wire [25:0]eraseCount = sizeX * sizeY + 100;
 	parameter movementsPerSec = 48;
@@ -335,13 +373,13 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 				resetCYCLE = 1;
 			end
 		end
-		if(proceed == 1)
+		
+		else if(proceed == 1)
 		begin
 		if(firstTime == 1)
 		begin
 			firstTime = 0;
 			proceed = 0;
-			startTimer = 1;
 			
 			Target_inputX = Target_initialInputX;
 			Target_inputY = Target_initialInputY; 
@@ -364,17 +402,30 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 			Duck_6_inputX = Duck_6_initialInputX;
 			Duck_6_inputY = Duck_6_initialInputY;
 			
+			Duck_6_inputX = Duck_6_initialInputX;
+			Duck_6_inputY = Duck_6_initialInputY;
+			
+			End_inputX = End_initialInputX;
+			End_inputY = End_initialInputY;
+	
 			
 			ID = 1;
 			inputX = Duck_1_initialInputX;
 			inputY = Duck_1_initialInputY;
 		end
+		
+		
 		if((CYCLES >= currentCYCLE && CYCLES <= currentCYCLE + 1) || (CYCLES >= currentCYCLE + eraseCount && CYCLES <= currentCYCLE + eraseCount + 1))
 			enable = 1;
 		else
 			enable = 0;
 		
 		resetCYCLE = 0;
+		startTimer = 1;
+			
+		
+		
+		
 		
 		
 		//Kill computation
@@ -542,6 +593,7 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 				Duck_6_falling = 0;
 				Duck_6_dead = 1;
 				stopTimer = 1;
+				ID = 7;
 			end
 		if(ID == 6 && Duck_6_dead == 1)
 		begin
@@ -552,8 +604,8 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 			inputY = Target_inputY;
 		end
 	
-
 	
+		
 		//Erase computation
 	
 		if(CYCLES == currentCYCLE)
@@ -798,6 +850,15 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 				inputX = Target_inputX;
 				inputY = Target_inputY;
 			end
+			
+			//EndGame
+			else if(ID == 7)
+			begin
+				inputX = End_inputX;
+				inputY = End_inputY;
+			end
+			
+			
 		end
 		
 		
@@ -805,7 +866,10 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 		
 		if(CYCLES < (currentCYCLE + eraseCount))
 		begin
-			color = colorBackground;
+			if(ID == 7)
+				color = colorEnd;
+			else
+				color = colorBackground;
 		end
 		else if(CYCLES >= currentCYCLE + eraseCount)
 		begin	
@@ -959,6 +1023,9 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 				else
 					color = colorTarget;
 			end
+			
+			if(ID == 7)
+				color = colorEnd;
 		end
 			
 		//Toggle objects computation
@@ -989,21 +1056,26 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 			end
 			else if(ID == 6)
 			begin
-				ID = 0;
+				if(Duck_6_dead == 1 && Duck_5_dead == 1)
+					ID = 7;
+				else
+					ID = 0;
 			end
 			else if(ID == 0)
 			begin
 				ID = 1;
 			end
+			else if(ID == 7)
+				ID = 7;
 		end
-
 			
 		//CYCLE counter reset computation
 			
 		if(CYCLES == 49999999)
 			currentCYCLE = 0;
+
 	end
-	end
+end
 	
 	
 	//Final coordinates and size computation
@@ -1029,6 +1101,11 @@ module moveInstances(inputX, inputY, DuckColor, colorBackground, color, colorTar
 	always@(enable)
 	begin
 		if(proceed == 0)
+		begin
+			sizeX = backgroundSizeX;
+			sizeY = backgroundSizeY;
+		end
+		else if(ID == 7)
 		begin
 			sizeX = backgroundSizeX;
 			sizeY = backgroundSizeY;
@@ -1351,7 +1428,7 @@ module timer (CLOCK_50, KEY, HEX7, HEX6, HEX5, HEX4, HEX3, HEX2, startTimer, sto
   wire [5:0] SECONDS, MINUTES;
   wire [4:0] HOURS;
   
-  output startTimer, stopTimer;
+  input startTimer, stopTimer;
   
   reg sec, min, hour;
   counter_modk C0 (CLOCK_50, stopTimer, startTimer, PERSEC);
@@ -1447,7 +1524,7 @@ module counter_modk(clock, stop, start, Q);
   begin
     if (stop)
       Q <= 'd0;
-    else if(start)
+    else if (start)
 	 begin
       Q <= Q + 1'b1;
       if (Q == k-1)
