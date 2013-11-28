@@ -65,9 +65,12 @@ RESOLUTION
 PARAMETER_STRING
 USR
 BACKGROUND_IMAGE
-background2
+Welcome1
 PARAMETER_STRING
 USR
+}
+# hierarchies {
+vga_adapter:VGA
 }
 # macro_sequence
 
@@ -279,7 +282,7 @@ NEW_DATA_NO_NBE_READ
 PARAMETER_UNKNOWN
 DEF
 INIT_FILE
-background2
+Welcome1
 PARAMETER_UNKNOWN
 USR
 INIT_FILE_LAYOUT
@@ -327,7 +330,7 @@ Cyclone II
 PARAMETER_UNKNOWN
 USR
 CBXI_PARAMETER
-altsyncram_v2g1
+altsyncram_apf1
 PARAMETER_UNKNOWN
 USR
 }
@@ -364,35 +367,38 @@ clocken0
 2
 }
 # include_file {
-lpm_mux.inc
-dd87bed9959d6126db09970164b7ba6
-altram.inc
-ad5518b39ffd3cf1df377e6360d1c9b6
-lpm_decode.inc
-10da69a8bbd590d66779e7a142f73790
 altdpram.inc
 2f9e6727b678ffd76e72bc5a95a2630
-a_rdenreg.inc
-3fcdce755959d5a8afbe64788d21fb
+lpm_decode.inc
+10da69a8bbd590d66779e7a142f73790
 stratix_ram_block.inc
 e3a03868917fb3dd57b6ed1dd195f22
+a_rdenreg.inc
+3fcdce755959d5a8afbe64788d21fb
 aglobal111.inc
 9cc1f9de5ad83fc94dd171c3f7986bd
 altrom.inc
 192b74eafa8debf2248ea73881e77f91
+altram.inc
+ad5518b39ffd3cf1df377e6360d1c9b6
+lpm_mux.inc
+dd87bed9959d6126db09970164b7ba6
+}
+# hierarchies {
+vga_adapter:VGA|altsyncram:VideoMemory
 }
 # macro_sequence
 
 # end
 # entity
-altsyncram_v2g1
+altsyncram_apf1
 # storage
 db|animation.(4).cnf
 db|animation.(4).cnf
 # case_insensitive
 # source_file
-db|altsyncram_v2g1.tdf
-2a609911523d6e4ddfe1688f55de9a75
+db|altsyncram_apf1.tdf
+d1793ff26d948984a5a56de17ef37225
 7
 # used_port {
 wren_a
@@ -513,18 +519,21 @@ address_a0
 -1
 3
 }
+# hierarchies {
+vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_apf1:auto_generated
+}
 # macro_sequence
 
 # end
 # entity
-altsyncram_vsq1
+altsyncram_ajq1
 # storage
 db|animation.(5).cnf
 db|animation.(5).cnf
 # case_insensitive
 # source_file
-db|altsyncram_vsq1.tdf
-547262de9f3402b23101a2723f5c89
+db|altsyncram_ajq1.tdf
+ba5fd9c50c90b9e371a46d1d5f1b87
 7
 # used_port {
 wren_b
@@ -661,8 +670,11 @@ data_a0
 2
 }
 # memory_file {
-background2
+welcome1
 0
+}
+# hierarchies {
+vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_apf1:auto_generated|altsyncram_ajq1:altsyncram1
 }
 # macro_sequence
 
@@ -2358,14 +2370,14 @@ clk
 3
 }
 # include_file {
-cycloneii_pll.inc
-c2ee779f89b3bc181df753ea85b3ef
-stratix_pll.inc
-a9a94c5be18105f7ae8c218a67ec9f7
 stratixii_pll.inc
 6797ab505ed70f1a221e4a213e16a6
 aglobal111.inc
 9cc1f9de5ad83fc94dd171c3f7986bd
+stratix_pll.inc
+a9a94c5be18105f7ae8c218a67ec9f7
+cycloneii_pll.inc
+c2ee779f89b3bc181df753ea85b3ef
 }
 # hierarchies {
 vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
@@ -2456,10 +2468,194 @@ vga_adapter:VGA|vga_controller:controller
 
 # end
 # entity
+PS2_Controller
+# storage
+db|animation.(13).cnf
+db|animation.(13).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+ps2_controller.v
+8736258426a5627fd44758ccd934f2
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+INITIALIZE_MOUSE
+0
+PARAMETER_SIGNED_DEC
+DEF
+}
+# hierarchies {
+PS2_Demo:keyboard|PS2_Controller:PS2
+}
+# macro_sequence
+
+# end
+# entity
+Altera_UP_PS2_Data_In
+# storage
+db|animation.(14).cnf
+db|animation.(14).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+altera_up_ps2_data_in.v
+242349bd7745d345b11e265c37c2b13
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In
+}
+# macro_sequence
+
+# end
+# entity
+Altera_UP_PS2_Command_Out
+# storage
+db|animation.(15).cnf
+db|animation.(15).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+altera_up_ps2_command_out.v
+7af2a4a67e412b6532e9ce8d7cbdc71
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+CLOCK_CYCLES_FOR_101US
+5050
+PARAMETER_SIGNED_DEC
+DEF
+NUMBER_OF_BITS_FOR_101US
+13
+PARAMETER_SIGNED_DEC
+DEF
+COUNTER_INCREMENT_FOR_101US
+0000000000001
+PARAMETER_UNSIGNED_BIN
+DEF
+CLOCK_CYCLES_FOR_15MS
+750000
+PARAMETER_SIGNED_DEC
+DEF
+NUMBER_OF_BITS_FOR_15MS
+20
+PARAMETER_SIGNED_DEC
+DEF
+COUNTER_INCREMENT_FOR_15MS
+00000000000000000001
+PARAMETER_UNSIGNED_BIN
+DEF
+CLOCK_CYCLES_FOR_2MS
+100000
+PARAMETER_SIGNED_DEC
+DEF
+NUMBER_OF_BITS_FOR_2MS
+17
+PARAMETER_SIGNED_DEC
+DEF
+COUNTER_INCREMENT_FOR_2MS
+00000000000000001
+PARAMETER_UNSIGNED_BIN
+DEF
+PS2_STATE_0_IDLE
+000
+PARAMETER_UNSIGNED_BIN
+DEF
+PS2_STATE_1_INITIATE_COMMUNICATION
+001
+PARAMETER_UNSIGNED_BIN
+DEF
+PS2_STATE_2_WAIT_FOR_CLOCK
+010
+PARAMETER_UNSIGNED_BIN
+DEF
+PS2_STATE_3_TRANSMIT_DATA
+011
+PARAMETER_UNSIGNED_BIN
+DEF
+PS2_STATE_4_TRANSMIT_STOP_BIT
+100
+PARAMETER_UNSIGNED_BIN
+DEF
+PS2_STATE_5_RECEIVE_ACK_BIT
+101
+PARAMETER_UNSIGNED_BIN
+DEF
+PS2_STATE_6_COMMAND_WAS_SENT
+110
+PARAMETER_UNSIGNED_BIN
+DEF
+PS2_STATE_7_TRANSMISSION_ERROR
+111
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out
+}
+# macro_sequence
+
+# end
+# entity
 DuckROM1
 # storage
-db|animation.(12).cnf
-db|animation.(12).cnf
+db|animation.(16).cnf
+db|animation.(16).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -2494,8 +2690,8 @@ ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # entity
 altsyncram
 # storage
-db|animation.(13).cnf
-db|animation.(13).cnf
+db|animation.(17).cnf
+db|animation.(17).cnf
 # case_insensitive
 # source_file
 altsyncram.tdf
@@ -2773,22 +2969,22 @@ address_b
 2
 }
 # include_file {
-lpm_mux.inc
-dd87bed9959d6126db09970164b7ba6
-altram.inc
-ad5518b39ffd3cf1df377e6360d1c9b6
-lpm_decode.inc
-10da69a8bbd590d66779e7a142f73790
 altdpram.inc
 2f9e6727b678ffd76e72bc5a95a2630
-a_rdenreg.inc
-3fcdce755959d5a8afbe64788d21fb
+lpm_decode.inc
+10da69a8bbd590d66779e7a142f73790
 stratix_ram_block.inc
 e3a03868917fb3dd57b6ed1dd195f22
+a_rdenreg.inc
+3fcdce755959d5a8afbe64788d21fb
 aglobal111.inc
 9cc1f9de5ad83fc94dd171c3f7986bd
 altrom.inc
 192b74eafa8debf2248ea73881e77f91
+altram.inc
+ad5518b39ffd3cf1df377e6360d1c9b6
+lpm_mux.inc
+dd87bed9959d6126db09970164b7ba6
 }
 # hierarchies {
 DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component
@@ -2799,8 +2995,8 @@ DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component
 # entity
 altsyncram_is81
 # storage
-db|animation.(14).cnf
-db|animation.(14).cnf
+db|animation.(18).cnf
+db|animation.(18).cnf
 # case_insensitive
 # source_file
 db|altsyncram_is81.tdf
@@ -2863,8 +3059,8 @@ DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component|altsyncram_is81:auto_gene
 # entity
 BackgroundROM
 # storage
-db|animation.(15).cnf
-db|animation.(15).cnf
+db|animation.(19).cnf
+db|animation.(19).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -2899,8 +3095,8 @@ ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # entity
 altsyncram
 # storage
-db|animation.(16).cnf
-db|animation.(16).cnf
+db|animation.(20).cnf
+db|animation.(20).cnf
 # case_insensitive
 # source_file
 altsyncram.tdf
@@ -3178,22 +3374,22 @@ address_b
 2
 }
 # include_file {
-lpm_mux.inc
-dd87bed9959d6126db09970164b7ba6
-altram.inc
-ad5518b39ffd3cf1df377e6360d1c9b6
-lpm_decode.inc
-10da69a8bbd590d66779e7a142f73790
 altdpram.inc
 2f9e6727b678ffd76e72bc5a95a2630
-a_rdenreg.inc
-3fcdce755959d5a8afbe64788d21fb
+lpm_decode.inc
+10da69a8bbd590d66779e7a142f73790
 stratix_ram_block.inc
 e3a03868917fb3dd57b6ed1dd195f22
+a_rdenreg.inc
+3fcdce755959d5a8afbe64788d21fb
 aglobal111.inc
 9cc1f9de5ad83fc94dd171c3f7986bd
 altrom.inc
 192b74eafa8debf2248ea73881e77f91
+altram.inc
+ad5518b39ffd3cf1df377e6360d1c9b6
+lpm_mux.inc
+dd87bed9959d6126db09970164b7ba6
 }
 # hierarchies {
 BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component
@@ -3204,8 +3400,8 @@ BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component
 # entity
 altsyncram_jd81
 # storage
-db|animation.(17).cnf
-db|animation.(17).cnf
+db|animation.(21).cnf
+db|animation.(21).cnf
 # case_insensitive
 # source_file
 db|altsyncram_jd81.tdf
@@ -3283,8 +3479,8 @@ BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component|altsyncram_jd81
 # entity
 decode_9oa
 # storage
-db|animation.(18).cnf
-db|animation.(18).cnf
+db|animation.(22).cnf
+db|animation.(22).cnf
 # case_insensitive
 # source_file
 db|decode_9oa.tdf
@@ -3330,7 +3526,6 @@ enable
 }
 # hierarchies {
 BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component|altsyncram_jd81:auto_generated|decode_9oa:deep_decode
-EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|decode_9oa:deep_decode
 }
 # macro_sequence
 
@@ -3338,8 +3533,8 @@ EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_
 # entity
 mux_kib
 # storage
-db|animation.(19).cnf
-db|animation.(19).cnf
+db|animation.(23).cnf
+db|animation.(23).cnf
 # case_insensitive
 # source_file
 db|mux_kib.tdf
@@ -3439,7 +3634,6 @@ data0
 }
 # hierarchies {
 BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component|altsyncram_jd81:auto_generated|mux_kib:mux2
-EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|mux_kib:mux2
 }
 # macro_sequence
 
@@ -3447,8 +3641,8 @@ EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_
 # entity
 TargetROM
 # storage
-db|animation.(20).cnf
-db|animation.(20).cnf
+db|animation.(24).cnf
+db|animation.(24).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -3456,7 +3650,7 @@ ON
 # case_sensitive
 # source_file
 targetrom.v
-dc383353ab33f018edd1292733815168
+e84fd8e31969a3b63a4b3b9749ffbb5c
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -3483,8 +3677,8 @@ ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # entity
 altsyncram
 # storage
-db|animation.(21).cnf
-db|animation.(21).cnf
+db|animation.(25).cnf
+db|animation.(25).cnf
 # case_insensitive
 # source_file
 altsyncram.tdf
@@ -3524,11 +3718,11 @@ WIDTH_A
 PARAMETER_SIGNED_DEC
 USR
 WIDTHAD_A
-7
+8
 PARAMETER_SIGNED_DEC
 USR
 NUMWORDS_A
-128
+256
 PARAMETER_SIGNED_DEC
 USR
 OUTDATA_REG_A
@@ -3692,7 +3886,7 @@ Cyclone II
 PARAMETER_UNKNOWN
 USR
 CBXI_PARAMETER
-altsyncram_aq71
+altsyncram_dq71
 PARAMETER_UNKNOWN
 USR
 }
@@ -3762,22 +3956,22 @@ address_b
 2
 }
 # include_file {
-lpm_mux.inc
-dd87bed9959d6126db09970164b7ba6
-altram.inc
-ad5518b39ffd3cf1df377e6360d1c9b6
-lpm_decode.inc
-10da69a8bbd590d66779e7a142f73790
 altdpram.inc
 2f9e6727b678ffd76e72bc5a95a2630
-a_rdenreg.inc
-3fcdce755959d5a8afbe64788d21fb
+lpm_decode.inc
+10da69a8bbd590d66779e7a142f73790
 stratix_ram_block.inc
 e3a03868917fb3dd57b6ed1dd195f22
+a_rdenreg.inc
+3fcdce755959d5a8afbe64788d21fb
 aglobal111.inc
 9cc1f9de5ad83fc94dd171c3f7986bd
 altrom.inc
 192b74eafa8debf2248ea73881e77f91
+altram.inc
+ad5518b39ffd3cf1df377e6360d1c9b6
+lpm_mux.inc
+dd87bed9959d6126db09970164b7ba6
 }
 # hierarchies {
 TargetROM:TargetROM_inst|altsyncram:altsyncram_component
@@ -3786,14 +3980,14 @@ TargetROM:TargetROM_inst|altsyncram:altsyncram_component
 
 # end
 # entity
-altsyncram_aq71
+altsyncram_dq71
 # storage
-db|animation.(22).cnf
-db|animation.(22).cnf
+db|animation.(26).cnf
+db|animation.(26).cnf
 # case_insensitive
 # source_file
-db|altsyncram_aq71.tdf
-288a659921dc355793befedc6a70b6
+db|altsyncram_dq71.tdf
+7ac46d57d295dba4277dcdd5e208349
 7
 # used_port {
 q_a2
@@ -3806,6 +4000,9 @@ q_a0
 -1
 3
 clock0
+-1
+3
+address_a7
 -1
 3
 address_a6
@@ -3832,10 +4029,10 @@ address_a0
 }
 # memory_file {
 target.mif
-ade9b52d6beb9c144dd9db56734574
+4a3b6e8720522926d1d9122e6dc9e85e
 }
 # hierarchies {
-TargetROM:TargetROM_inst|altsyncram:altsyncram_component|altsyncram_aq71:auto_generated
+TargetROM:TargetROM_inst|altsyncram:altsyncram_component|altsyncram_dq71:auto_generated
 }
 # macro_sequence
 
@@ -3843,8 +4040,8 @@ TargetROM:TargetROM_inst|altsyncram:altsyncram_component|altsyncram_aq71:auto_ge
 # entity
 FallingDuckROM
 # storage
-db|animation.(23).cnf
-db|animation.(23).cnf
+db|animation.(27).cnf
+db|animation.(27).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -3879,8 +4076,8 @@ ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # entity
 altsyncram
 # storage
-db|animation.(24).cnf
-db|animation.(24).cnf
+db|animation.(28).cnf
+db|animation.(28).cnf
 # case_insensitive
 # source_file
 altsyncram.tdf
@@ -4158,22 +4355,22 @@ address_b
 2
 }
 # include_file {
-lpm_mux.inc
-dd87bed9959d6126db09970164b7ba6
-altram.inc
-ad5518b39ffd3cf1df377e6360d1c9b6
-lpm_decode.inc
-10da69a8bbd590d66779e7a142f73790
 altdpram.inc
 2f9e6727b678ffd76e72bc5a95a2630
-a_rdenreg.inc
-3fcdce755959d5a8afbe64788d21fb
+lpm_decode.inc
+10da69a8bbd590d66779e7a142f73790
 stratix_ram_block.inc
 e3a03868917fb3dd57b6ed1dd195f22
+a_rdenreg.inc
+3fcdce755959d5a8afbe64788d21fb
 aglobal111.inc
 9cc1f9de5ad83fc94dd171c3f7986bd
 altrom.inc
 192b74eafa8debf2248ea73881e77f91
+altram.inc
+ad5518b39ffd3cf1df377e6360d1c9b6
+lpm_mux.inc
+dd87bed9959d6126db09970164b7ba6
 }
 # hierarchies {
 FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component
@@ -4184,8 +4381,8 @@ FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component
 # entity
 altsyncram_5d81
 # storage
-db|animation.(25).cnf
-db|animation.(25).cnf
+db|animation.(29).cnf
+db|animation.(29).cnf
 # case_insensitive
 # source_file
 db|altsyncram_5d81.tdf
@@ -4251,1799 +4448,8 @@ FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component|altsyncram_5d
 # entity
 lpm_mult
 # storage
-db|animation.(31).cnf
-db|animation.(31).cnf
-# case_insensitive
-# source_file
-lpm_mult.tdf
-9ac1ca51ddc62512be537f722afe41
-7
-# user_parameter {
-AUTO_CARRY_CHAINS
-ON
-AUTO_CARRY
-USR
-IGNORE_CARRY_BUFFERS
-OFF
-IGNORE_CARRY
-USR
-AUTO_CASCADE_CHAINS
-ON
-AUTO_CASCADE
-USR
-IGNORE_CASCADE_BUFFERS
-OFF
-IGNORE_CASCADE
-USR
-LPM_WIDTHA
-6
-PARAMETER_UNKNOWN
-USR
-LPM_WIDTHB
-5
-PARAMETER_UNKNOWN
-USR
-LPM_WIDTHP
-11
-PARAMETER_UNKNOWN
-USR
-LPM_WIDTHR
-11
-PARAMETER_UNKNOWN
-USR
-LPM_WIDTHS
-1
-PARAMETER_UNKNOWN
-USR
-LPM_REPRESENTATION
-UNSIGNED
-PARAMETER_UNKNOWN
-USR
-LPM_PIPELINE
-0
-PARAMETER_UNKNOWN
-DEF
-LATENCY
-0
-PARAMETER_UNKNOWN
-DEF
-INPUT_A_IS_CONSTANT
-NO
-PARAMETER_UNKNOWN
-USR
-INPUT_B_IS_CONSTANT
-NO
-PARAMETER_UNKNOWN
-USR
-USE_EAB
-OFF
-PARAMETER_UNKNOWN
-DEF
-MAXIMIZE_SPEED
-5
-PARAMETER_UNKNOWN
-USR
-DEVICE_FAMILY
-Cyclone II
-PARAMETER_UNKNOWN
-USR
-CARRY_CHAIN
-MANUAL
-PARAMETER_UNKNOWN
-USR
-APEX20K_TECHNOLOGY_MAPPER
-LUT
-TECH_MAPPER_APEX20K
-USR
-DEDICATED_MULTIPLIER_CIRCUITRY
-AUTO
-PARAMETER_UNKNOWN
-DEF
-DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO
-0
-PARAMETER_UNKNOWN
-DEF
-DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO
-0
-PARAMETER_UNKNOWN
-DEF
-CBXI_PARAMETER
-mult_e5t
-PARAMETER_UNKNOWN
-USR
-INPUT_A_FIXED_VALUE
-Bx
-PARAMETER_UNKNOWN
-DEF
-INPUT_B_FIXED_VALUE
-Bx
-PARAMETER_UNKNOWN
-DEF
-USE_AHDL_IMPLEMENTATION
-OFF
-PARAMETER_UNKNOWN
-DEF
-}
-# used_port {
-result9
--1
-3
-result8
--1
-3
-result7
--1
-3
-result6
--1
-3
-result5
--1
-3
-result4
--1
-3
-result3
--1
-3
-result10
--1
-3
-datab4
--1
-3
-datab3
--1
-3
-datab2
--1
-3
-datab1
--1
-3
-datab0
--1
-3
-dataa5
--1
-3
-dataa3
--1
-3
-dataa4
--1
-1
-dataa2
--1
-1
-dataa0
--1
-1
-dataa1
--1
-2
-}
-# include_file {
-multcore.inc
-ee598ea39a3d6bdc35b167eefc3ee3da
-bypassff.inc
-42d08f243d3471f724fd61ea21a0eb9f
-altshift.inc
-5c767a29f11db3f131fc886ea42a52bd
-aglobal111.inc
-9cc1f9de5ad83fc94dd171c3f7986bd
-lpm_add_sub.inc
-144a73b61081a2a03554ff5acc5e8842
-}
-# macro_sequence
-
-# end
-# entity
-mult_e5t
-# storage
-db|animation.(32).cnf
-db|animation.(32).cnf
-# case_insensitive
-# source_file
-db|mult_e5t.tdf
-5b6449d85b92ab35c15f8397902938ee
-7
-# used_port {
-result9
--1
-3
-result8
--1
-3
-result7
--1
-3
-result6
--1
-3
-result5
--1
-3
-result4
--1
-3
-result3
--1
-3
-result2
--1
-3
-result10
--1
-3
-result1
--1
-3
-result0
--1
-3
-datab4
--1
-3
-datab3
--1
-3
-datab2
--1
-3
-datab1
--1
-3
-datab0
--1
-3
-dataa5
--1
-3
-dataa4
--1
-3
-dataa3
--1
-3
-dataa2
--1
-3
-dataa1
--1
-3
-dataa0
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-vga_adapter
-# storage
-db|animation.(26).cnf
-db|animation.(26).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-vga_adapter|vga_adapter.v
-bff8219810d17fcde268b65fae3512e7
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-BITS_PER_COLOUR_CHANNEL
-1
-PARAMETER_SIGNED_DEC
-USR
-MONOCHROME
-FALSE
-PARAMETER_STRING
-USR
-RESOLUTION
-160x120
-PARAMETER_STRING
-USR
-BACKGROUND_IMAGE
-Welcome
-PARAMETER_STRING
-USR
-}
-# macro_sequence
-
-# end
-# entity
-altsyncram
-# storage
-db|animation.(27).cnf
-db|animation.(27).cnf
-# case_insensitive
-# source_file
-altsyncram.tdf
-5563b8a11ee06796d9858b2fb8665e
-7
-# user_parameter {
-BYTE_SIZE_BLOCK
-8
-PARAMETER_UNKNOWN
-DEF
-AUTO_CARRY_CHAINS
-ON
-AUTO_CARRY
-USR
-IGNORE_CARRY_BUFFERS
-OFF
-IGNORE_CARRY
-USR
-AUTO_CASCADE_CHAINS
-ON
-AUTO_CASCADE
-USR
-IGNORE_CASCADE_BUFFERS
-OFF
-IGNORE_CASCADE
-USR
-WIDTH_BYTEENA
-1
-PARAMETER_UNKNOWN
-DEF
-OPERATION_MODE
-DUAL_PORT
-PARAMETER_UNKNOWN
-USR
-WIDTH_A
-3
-PARAMETER_SIGNED_DEC
-USR
-WIDTHAD_A
-15
-PARAMETER_SIGNED_DEC
-USR
-NUMWORDS_A
-19200
-PARAMETER_SIGNED_DEC
-USR
-OUTDATA_REG_A
-UNREGISTERED
-PARAMETER_UNKNOWN
-DEF
-ADDRESS_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-OUTDATA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-WRCONTROL_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-INDATA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-BYTEENA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-WIDTH_B
-3
-PARAMETER_SIGNED_DEC
-USR
-WIDTHAD_B
-15
-PARAMETER_SIGNED_DEC
-USR
-NUMWORDS_B
-19200
-PARAMETER_SIGNED_DEC
-USR
-INDATA_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-WRCONTROL_WRADDRESS_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-RDCONTROL_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-ADDRESS_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-USR
-OUTDATA_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-USR
-BYTEENA_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-INDATA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-WRCONTROL_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-ADDRESS_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-OUTDATA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-RDCONTROL_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-BYTEENA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-WIDTH_BYTEENA_A
-1
-PARAMETER_UNKNOWN
-DEF
-WIDTH_BYTEENA_B
-1
-PARAMETER_UNKNOWN
-DEF
-RAM_BLOCK_TYPE
-AUTO
-PARAMETER_UNKNOWN
-DEF
-BYTE_SIZE
-8
-PARAMETER_UNKNOWN
-DEF
-READ_DURING_WRITE_MODE_MIXED_PORTS
-DONT_CARE
-PARAMETER_UNKNOWN
-DEF
-READ_DURING_WRITE_MODE_PORT_A
-NEW_DATA_NO_NBE_READ
-PARAMETER_UNKNOWN
-DEF
-READ_DURING_WRITE_MODE_PORT_B
-NEW_DATA_NO_NBE_READ
-PARAMETER_UNKNOWN
-DEF
-INIT_FILE
-Welcome
-PARAMETER_UNKNOWN
-USR
-INIT_FILE_LAYOUT
-PORT_A
-PARAMETER_UNKNOWN
-DEF
-MAXIMUM_DEPTH
-0
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_INPUT_A
-BYPASS
-PARAMETER_UNKNOWN
-USR
-CLOCK_ENABLE_INPUT_B
-BYPASS
-PARAMETER_UNKNOWN
-USR
-CLOCK_ENABLE_OUTPUT_A
-NORMAL
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_OUTPUT_B
-BYPASS
-PARAMETER_UNKNOWN
-USR
-CLOCK_ENABLE_CORE_A
-USE_INPUT_CLKEN
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_CORE_B
-USE_INPUT_CLKEN
-PARAMETER_UNKNOWN
-DEF
-ENABLE_ECC
-FALSE
-PARAMETER_UNKNOWN
-DEF
-WIDTH_ECCSTATUS
-3
-PARAMETER_UNKNOWN
-DEF
-DEVICE_FAMILY
-Cyclone II
-PARAMETER_UNKNOWN
-USR
-CBXI_PARAMETER
-altsyncram_pnf1
-PARAMETER_UNKNOWN
-USR
-}
-# used_port {
-wren_a
--1
-3
-q_b
--1
-3
-data_a
--1
-3
-clock1
--1
-3
-clock0
--1
-3
-address_b
--1
-3
-address_a
--1
-3
-wren_b
--1
-1
-clocken1
--1
-2
-clocken0
--1
-2
-}
-# include_file {
-lpm_decode.inc
-10da69a8bbd590d66779e7a142f73790
-altrom.inc
-192b74eafa8debf2248ea73881e77f91
-a_rdenreg.inc
-3fcdce755959d5a8afbe64788d21fb
-altram.inc
-ad5518b39ffd3cf1df377e6360d1c9b6
-stratix_ram_block.inc
-e3a03868917fb3dd57b6ed1dd195f22
-altdpram.inc
-2f9e6727b678ffd76e72bc5a95a2630
-aglobal111.inc
-9cc1f9de5ad83fc94dd171c3f7986bd
-lpm_mux.inc
-dd87bed9959d6126db09970164b7ba6
-}
-# macro_sequence
-
-# end
-# entity
-altsyncram_pnf1
-# storage
-db|animation.(28).cnf
-db|animation.(28).cnf
-# case_insensitive
-# source_file
-db|altsyncram_pnf1.tdf
-3ec58bbac8b1cc298ef0341352b3c890
-7
-# used_port {
-wren_a
--1
-3
-q_b2
--1
-3
-q_b1
--1
-3
-q_b0
--1
-3
-data_a2
--1
-3
-data_a1
--1
-3
-data_a0
--1
-3
-clock1
--1
-3
-clock0
--1
-3
-address_b9
--1
-3
-address_b8
--1
-3
-address_b7
--1
-3
-address_b6
--1
-3
-address_b5
--1
-3
-address_b4
--1
-3
-address_b3
--1
-3
-address_b2
--1
-3
-address_b14
--1
-3
-address_b13
--1
-3
-address_b12
--1
-3
-address_b11
--1
-3
-address_b10
--1
-3
-address_b1
--1
-3
-address_b0
--1
-3
-address_a9
--1
-3
-address_a8
--1
-3
-address_a7
--1
-3
-address_a6
--1
-3
-address_a5
--1
-3
-address_a4
--1
-3
-address_a3
--1
-3
-address_a2
--1
-3
-address_a14
--1
-3
-address_a13
--1
-3
-address_a12
--1
-3
-address_a11
--1
-3
-address_a10
--1
-3
-address_a1
--1
-3
-address_a0
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-altsyncram_phq1
-# storage
-db|animation.(29).cnf
-db|animation.(29).cnf
-# case_insensitive
-# source_file
-db|altsyncram_phq1.tdf
-7de6a4b9e1a6e9eb5d78ac51d60f9
-7
-# used_port {
-wren_b
--1
-3
-q_a2
--1
-3
-q_a1
--1
-3
-q_a0
--1
-3
-data_b2
--1
-3
-data_b1
--1
-3
-data_b0
--1
-3
-clocken1
--1
-3
-clock1
--1
-3
-clock0
--1
-3
-address_b9
--1
-3
-address_b8
--1
-3
-address_b7
--1
-3
-address_b6
--1
-3
-address_b5
--1
-3
-address_b4
--1
-3
-address_b3
--1
-3
-address_b2
--1
-3
-address_b14
--1
-3
-address_b13
--1
-3
-address_b12
--1
-3
-address_b11
--1
-3
-address_b10
--1
-3
-address_b1
--1
-3
-address_b0
--1
-3
-address_a9
--1
-3
-address_a8
--1
-3
-address_a7
--1
-3
-address_a6
--1
-3
-address_a5
--1
-3
-address_a4
--1
-3
-address_a3
--1
-3
-address_a2
--1
-3
-address_a14
--1
-3
-address_a13
--1
-3
-address_a12
--1
-3
-address_a11
--1
-3
-address_a10
--1
-3
-address_a1
--1
-3
-address_a0
--1
-3
-wren_a
--1
-1
-data_a2
--1
-2
-data_a1
--1
-2
-data_a0
--1
-2
-}
-# memory_file {
-welcome
-0
-}
-# macro_sequence
-
-# end
-# entity
-lpm_mult
-# storage
-db|animation.(37).cnf
-db|animation.(37).cnf
-# case_insensitive
-# source_file
-lpm_mult.tdf
-9ac1ca51ddc62512be537f722afe41
-7
-# user_parameter {
-AUTO_CARRY_CHAINS
-ON
-AUTO_CARRY
-USR
-IGNORE_CARRY_BUFFERS
-OFF
-IGNORE_CARRY
-USR
-AUTO_CASCADE_CHAINS
-ON
-AUTO_CASCADE
-USR
-IGNORE_CASCADE_BUFFERS
-OFF
-IGNORE_CASCADE
-USR
-LPM_WIDTHA
-6
-PARAMETER_UNKNOWN
-USR
-LPM_WIDTHB
-5
-PARAMETER_UNKNOWN
-USR
-LPM_WIDTHP
-11
-PARAMETER_UNKNOWN
-USR
-LPM_WIDTHR
-11
-PARAMETER_UNKNOWN
-USR
-LPM_WIDTHS
-1
-PARAMETER_UNKNOWN
-USR
-LPM_REPRESENTATION
-UNSIGNED
-PARAMETER_UNKNOWN
-USR
-LPM_PIPELINE
-0
-PARAMETER_UNKNOWN
-DEF
-LATENCY
-0
-PARAMETER_UNKNOWN
-DEF
-INPUT_A_IS_CONSTANT
-YES
-PARAMETER_UNKNOWN
-USR
-INPUT_B_IS_CONSTANT
-YES
-PARAMETER_UNKNOWN
-USR
-USE_EAB
-OFF
-PARAMETER_UNKNOWN
-DEF
-MAXIMIZE_SPEED
-5
-PARAMETER_UNKNOWN
-USR
-DEVICE_FAMILY
-Cyclone II
-PARAMETER_UNKNOWN
-USR
-CARRY_CHAIN
-MANUAL
-PARAMETER_UNKNOWN
-USR
-APEX20K_TECHNOLOGY_MAPPER
-LUT
-TECH_MAPPER_APEX20K
-USR
-DEDICATED_MULTIPLIER_CIRCUITRY
-AUTO
-PARAMETER_UNKNOWN
-DEF
-DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO
-0
-PARAMETER_UNKNOWN
-DEF
-DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO
-0
-PARAMETER_UNKNOWN
-DEF
-CBXI_PARAMETER
-NOTHING
-PARAMETER_UNKNOWN
-DEF
-INPUT_A_FIXED_VALUE
-Bx
-PARAMETER_UNKNOWN
-DEF
-INPUT_B_FIXED_VALUE
-Bx
-PARAMETER_UNKNOWN
-DEF
-USE_AHDL_IMPLEMENTATION
-OFF
-PARAMETER_UNKNOWN
-DEF
-}
-# used_port {
-result9
--1
-3
-result8
--1
-3
-result7
--1
-3
-result6
--1
-3
-result5
--1
-3
-result4
--1
-3
-result3
--1
-3
-datab3
--1
-1
-dataa4
--1
-1
-dataa3
--1
-1
-dataa2
--1
-1
-dataa0
--1
-1
-datab4
--1
-2
-datab2
--1
-2
-datab1
--1
-2
-datab0
--1
-2
-dataa5
--1
-2
-dataa1
--1
-2
-}
-# include_file {
-lpm_add_sub.inc
-144a73b61081a2a03554ff5acc5e8842
-aglobal111.inc
-9cc1f9de5ad83fc94dd171c3f7986bd
-multcore.inc
-ee598ea39a3d6bdc35b167eefc3ee3da
-bypassff.inc
-42d08f243d3471f724fd61ea21a0eb9f
-altshift.inc
-5c767a29f11db3f131fc886ea42a52bd
-}
-# macro_sequence
-
-# end
-# entity
-multcore
-# storage
-db|animation.(38).cnf
-db|animation.(38).cnf
-# case_insensitive
-# source_file
-multcore.tdf
-132326523f76995d1be4eae65e6590
-7
-# user_parameter {
-AUTO_CARRY_CHAINS
-ON
-AUTO_CARRY
-USR
-IGNORE_CARRY_BUFFERS
-OFF
-IGNORE_CARRY
-USR
-AUTO_CASCADE_CHAINS
-ON
-AUTO_CASCADE
-USR
-IGNORE_CASCADE_BUFFERS
-OFF
-IGNORE_CASCADE
-USR
-widtha
-5
-PARAMETER_UNKNOWN
-USR
-widthb
-6
-PARAMETER_UNKNOWN
-USR
-LPM_REPRESENTATION
-UNSIGNED
-PARAMETER_UNKNOWN
-USR
-LATENCY
-1
-PARAMETER_UNKNOWN
-USR
-ONE_INPUT_IS_CONSTANT
-YES
-PARAMETER_UNKNOWN
-USR
-USE_EAB
-OFF
-PARAMETER_UNKNOWN
-USR
-MAXIMIZE_SPEED
-5
-PARAMETER_UNKNOWN
-USR
-OP_MODE
-0
-PARAMETER_UNKNOWN
-USR
-DEVICE_FAMILY
-Cyclone II
-PARAMETER_UNKNOWN
-USR
-CARRY_CHAIN
-MANUAL
-PARAMETER_UNKNOWN
-USR
-DEDICATED_MULTIPLIER_CIRCUITRY
-YES
-PARAMETER_UNKNOWN
-DEF
-SUB_DEDICATED_MULTIPLIER_CIRCUITRY
-NO
-PARAMETER_UNKNOWN
-USR
-DSP_BLOCK_BALANCING
-AUTO
-PARAMETER_UNKNOWN
-USR
-}
-# used_port {
-result9
--1
-3
-result8
--1
-3
-result7
--1
-3
-result6
--1
-3
-result5
--1
-3
-result4
--1
-3
-result3
--1
-3
-result2
--1
-3
-result10
--1
-3
-result1
--1
-3
-result0
--1
-3
-datab5
--1
-3
-datab4
--1
-3
-datab3
--1
-3
-datab2
--1
-3
-datab1
--1
-3
-datab0
--1
-3
-dataa4
--1
-3
-dataa3
--1
-3
-dataa2
--1
-3
-dataa1
--1
-3
-dataa0
--1
-3
-}
-# include_file {
-lpm_add_sub.inc
-144a73b61081a2a03554ff5acc5e8842
-dffpipe.inc
-5471cd80ee441dd293deca0963c9aa0
-alt_ded_mult_y.inc
-3e7ed647d36279c93ab781e67a0aeb0
-alt_ded_mult.inc
-ec98c2a73c1944d24ba8366fc29e8d4
-muleabz.inc
-9022d0f0ac610fb2fcbcdbf329d5b22
-aglobal111.inc
-9cc1f9de5ad83fc94dd171c3f7986bd
-mul_lfrg.inc
-47f6e380151c8e526b62c6d1f8cd8ec
-mul_boothc.inc
-865041f39baa34821d68d61a3e2fd457
-csa_add.inc
-2817bc4fb699031583cb64b99d6e64b
-mpar_add.inc
-029862889cd5a4e65712a9cc002ab
-}
-# macro_sequence
-
-# end
-# entity
-mpar_add
-# storage
-db|animation.(39).cnf
-db|animation.(39).cnf
-# case_insensitive
-# source_file
-mpar_add.tdf
-7cbf24afda73e2f88a1def44e2e3f4c0
-7
-# user_parameter {
-size
-10
-PARAMETER_UNKNOWN
-USR
-width
-2
-PARAMETER_UNKNOWN
-USR
-REPRESENTATION
-UNSIGNED
-PARAMETER_UNKNOWN
-USR
-LEVEL
-3
-PARAMETER_UNKNOWN
-USR
-TOT_LEVELS
-4
-PARAMETER_UNKNOWN
-USR
-STAGE
-1
-PARAMETER_UNKNOWN
-USR
-TOT_STAGES
-2
-PARAMETER_UNKNOWN
-USR
-INT_LATENCY
-1
-PARAMETER_UNKNOWN
-USR
-PREV_SING_SIZE
-10
-PARAMETER_UNKNOWN
-USR
-BOOTH_ADDER
-NO
-PARAMETER_UNKNOWN
-DEF
-CREATE_MS_BOOTH_ADDER
-NO
-PARAMETER_UNKNOWN
-DEF
-MPARADD_OP_MODE
-0
-PARAMETER_UNKNOWN
-DEF
-}
-# used_port {
-result9
--1
-3
-result8
--1
-3
-result7
--1
-3
-result6
--1
-3
-result5
--1
-3
-result4
--1
-3
-result3
--1
-3
-result2
--1
-3
-result10
--1
-3
-result1
--1
-3
-result0
--1
-3
-data1_9
--1
-3
-data1_8
--1
-3
-data1_7
--1
-3
-data1_6
--1
-3
-data1_5
--1
-3
-data1_4
--1
-3
-data1_3
--1
-3
-data1_2
--1
-3
-data1_1
--1
-3
-data1_0
--1
-3
-data0_9
--1
-3
-data0_8
--1
-3
-data0_7
--1
-3
-data0_6
--1
-3
-data0_5
--1
-3
-data0_4
--1
-3
-data0_3
--1
-3
-data0_2
--1
-3
-data0_1
--1
-3
-data0_0
--1
-3
-}
-# include_file {
-lpm_add_sub.inc
-144a73b61081a2a03554ff5acc5e8842
-mpar_add.inc
-029862889cd5a4e65712a9cc002ab
-}
-# macro_sequence
-
-# end
-# entity
-lpm_add_sub
-# storage
-db|animation.(40).cnf
-db|animation.(40).cnf
-# case_insensitive
-# source_file
-lpm_add_sub.tdf
-f278d1d04a98bb366768ce762f7335fd
-7
-# user_parameter {
-LPM_WIDTH
-10
-PARAMETER_UNKNOWN
-USR
-LPM_REPRESENTATION
-UNSIGNED
-PARAMETER_UNKNOWN
-USR
-LPM_DIRECTION
-DEFAULT
-PARAMETER_UNKNOWN
-DEF
-ONE_INPUT_IS_CONSTANT
-YES
-PARAMETER_UNKNOWN
-USR
-LPM_PIPELINE
-0
-PARAMETER_UNKNOWN
-USR
-MAXIMIZE_SPEED
-5
-PARAMETER_UNKNOWN
-USR
-REGISTERED_AT_END
-1
-PARAMETER_UNKNOWN
-USR
-OPTIMIZE_FOR_SPEED
-5
-PARAMETER_UNKNOWN
-USR
-USE_CS_BUFFERS
-1
-PARAMETER_UNKNOWN
-DEF
-CARRY_CHAIN
-MANUAL
-PARAMETER_UNKNOWN
-USR
-CARRY_CHAIN_LENGTH
-48
-CARRY_CHAIN_LENGTH
-USR
-DEVICE_FAMILY
-Cyclone II
-PARAMETER_UNKNOWN
-USR
-USE_WYS
-OFF
-PARAMETER_UNKNOWN
-DEF
-STYLE
-FAST
-PARAMETER_UNKNOWN
-USR
-CBXI_PARAMETER
-add_sub_1ch
-PARAMETER_UNKNOWN
-USR
-AUTO_CARRY_CHAINS
-ON
-AUTO_CARRY
-USR
-IGNORE_CARRY_BUFFERS
-OFF
-IGNORE_CARRY
-USR
-AUTO_CASCADE_CHAINS
-ON
-AUTO_CASCADE
-USR
-IGNORE_CASCADE_BUFFERS
-OFF
-IGNORE_CASCADE
-USR
-}
-# used_port {
-result9
--1
-3
-result8
--1
-3
-result7
--1
-3
-result6
--1
-3
-result5
--1
-3
-result4
--1
-3
-result3
--1
-3
-result2
--1
-3
-result1
--1
-3
-result0
--1
-3
-datab9
--1
-3
-datab8
--1
-3
-datab7
--1
-3
-datab6
--1
-3
-datab5
--1
-3
-datab4
--1
-3
-datab3
--1
-3
-datab2
--1
-3
-datab1
--1
-3
-datab0
--1
-3
-dataa5
--1
-3
-dataa4
--1
-3
-dataa3
--1
-3
-dataa2
--1
-3
-dataa1
--1
-3
-dataa0
--1
-3
-dataa9
--1
-1
-dataa8
--1
-1
-dataa7
--1
-1
-dataa6
--1
-1
-}
-# include_file {
-addcore.inc
-e15993f131a5367862d6283fbb5a133
-aglobal111.inc
-9cc1f9de5ad83fc94dd171c3f7986bd
-bypassff.inc
-42d08f243d3471f724fd61ea21a0eb9f
-look_add.inc
-9091c394592369a07bdf7fbf1ce9ced6
-altshift.inc
-5c767a29f11db3f131fc886ea42a52bd
-alt_stratix_add_sub.inc
-16df31198e4f1dce2b8df944fbafaefe
-}
-# macro_sequence
-
-# end
-# entity
-add_sub_1ch
-# storage
-db|animation.(41).cnf
-db|animation.(41).cnf
-# case_insensitive
-# source_file
-db|add_sub_1ch.tdf
-89a41b33bf89c23e1deae7306bad6eaf
-7
-# used_port {
-result9
--1
-3
-result8
--1
-3
-result7
--1
-3
-result6
--1
-3
-result5
--1
-3
-result4
--1
-3
-result3
--1
-3
-result2
--1
-3
-result1
--1
-3
-result0
--1
-3
-datab9
--1
-3
-datab8
--1
-3
-datab7
--1
-3
-datab6
--1
-3
-datab5
--1
-3
-datab4
--1
-3
-datab3
--1
-3
-datab2
--1
-3
-datab1
--1
-3
-datab0
--1
-3
-dataa9
--1
-3
-dataa8
--1
-3
-dataa7
--1
-3
-dataa6
--1
-3
-dataa5
--1
-3
-dataa4
--1
-3
-dataa3
--1
-3
-dataa2
--1
-3
-dataa1
--1
-3
-dataa0
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-altshift
-# storage
-db|animation.(42).cnf
-db|animation.(42).cnf
-# case_insensitive
-# source_file
-altshift.tdf
-a8f0cd996016253f0a1fe3c71e2dc75
-7
-# user_parameter {
-WIDTH
-11
-PARAMETER_UNKNOWN
-USR
-DEPTH
-0
-PARAMETER_UNKNOWN
-USR
-}
-# used_port {
-result9
--1
-3
-result8
--1
-3
-result7
--1
-3
-result6
--1
-3
-result5
--1
-3
-result4
--1
-3
-result3
--1
-3
-result2
--1
-3
-result10
--1
-3
-result1
--1
-3
-result0
--1
-3
-data9
--1
-3
-data8
--1
-3
-data7
--1
-3
-data6
--1
-3
-data5
--1
-3
-data4
--1
-3
-data3
--1
-3
-data2
--1
-3
-data10
--1
-3
-data1
--1
-3
-data0
--1
-3
-}
-# macro_sequence
-
-# end
-# entity
-lpm_mult
-# storage
-db|animation.(43).cnf
-db|animation.(43).cnf
+db|animation.(35).cnf
+db|animation.(35).cnf
 # case_insensitive
 # source_file
 lpm_mult.tdf
@@ -6213,9 +4619,6 @@ datab3
 datab2
 -1
 3
-datab1
--1
-3
 datab0
 -1
 3
@@ -6228,6 +4631,9 @@ dataa5
 dataa3
 -1
 3
+dataa2
+-1
+3
 dataa1
 -1
 3
@@ -6237,22 +4643,22 @@ dataa6
 dataa4
 -1
 1
-dataa2
--1
-1
 dataa0
 -1
 1
+datab1
+-1
+2
 }
 # include_file {
 multcore.inc
 ee598ea39a3d6bdc35b167eefc3ee3da
-bypassff.inc
-42d08f243d3471f724fd61ea21a0eb9f
 altshift.inc
 5c767a29f11db3f131fc886ea42a52bd
 aglobal111.inc
 9cc1f9de5ad83fc94dd171c3f7986bd
+bypassff.inc
+42d08f243d3471f724fd61ea21a0eb9f
 lpm_add_sub.inc
 144a73b61081a2a03554ff5acc5e8842
 }
@@ -6262,8 +4668,8 @@ lpm_add_sub.inc
 # entity
 mult_m5t
 # storage
-db|animation.(44).cnf
-db|animation.(44).cnf
+db|animation.(36).cnf
+db|animation.(36).cnf
 # case_insensitive
 # source_file
 db|mult_m5t.tdf
@@ -6365,74 +4771,56 @@ dataa0
 
 # end
 # entity
-vga_adapter
+lpm_divide
 # storage
-db|animation.(30).cnf
-db|animation.(30).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-vga_adapter|vga_adapter.v
-bff8219810d17fcde268b65fae3512e7
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-BITS_PER_COLOUR_CHANNEL
-1
-PARAMETER_SIGNED_DEC
-USR
-MONOCHROME
-FALSE
-PARAMETER_STRING
-USR
-RESOLUTION
-160x120
-PARAMETER_STRING
-USR
-BACKGROUND_IMAGE
-Welcome1
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-vga_adapter:VGA
-}
-# macro_sequence
-
-# end
-# entity
-altsyncram
-# storage
-db|animation.(33).cnf
-db|animation.(33).cnf
+db|animation.(45).cnf
+db|animation.(45).cnf
 # case_insensitive
 # source_file
-altsyncram.tdf
-5563b8a11ee06796d9858b2fb8665e
+lpm_divide.tdf
+6a8184c9b63557df2bce3e6eaf453fd
 7
 # user_parameter {
-BYTE_SIZE_BLOCK
-8
+LPM_WIDTHN
+32
+PARAMETER_UNKNOWN
+USR
+LPM_WIDTHD
+4
+PARAMETER_UNKNOWN
+USR
+LPM_NREPRESENTATION
+UNSIGNED
+PARAMETER_UNKNOWN
+USR
+LPM_DREPRESENTATION
+UNSIGNED
+PARAMETER_UNKNOWN
+USR
+LPM_PIPELINE
+0
 PARAMETER_UNKNOWN
 DEF
+LPM_REMAINDERPOSITIVE
+TRUE
+PARAMETER_UNKNOWN
+DEF
+MAXIMIZE_SPEED
+5
+PARAMETER_UNKNOWN
+DEF
+CBXI_PARAMETER
+lpm_divide_eem
+PARAMETER_UNKNOWN
+USR
+CARRY_CHAIN
+MANUAL
+PARAMETER_UNKNOWN
+USR
+OPTIMIZE_FOR_SPEED
+5
+PARAMETER_UNKNOWN
+USR
 AUTO_CARRY_CHAINS
 ON
 AUTO_CARRY
@@ -6449,587 +4837,935 @@ IGNORE_CASCADE_BUFFERS
 OFF
 IGNORE_CASCADE
 USR
-WIDTH_BYTEENA
-1
-PARAMETER_UNKNOWN
-DEF
-OPERATION_MODE
-DUAL_PORT
-PARAMETER_UNKNOWN
-USR
-WIDTH_A
-3
-PARAMETER_SIGNED_DEC
-USR
-WIDTHAD_A
-15
-PARAMETER_SIGNED_DEC
-USR
-NUMWORDS_A
-19200
-PARAMETER_SIGNED_DEC
-USR
-OUTDATA_REG_A
-UNREGISTERED
-PARAMETER_UNKNOWN
-DEF
-ADDRESS_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-OUTDATA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-WRCONTROL_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-INDATA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-BYTEENA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-WIDTH_B
-3
-PARAMETER_SIGNED_DEC
-USR
-WIDTHAD_B
-15
-PARAMETER_SIGNED_DEC
-USR
-NUMWORDS_B
-19200
-PARAMETER_SIGNED_DEC
-USR
-INDATA_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-WRCONTROL_WRADDRESS_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-RDCONTROL_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-ADDRESS_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-USR
-OUTDATA_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-USR
-BYTEENA_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-INDATA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-WRCONTROL_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-ADDRESS_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-OUTDATA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-RDCONTROL_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-BYTEENA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-WIDTH_BYTEENA_A
-1
-PARAMETER_UNKNOWN
-DEF
-WIDTH_BYTEENA_B
-1
-PARAMETER_UNKNOWN
-DEF
-RAM_BLOCK_TYPE
-AUTO
-PARAMETER_UNKNOWN
-DEF
-BYTE_SIZE
-8
-PARAMETER_UNKNOWN
-DEF
-READ_DURING_WRITE_MODE_MIXED_PORTS
-DONT_CARE
-PARAMETER_UNKNOWN
-DEF
-READ_DURING_WRITE_MODE_PORT_A
-NEW_DATA_NO_NBE_READ
-PARAMETER_UNKNOWN
-DEF
-READ_DURING_WRITE_MODE_PORT_B
-NEW_DATA_NO_NBE_READ
-PARAMETER_UNKNOWN
-DEF
-INIT_FILE
-Welcome1
-PARAMETER_UNKNOWN
-USR
-INIT_FILE_LAYOUT
-PORT_A
-PARAMETER_UNKNOWN
-DEF
-MAXIMUM_DEPTH
-0
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_INPUT_A
-BYPASS
-PARAMETER_UNKNOWN
-USR
-CLOCK_ENABLE_INPUT_B
-BYPASS
-PARAMETER_UNKNOWN
-USR
-CLOCK_ENABLE_OUTPUT_A
-NORMAL
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_OUTPUT_B
-BYPASS
-PARAMETER_UNKNOWN
-USR
-CLOCK_ENABLE_CORE_A
-USE_INPUT_CLKEN
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_CORE_B
-USE_INPUT_CLKEN
-PARAMETER_UNKNOWN
-DEF
-ENABLE_ECC
-FALSE
-PARAMETER_UNKNOWN
-DEF
-WIDTH_ECCSTATUS
-3
-PARAMETER_UNKNOWN
-DEF
-DEVICE_FAMILY
-Cyclone II
-PARAMETER_UNKNOWN
-USR
-CBXI_PARAMETER
-altsyncram_apf1
-PARAMETER_UNKNOWN
-USR
 }
 # used_port {
-wren_a
+quotient3
 -1
 3
-q_b
+quotient2
 -1
 3
-data_a
+quotient1
 -1
 3
-clock1
+quotient0
 -1
 3
-clock0
+numer9
 -1
 3
-address_b
+numer8
 -1
 3
-address_a
+numer7
 -1
 3
-wren_b
+numer6
+-1
+3
+numer5
+-1
+3
+numer4
+-1
+3
+numer31
+-1
+3
+numer30
+-1
+3
+numer3
+-1
+3
+numer29
+-1
+3
+numer28
+-1
+3
+numer27
+-1
+3
+numer26
+-1
+3
+numer25
+-1
+3
+numer24
+-1
+3
+numer23
+-1
+3
+numer22
+-1
+3
+numer21
+-1
+3
+numer20
+-1
+3
+numer2
+-1
+3
+numer19
+-1
+3
+numer18
+-1
+3
+numer17
+-1
+3
+numer16
+-1
+3
+numer15
+-1
+3
+numer14
+-1
+3
+numer13
+-1
+3
+numer12
+-1
+3
+numer11
+-1
+3
+numer10
+-1
+3
+numer1
+-1
+3
+numer0
+-1
+3
+denom2
 -1
 1
-clocken1
+denom0
+-1
+1
+denom3
 -1
 2
-clocken0
+denom1
 -1
 2
 }
 # include_file {
-lpm_decode.inc
-10da69a8bbd590d66779e7a142f73790
-altrom.inc
-192b74eafa8debf2248ea73881e77f91
-a_rdenreg.inc
-3fcdce755959d5a8afbe64788d21fb
-altram.inc
-ad5518b39ffd3cf1df377e6360d1c9b6
-stratix_ram_block.inc
-e3a03868917fb3dd57b6ed1dd195f22
-altdpram.inc
-2f9e6727b678ffd76e72bc5a95a2630
+abs_divider.inc
+49e0557d5addd986524b344bed283d9
 aglobal111.inc
 9cc1f9de5ad83fc94dd171c3f7986bd
-lpm_mux.inc
-dd87bed9959d6126db09970164b7ba6
-}
-# hierarchies {
-vga_adapter:VGA|altsyncram:VideoMemory
+sign_div_unsign.inc
+535d76a18080ee8f75d090fcce186e19
 }
 # macro_sequence
 
 # end
 # entity
-altsyncram_apf1
+lpm_divide_eem
 # storage
-db|animation.(34).cnf
-db|animation.(34).cnf
+db|animation.(46).cnf
+db|animation.(46).cnf
 # case_insensitive
 # source_file
-db|altsyncram_apf1.tdf
-d1793ff26d948984a5a56de17ef37225
+db|lpm_divide_eem.tdf
+7fa58e208728d7d5efcad4288a3c5095
 7
 # used_port {
-wren_a
+quotient9
 -1
 3
-q_b2
+quotient8
 -1
 3
-q_b1
+quotient7
 -1
 3
-q_b0
+quotient6
 -1
 3
-data_a2
+quotient5
 -1
 3
-data_a1
+quotient4
 -1
 3
-data_a0
+quotient31
 -1
 3
-clock1
+quotient30
 -1
 3
-clock0
+quotient3
 -1
 3
-address_b9
+quotient29
 -1
 3
-address_b8
+quotient28
 -1
 3
-address_b7
+quotient27
 -1
 3
-address_b6
+quotient26
 -1
 3
-address_b5
+quotient25
 -1
 3
-address_b4
+quotient24
 -1
 3
-address_b3
+quotient23
 -1
 3
-address_b2
+quotient22
 -1
 3
-address_b14
+quotient21
 -1
 3
-address_b13
+quotient20
 -1
 3
-address_b12
+quotient2
 -1
 3
-address_b11
+quotient19
 -1
 3
-address_b10
+quotient18
 -1
 3
-address_b1
+quotient17
 -1
 3
-address_b0
+quotient16
 -1
 3
-address_a9
+quotient15
 -1
 3
-address_a8
+quotient14
 -1
 3
-address_a7
+quotient13
 -1
 3
-address_a6
+quotient12
 -1
 3
-address_a5
+quotient11
 -1
 3
-address_a4
+quotient10
 -1
 3
-address_a3
+quotient1
 -1
 3
-address_a2
+quotient0
 -1
 3
-address_a14
+numer9
 -1
 3
-address_a13
+numer8
 -1
 3
-address_a12
+numer7
 -1
 3
-address_a11
+numer6
 -1
 3
-address_a10
+numer5
 -1
 3
-address_a1
+numer4
 -1
 3
-address_a0
+numer31
 -1
 3
-}
-# hierarchies {
-vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_apf1:auto_generated
+numer30
+-1
+3
+numer3
+-1
+3
+numer29
+-1
+3
+numer28
+-1
+3
+numer27
+-1
+3
+numer26
+-1
+3
+numer25
+-1
+3
+numer24
+-1
+3
+numer23
+-1
+3
+numer22
+-1
+3
+numer21
+-1
+3
+numer20
+-1
+3
+numer2
+-1
+3
+numer19
+-1
+3
+numer18
+-1
+3
+numer17
+-1
+3
+numer16
+-1
+3
+numer15
+-1
+3
+numer14
+-1
+3
+numer13
+-1
+3
+numer12
+-1
+3
+numer11
+-1
+3
+numer10
+-1
+3
+numer1
+-1
+3
+numer0
+-1
+3
+denom3
+-1
+3
+denom2
+-1
+3
+denom1
+-1
+3
+denom0
+-1
+3
 }
 # macro_sequence
 
 # end
 # entity
-altsyncram_ajq1
+sign_div_unsign_olh
 # storage
-db|animation.(35).cnf
-db|animation.(35).cnf
+db|animation.(47).cnf
+db|animation.(47).cnf
 # case_insensitive
 # source_file
-db|altsyncram_ajq1.tdf
-ba5fd9c50c90b9e371a46d1d5f1b87
+db|sign_div_unsign_olh.tdf
+10bd8b7f2f97db192fce19d21baa9f9
 7
 # used_port {
-wren_b
+remainder3
 -1
 3
-q_a2
+remainder2
 -1
 3
-q_a1
+remainder1
 -1
 3
-q_a0
+remainder0
 -1
 3
-data_b2
+quotient9
 -1
 3
-data_b1
+quotient8
 -1
 3
-data_b0
+quotient7
 -1
 3
-clocken1
+quotient6
 -1
 3
-clock1
+quotient5
 -1
 3
-clock0
+quotient4
 -1
 3
-address_b9
+quotient31
 -1
 3
-address_b8
+quotient30
 -1
 3
-address_b7
+quotient3
 -1
 3
-address_b6
+quotient29
 -1
 3
-address_b5
+quotient28
 -1
 3
-address_b4
+quotient27
 -1
 3
-address_b3
+quotient26
 -1
 3
-address_b2
+quotient25
 -1
 3
-address_b14
+quotient24
 -1
 3
-address_b13
+quotient23
 -1
 3
-address_b12
+quotient22
 -1
 3
-address_b11
+quotient21
 -1
 3
-address_b10
+quotient20
 -1
 3
-address_b1
+quotient2
 -1
 3
-address_b0
+quotient19
 -1
 3
-address_a9
+quotient18
 -1
 3
-address_a8
+quotient17
 -1
 3
-address_a7
+quotient16
 -1
 3
-address_a6
+quotient15
 -1
 3
-address_a5
+quotient14
 -1
 3
-address_a4
+quotient13
 -1
 3
-address_a3
+quotient12
 -1
 3
-address_a2
+quotient11
 -1
 3
-address_a14
+quotient10
 -1
 3
-address_a13
+quotient1
 -1
 3
-address_a12
+quotient0
 -1
 3
-address_a11
+numerator9
 -1
 3
-address_a10
+numerator8
 -1
 3
-address_a1
+numerator7
 -1
 3
-address_a0
+numerator6
 -1
 3
-wren_a
+numerator5
 -1
-1
-data_a2
+3
+numerator4
 -1
-2
-data_a1
+3
+numerator31
 -1
-2
-data_a0
+3
+numerator30
 -1
-2
-}
-# memory_file {
-welcome1
-0
-}
-# hierarchies {
-vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_apf1:auto_generated|altsyncram_ajq1:altsyncram1
+3
+numerator3
+-1
+3
+numerator29
+-1
+3
+numerator28
+-1
+3
+numerator27
+-1
+3
+numerator26
+-1
+3
+numerator25
+-1
+3
+numerator24
+-1
+3
+numerator23
+-1
+3
+numerator22
+-1
+3
+numerator21
+-1
+3
+numerator20
+-1
+3
+numerator2
+-1
+3
+numerator19
+-1
+3
+numerator18
+-1
+3
+numerator17
+-1
+3
+numerator16
+-1
+3
+numerator15
+-1
+3
+numerator14
+-1
+3
+numerator13
+-1
+3
+numerator12
+-1
+3
+numerator11
+-1
+3
+numerator10
+-1
+3
+numerator1
+-1
+3
+numerator0
+-1
+3
+denominator3
+-1
+3
+denominator2
+-1
+3
+denominator1
+-1
+3
+denominator0
+-1
+3
 }
 # macro_sequence
 
 # end
 # entity
-EndGameROM
+alt_u_div_i2f
 # storage
-db|animation.(36).cnf
-db|animation.(36).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-endgamerom.v
-9d412b6cf9f5b4292dc76e2675edf1
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-EndGameROM:EndGameROM_inst
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
-# end
-# entity
-altsyncram
-# storage
-db|animation.(45).cnf
-db|animation.(45).cnf
+db|animation.(48).cnf
+db|animation.(48).cnf
 # case_insensitive
 # source_file
-altsyncram.tdf
-5563b8a11ee06796d9858b2fb8665e
+db|alt_u_div_i2f.tdf
+d7375bfc57dbf3c8fb7cc26a99a8427
+7
+# used_port {
+remainder3
+-1
+3
+remainder2
+-1
+3
+remainder1
+-1
+3
+remainder0
+-1
+3
+quotient9
+-1
+3
+quotient8
+-1
+3
+quotient7
+-1
+3
+quotient6
+-1
+3
+quotient5
+-1
+3
+quotient4
+-1
+3
+quotient31
+-1
+3
+quotient30
+-1
+3
+quotient3
+-1
+3
+quotient29
+-1
+3
+quotient28
+-1
+3
+quotient27
+-1
+3
+quotient26
+-1
+3
+quotient25
+-1
+3
+quotient24
+-1
+3
+quotient23
+-1
+3
+quotient22
+-1
+3
+quotient21
+-1
+3
+quotient20
+-1
+3
+quotient2
+-1
+3
+quotient19
+-1
+3
+quotient18
+-1
+3
+quotient17
+-1
+3
+quotient16
+-1
+3
+quotient15
+-1
+3
+quotient14
+-1
+3
+quotient13
+-1
+3
+quotient12
+-1
+3
+quotient11
+-1
+3
+quotient10
+-1
+3
+quotient1
+-1
+3
+quotient0
+-1
+3
+numerator9
+-1
+3
+numerator8
+-1
+3
+numerator7
+-1
+3
+numerator6
+-1
+3
+numerator5
+-1
+3
+numerator4
+-1
+3
+numerator31
+-1
+3
+numerator30
+-1
+3
+numerator3
+-1
+3
+numerator29
+-1
+3
+numerator28
+-1
+3
+numerator27
+-1
+3
+numerator26
+-1
+3
+numerator25
+-1
+3
+numerator24
+-1
+3
+numerator23
+-1
+3
+numerator22
+-1
+3
+numerator21
+-1
+3
+numerator20
+-1
+3
+numerator2
+-1
+3
+numerator19
+-1
+3
+numerator18
+-1
+3
+numerator17
+-1
+3
+numerator16
+-1
+3
+numerator15
+-1
+3
+numerator14
+-1
+3
+numerator13
+-1
+3
+numerator12
+-1
+3
+numerator11
+-1
+3
+numerator10
+-1
+3
+numerator1
+-1
+3
+numerator0
+-1
+3
+denominator3
+-1
+3
+denominator2
+-1
+3
+denominator1
+-1
+3
+denominator0
+-1
+3
+}
+# macro_sequence
+
+# end
+# entity
+add_sub_lkc
+# storage
+db|animation.(49).cnf
+db|animation.(49).cnf
+# case_insensitive
+# source_file
+db|add_sub_lkc.tdf
+47df8cff2d1a866ecc928c7a5cb2f
+7
+# used_port {
+result0
+-1
+3
+datab0
+-1
+3
+dataa0
+-1
+3
+cout
+-1
+3
+}
+# macro_sequence
+
+# end
+# entity
+add_sub_mkc
+# storage
+db|animation.(50).cnf
+db|animation.(50).cnf
+# case_insensitive
+# source_file
+db|add_sub_mkc.tdf
+cca4f7c759d4735a80a9424e5cb8e
+7
+# used_port {
+result1
+-1
+3
+result0
+-1
+3
+datab1
+-1
+3
+datab0
+-1
+3
+dataa1
+-1
+3
+dataa0
+-1
+3
+cout
+-1
+3
+}
+# macro_sequence
+
+# end
+# entity
+lpm_divide
+# storage
+db|animation.(51).cnf
+db|animation.(51).cnf
+# case_insensitive
+# source_file
+lpm_divide.tdf
+6a8184c9b63557df2bce3e6eaf453fd
 7
 # user_parameter {
-BYTE_SIZE_BLOCK
-8
+LPM_WIDTHN
+7
+PARAMETER_UNKNOWN
+USR
+LPM_WIDTHD
+4
+PARAMETER_UNKNOWN
+USR
+LPM_NREPRESENTATION
+UNSIGNED
+PARAMETER_UNKNOWN
+USR
+LPM_DREPRESENTATION
+UNSIGNED
+PARAMETER_UNKNOWN
+USR
+LPM_PIPELINE
+0
 PARAMETER_UNKNOWN
 DEF
+LPM_REMAINDERPOSITIVE
+TRUE
+PARAMETER_UNKNOWN
+DEF
+MAXIMIZE_SPEED
+5
+PARAMETER_UNKNOWN
+DEF
+CBXI_PARAMETER
+lpm_divide_35m
+PARAMETER_UNKNOWN
+USR
+CARRY_CHAIN
+MANUAL
+PARAMETER_UNKNOWN
+USR
+OPTIMIZE_FOR_SPEED
+5
+PARAMETER_UNKNOWN
+USR
 AUTO_CARRY_CHAINS
 ON
 AUTO_CARRY
@@ -7046,355 +5782,409 @@ IGNORE_CASCADE_BUFFERS
 OFF
 IGNORE_CASCADE
 USR
-WIDTH_BYTEENA
-1
-PARAMETER_UNKNOWN
-DEF
-OPERATION_MODE
-ROM
-PARAMETER_UNKNOWN
-USR
-WIDTH_A
-3
-PARAMETER_SIGNED_DEC
-USR
-WIDTHAD_A
-15
-PARAMETER_SIGNED_DEC
-USR
-NUMWORDS_A
-32768
-PARAMETER_SIGNED_DEC
-USR
-OUTDATA_REG_A
-UNREGISTERED
-PARAMETER_UNKNOWN
-USR
-ADDRESS_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-OUTDATA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-USR
-WRCONTROL_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-INDATA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-BYTEENA_ACLR_A
-NONE
-PARAMETER_UNKNOWN
-DEF
-WIDTH_B
-1
-PARAMETER_UNKNOWN
-DEF
-WIDTHAD_B
-1
-PARAMETER_UNKNOWN
-DEF
-NUMWORDS_B
-1
-PARAMETER_UNKNOWN
-DEF
-INDATA_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-WRCONTROL_WRADDRESS_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-RDCONTROL_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-ADDRESS_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-OUTDATA_REG_B
-UNREGISTERED
-PARAMETER_UNKNOWN
-DEF
-BYTEENA_REG_B
-CLOCK1
-PARAMETER_UNKNOWN
-DEF
-INDATA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-WRCONTROL_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-ADDRESS_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-OUTDATA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-RDCONTROL_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-BYTEENA_ACLR_B
-NONE
-PARAMETER_UNKNOWN
-DEF
-WIDTH_BYTEENA_A
-1
-PARAMETER_SIGNED_DEC
-USR
-WIDTH_BYTEENA_B
-1
-PARAMETER_UNKNOWN
-DEF
-RAM_BLOCK_TYPE
-AUTO
-PARAMETER_UNKNOWN
-DEF
-BYTE_SIZE
-8
-PARAMETER_UNKNOWN
-DEF
-READ_DURING_WRITE_MODE_MIXED_PORTS
-DONT_CARE
-PARAMETER_UNKNOWN
-DEF
-READ_DURING_WRITE_MODE_PORT_A
-NEW_DATA_NO_NBE_READ
-PARAMETER_UNKNOWN
-DEF
-READ_DURING_WRITE_MODE_PORT_B
-NEW_DATA_NO_NBE_READ
-PARAMETER_UNKNOWN
-DEF
-INIT_FILE
-endGame.mif
-PARAMETER_UNKNOWN
-USR
-INIT_FILE_LAYOUT
-PORT_A
-PARAMETER_UNKNOWN
-DEF
-MAXIMUM_DEPTH
-0
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_INPUT_A
-BYPASS
-PARAMETER_UNKNOWN
-USR
-CLOCK_ENABLE_INPUT_B
-NORMAL
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_OUTPUT_A
-BYPASS
-PARAMETER_UNKNOWN
-USR
-CLOCK_ENABLE_OUTPUT_B
-NORMAL
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_CORE_A
-USE_INPUT_CLKEN
-PARAMETER_UNKNOWN
-DEF
-CLOCK_ENABLE_CORE_B
-USE_INPUT_CLKEN
-PARAMETER_UNKNOWN
-DEF
-ENABLE_ECC
-FALSE
-PARAMETER_UNKNOWN
-DEF
-WIDTH_ECCSTATUS
-3
-PARAMETER_UNKNOWN
-DEF
-DEVICE_FAMILY
-Cyclone II
-PARAMETER_UNKNOWN
-USR
-CBXI_PARAMETER
-altsyncram_i181
-PARAMETER_UNKNOWN
-USR
 }
 # used_port {
-q_a
+remain3
 -1
 3
-clock0
+remain2
 -1
 3
-address_a
+remain1
 -1
 3
-wren_b
+remain0
+-1
+3
+numer4
+-1
+3
+numer3
+-1
+3
+numer2
+-1
+3
+numer1
+-1
+3
+numer0
+-1
+3
+numer6
 -1
 1
-wren_a
+numer5
 -1
 1
-addressstall_b
+denom2
 -1
 1
-addressstall_a
+denom0
 -1
 1
-aclr1
--1
-1
-aclr0
--1
-1
-rden_b
+denom3
 -1
 2
-rden_a
--1
-2
-data_b
--1
-2
-data_a
--1
-2
-clocken3
--1
-2
-clocken2
--1
-2
-clocken1
--1
-2
-clocken0
--1
-2
-clock1
--1
-2
-byteena_b
--1
-2
-byteena_a
--1
-2
-address_b
+denom1
 -1
 2
 }
 # include_file {
-altrom.inc
-192b74eafa8debf2248ea73881e77f91
-a_rdenreg.inc
-3fcdce755959d5a8afbe64788d21fb
-altram.inc
-ad5518b39ffd3cf1df377e6360d1c9b6
-stratix_ram_block.inc
-e3a03868917fb3dd57b6ed1dd195f22
-altdpram.inc
-2f9e6727b678ffd76e72bc5a95a2630
+abs_divider.inc
+49e0557d5addd986524b344bed283d9
 aglobal111.inc
 9cc1f9de5ad83fc94dd171c3f7986bd
-lpm_mux.inc
-dd87bed9959d6126db09970164b7ba6
-lpm_decode.inc
-10da69a8bbd590d66779e7a142f73790
-}
-# hierarchies {
-EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component
+sign_div_unsign.inc
+535d76a18080ee8f75d090fcce186e19
 }
 # macro_sequence
 
 # end
 # entity
-altsyncram_i181
+lpm_divide_35m
 # storage
-db|animation.(46).cnf
-db|animation.(46).cnf
+db|animation.(52).cnf
+db|animation.(52).cnf
 # case_insensitive
 # source_file
-db|altsyncram_i181.tdf
-e04b2f48e426ed879e1fd231edfe078
+db|lpm_divide_35m.tdf
+bc8840b6fb59fbd83b821baa518a769
 7
 # used_port {
-q_a2
+remain3
 -1
 3
-q_a1
+remain2
 -1
 3
-q_a0
+remain1
 -1
 3
-clock0
+remain0
 -1
 3
-address_a9
+numer6
 -1
 3
-address_a8
+numer5
 -1
 3
-address_a7
+numer4
 -1
 3
-address_a6
+numer3
 -1
 3
-address_a5
+numer2
 -1
 3
-address_a4
+numer1
 -1
 3
-address_a3
+numer0
 -1
 3
-address_a2
+denom3
 -1
 3
-address_a14
+denom2
 -1
 3
-address_a13
+denom1
 -1
 3
-address_a12
--1
-3
-address_a11
--1
-3
-address_a10
--1
-3
-address_a1
--1
-3
-address_a0
+denom0
 -1
 3
 }
-# memory_file {
-endgame.mif
-5cc0f59628b38c2f8fb69b58c94322d
+# macro_sequence
+
+# end
+# entity
+sign_div_unsign_akh
+# storage
+db|animation.(53).cnf
+db|animation.(53).cnf
+# case_insensitive
+# source_file
+db|sign_div_unsign_akh.tdf
+15372dfd6227e6c38ce62186935ed
+7
+# used_port {
+remainder3
+-1
+3
+remainder2
+-1
+3
+remainder1
+-1
+3
+remainder0
+-1
+3
+quotient6
+-1
+3
+quotient5
+-1
+3
+quotient4
+-1
+3
+quotient3
+-1
+3
+quotient2
+-1
+3
+quotient1
+-1
+3
+quotient0
+-1
+3
+numerator6
+-1
+3
+numerator5
+-1
+3
+numerator4
+-1
+3
+numerator3
+-1
+3
+numerator2
+-1
+3
+numerator1
+-1
+3
+numerator0
+-1
+3
+denominator3
+-1
+3
+denominator2
+-1
+3
+denominator1
+-1
+3
+denominator0
+-1
+3
 }
-# hierarchies {
-EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated
+# macro_sequence
+
+# end
+# entity
+alt_u_div_mve
+# storage
+db|animation.(54).cnf
+db|animation.(54).cnf
+# case_insensitive
+# source_file
+db|alt_u_div_mve.tdf
+671fed35f8cde665168e4dd85aede85
+7
+# used_port {
+remainder3
+-1
+3
+remainder2
+-1
+3
+remainder1
+-1
+3
+remainder0
+-1
+3
+quotient6
+-1
+3
+quotient5
+-1
+3
+quotient4
+-1
+3
+quotient3
+-1
+3
+quotient2
+-1
+3
+quotient1
+-1
+3
+quotient0
+-1
+3
+numerator6
+-1
+3
+numerator5
+-1
+3
+numerator4
+-1
+3
+numerator3
+-1
+3
+numerator2
+-1
+3
+numerator1
+-1
+3
+numerator0
+-1
+3
+denominator3
+-1
+3
+denominator2
+-1
+3
+denominator1
+-1
+3
+denominator0
+-1
+3
+}
+# macro_sequence
+
+# end
+# entity
+lpm_divide
+# storage
+db|animation.(55).cnf
+db|animation.(55).cnf
+# case_insensitive
+# source_file
+lpm_divide.tdf
+6a8184c9b63557df2bce3e6eaf453fd
+7
+# user_parameter {
+LPM_WIDTHN
+7
+PARAMETER_UNKNOWN
+USR
+LPM_WIDTHD
+4
+PARAMETER_UNKNOWN
+USR
+LPM_NREPRESENTATION
+UNSIGNED
+PARAMETER_UNKNOWN
+USR
+LPM_DREPRESENTATION
+UNSIGNED
+PARAMETER_UNKNOWN
+USR
+LPM_PIPELINE
+0
+PARAMETER_UNKNOWN
+DEF
+LPM_REMAINDERPOSITIVE
+TRUE
+PARAMETER_UNKNOWN
+DEF
+MAXIMIZE_SPEED
+5
+PARAMETER_UNKNOWN
+DEF
+CBXI_PARAMETER
+lpm_divide_35m
+PARAMETER_UNKNOWN
+USR
+CARRY_CHAIN
+MANUAL
+PARAMETER_UNKNOWN
+USR
+OPTIMIZE_FOR_SPEED
+5
+PARAMETER_UNKNOWN
+USR
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+}
+# used_port {
+remain3
+-1
+3
+remain2
+-1
+3
+remain1
+-1
+3
+remain0
+-1
+3
+numer5
+-1
+3
+numer4
+-1
+3
+numer3
+-1
+3
+numer2
+-1
+3
+numer1
+-1
+3
+numer0
+-1
+3
+numer6
+-1
+1
+denom2
+-1
+1
+denom0
+-1
+1
+denom3
+-1
+2
+denom1
+-1
+2
+}
+# include_file {
+abs_divider.inc
+49e0557d5addd986524b344bed283d9
+aglobal111.inc
+9cc1f9de5ad83fc94dd171c3f7986bd
+sign_div_unsign.inc
+535d76a18080ee8f75d090fcce186e19
 }
 # macro_sequence
 
@@ -7411,7 +6201,7 @@ ON
 # case_sensitive
 # source_file
 animation.v
-96bef63632c3e7df5ea21ad52bc092
+ad11cdf36ae769d998498b0a41ab936
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -7436,10 +6226,10 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 
 # end
 # entity
-moveInstances
+PS2_Demo
 # storage
-db|animation.(47).cnf
-db|animation.(47).cnf
+db|animation.(12).cnf
+db|animation.(12).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -7447,7 +6237,43 @@ ON
 # case_sensitive
 # source_file
 animation.v
-96bef63632c3e7df5ea21ad52bc092
+ad11cdf36ae769d998498b0a41ab936
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+PS2_Demo:keyboard
+}
+# macro_sequence
+
+# end
+# entity
+moveInstances
+# storage
+db|animation.(30).cnf
+db|animation.(30).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+animation.v
+ad11cdf36ae769d998498b0a41ab936
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -7483,7 +6309,7 @@ Duck_2_initialInputX
 PARAMETER_SIGNED_DEC
 DEF
 Duck_2_initialInputY
-0111100
+1010000
 PARAMETER_UNSIGNED_BIN
 DEF
 Duck_3_initialInputX
@@ -7491,6 +6317,30 @@ Duck_3_initialInputX
 PARAMETER_SIGNED_DEC
 DEF
 Duck_3_initialInputY
+0011110
+PARAMETER_UNSIGNED_BIN
+DEF
+Duck_4_initialInputX
+0
+PARAMETER_SIGNED_DEC
+DEF
+Duck_4_initialInputY
+0001010
+PARAMETER_UNSIGNED_BIN
+DEF
+Duck_5_initialInputX
+0
+PARAMETER_SIGNED_DEC
+DEF
+Duck_5_initialInputY
+1011010
+PARAMETER_UNSIGNED_BIN
+DEF
+Duck_6_initialInputX
+0
+PARAMETER_SIGNED_DEC
+DEF
+Duck_6_initialInputY
 0000000
 PARAMETER_UNSIGNED_BIN
 DEF
@@ -7520,8 +6370,8 @@ moveInstances:stage5
 # entity
 main_clock
 # storage
-db|animation.(48).cnf
-db|animation.(48).cnf
+db|animation.(31).cnf
+db|animation.(31).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -7529,7 +6379,7 @@ ON
 # case_sensitive
 # source_file
 animation.v
-96bef63632c3e7df5ea21ad52bc092
+ad11cdf36ae769d998498b0a41ab936
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -7566,8 +6416,8 @@ moveInstances:stage5|main_clock:C0
 # entity
 NextState
 # storage
-db|animation.(49).cnf
-db|animation.(49).cnf
+db|animation.(32).cnf
+db|animation.(32).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -7575,7 +6425,7 @@ ON
 # case_sensitive
 # source_file
 animation.v
-96bef63632c3e7df5ea21ad52bc092
+ad11cdf36ae769d998498b0a41ab936
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -7620,8 +6470,8 @@ NextState:stage2
 # entity
 flipflop
 # storage
-db|animation.(50).cnf
-db|animation.(50).cnf
+db|animation.(33).cnf
+db|animation.(33).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -7629,7 +6479,7 @@ ON
 # case_sensitive
 # source_file
 animation.v
-96bef63632c3e7df5ea21ad52bc092
+ad11cdf36ae769d998498b0a41ab936
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -7662,8 +6512,8 @@ flipflop:stage3
 # entity
 changeCoordinate
 # storage
-db|animation.(51).cnf
-db|animation.(51).cnf
+db|animation.(34).cnf
+db|animation.(34).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -7671,7 +6521,7 @@ ON
 # case_sensitive
 # source_file
 animation.v
-96bef63632c3e7df5ea21ad52bc092
+ad11cdf36ae769d998498b0a41ab936
 8
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -7709,6 +6559,352 @@ DEF
 }
 # hierarchies {
 changeCoordinate:stage4
+}
+# macro_sequence
+
+# end
+# entity
+timer
+# storage
+db|animation.(37).cnf
+db|animation.(37).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+animation.v
+ad11cdf36ae769d998498b0a41ab936
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+timer:timerInstance
+}
+# macro_sequence
+
+# end
+# entity
+counter_modk
+# storage
+db|animation.(38).cnf
+db|animation.(38).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+animation.v
+ad11cdf36ae769d998498b0a41ab936
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+n
+26
+PARAMETER_SIGNED_DEC
+USR
+k
+50000000
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+timer:timerInstance|counter_modk:C0
+}
+# macro_sequence
+
+# end
+# entity
+counter_modk
+# storage
+db|animation.(39).cnf
+db|animation.(39).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+animation.v
+ad11cdf36ae769d998498b0a41ab936
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+n
+32
+PARAMETER_SIGNED_DEC
+USR
+k
+-1294967296
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+timer:timerInstance|counter_modk:C1
+}
+# macro_sequence
+
+# end
+# entity
+counter_modk
+# storage
+db|animation.(40).cnf
+db|animation.(40).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+animation.v
+ad11cdf36ae769d998498b0a41ab936
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+n
+38
+PARAMETER_SIGNED_DEC
+USR
+k
+-1
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+timer:timerInstance|counter_modk:C2
+}
+# macro_sequence
+
+# end
+# entity
+counter_modk
+# storage
+db|animation.(41).cnf
+db|animation.(41).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+animation.v
+ad11cdf36ae769d998498b0a41ab936
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+n
+6
+PARAMETER_SIGNED_DEC
+USR
+k
+60
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+timer:timerInstance|counter_modk:C3
+timer:timerInstance|counter_modk:C4
+}
+# macro_sequence
+
+# end
+# entity
+counter_modk
+# storage
+db|animation.(42).cnf
+db|animation.(42).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+animation.v
+ad11cdf36ae769d998498b0a41ab936
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+n
+5
+PARAMETER_SIGNED_DEC
+USR
+k
+24
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+timer:timerInstance|counter_modk:C5
+}
+# macro_sequence
+
+# end
+# entity
+twodigit_b2d_ssd
+# storage
+db|animation.(43).cnf
+db|animation.(43).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+animation.v
+ad11cdf36ae769d998498b0a41ab936
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+timer:timerInstance|twodigit_b2d_ssd:D7
+timer:timerInstance|twodigit_b2d_ssd:D5
+timer:timerInstance|twodigit_b2d_ssd:D3
+}
+# macro_sequence
+
+# end
+# entity
+b2d_ssd
+# storage
+db|animation.(44).cnf
+db|animation.(44).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+animation.v
+ad11cdf36ae769d998498b0a41ab936
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+timer:timerInstance|twodigit_b2d_ssd:D7|b2d_ssd:B1
+timer:timerInstance|twodigit_b2d_ssd:D7|b2d_ssd:B0
+timer:timerInstance|twodigit_b2d_ssd:D5|b2d_ssd:B1
+timer:timerInstance|twodigit_b2d_ssd:D5|b2d_ssd:B0
+timer:timerInstance|twodigit_b2d_ssd:D3|b2d_ssd:B1
+timer:timerInstance|twodigit_b2d_ssd:D3|b2d_ssd:B0
 }
 # macro_sequence
 

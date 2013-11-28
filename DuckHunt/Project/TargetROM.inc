@@ -15,7 +15,7 @@
 
 FUNCTION TargetROM 
 (
-	address[6..0],
+	address[7..0],
 	clock
 )
 

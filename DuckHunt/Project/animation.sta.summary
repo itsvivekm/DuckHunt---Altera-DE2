@@ -2,29 +2,41 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow Model Setup 'flipflop:stage3|y[0]'
-Slack : -7.157
-TNS   : -17.558
-
 Type  : Slow Model Setup 'CLOCK_50'
-Slack : -2.259
-TNS   : -22.696
+Slack : -25.652
+TNS   : -2595.380
+
+Type  : Slow Model Setup 'flipflop:stage3|y[0]'
+Slack : -7.817
+TNS   : -19.221
+
+Type  : Slow Model Setup 'SW[16]'
+Slack : -0.964
+TNS   : -0.964
 
 Type  : Slow Model Setup 'VGA|mypll|altpll_component|pll|clk[0]'
-Slack : 32.825
+Slack : 33.321
 TNS   : 0.000
 
 Type  : Slow Model Hold 'flipflop:stage3|y[0]'
-Slack : -2.645
-TNS   : -5.154
+Slack : -3.408
+TNS   : -6.651
 
 Type  : Slow Model Hold 'CLOCK_50'
-Slack : -1.547
-TNS   : -39.527
+Slack : -1.914
+TNS   : -38.078
+
+Type  : Slow Model Hold 'SW[16]'
+Slack : -0.150
+TNS   : -0.150
 
 Type  : Slow Model Hold 'VGA|mypll|altpll_component|pll|clk[0]'
-Slack : 0.517
+Slack : 0.518
 TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'SW[16]'
+Slack : -1.222
+TNS   : -1.222
 
 Type  : Slow Model Minimum Pulse Width 'flipflop:stage3|y[0]'
 Slack : 0.500
@@ -38,29 +50,41 @@ Type  : Slow Model Minimum Pulse Width 'VGA|mypll|altpll_component|pll|clk[0]'
 Slack : 17.873
 TNS   : 0.000
 
-Type  : Fast Model Setup 'flipflop:stage3|y[0]'
-Slack : -2.774
-TNS   : -7.231
-
 Type  : Fast Model Setup 'CLOCK_50'
-Slack : -0.616
-TNS   : -1.205
+Slack : -10.554
+TNS   : -1046.018
+
+Type  : Fast Model Setup 'flipflop:stage3|y[0]'
+Slack : -3.064
+TNS   : -7.919
+
+Type  : Fast Model Setup 'SW[16]'
+Slack : -0.412
+TNS   : -0.412
 
 Type  : Fast Model Setup 'VGA|mypll|altpll_component|pll|clk[0]'
-Slack : 36.713
+Slack : 37.026
 TNS   : 0.000
 
 Type  : Fast Model Hold 'flipflop:stage3|y[0]'
-Slack : -1.546
-TNS   : -3.028
+Slack : -1.862
+TNS   : -3.649
 
 Type  : Fast Model Hold 'CLOCK_50'
-Slack : -1.182
-TNS   : -31.333
+Slack : -1.099
+TNS   : -32.264
+
+Type  : Fast Model Hold 'SW[16]'
+Slack : -0.035
+TNS   : -0.035
 
 Type  : Fast Model Hold 'VGA|mypll|altpll_component|pll|clk[0]'
 Slack : 0.239
 TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'SW[16]'
+Slack : -1.222
+TNS   : -1.222
 
 Type  : Fast Model Minimum Pulse Width 'flipflop:stage3|y[0]'
 Slack : 0.500

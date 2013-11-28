@@ -1,5 +1,5 @@
 Analysis & Synthesis report for animation
-Sun Nov 24 23:01:08 2013
+Wed Nov 27 20:23:11 2013
 Quartus II 32-bit Version 11.1 Build 216 11/23/2011 Service Pack 1 SJ Web Edition
 
 
@@ -17,48 +17,63 @@ Quartus II 32-bit Version 11.1 Build 216 11/23/2011 Service Pack 1 SJ Web Editio
   9. Analysis & Synthesis DSP Block Usage Summary
  10. Analysis & Synthesis IP Cores Summary
  11. State Machine - |animation|moveInstances:stage5|ID
- 12. User-Specified and Inferred Latches
- 13. Registers Removed During Synthesis
- 14. General Register Statistics
- 15. Inverted Register Statistics
- 16. Multiplexer Restructuring Statistics (Restructuring Performed)
- 17. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_apf1:auto_generated
- 18. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_apf1:auto_generated|altsyncram_ajq1:altsyncram1
- 19. Source assignments for DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component|altsyncram_is81:auto_generated
- 20. Source assignments for BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component|altsyncram_jd81:auto_generated
- 21. Source assignments for TargetROM:TargetROM_inst|altsyncram:altsyncram_component|altsyncram_aq71:auto_generated
- 22. Source assignments for FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component|altsyncram_5d81:auto_generated
- 23. Source assignments for EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated
- 24. Parameter Settings for User Entity Instance: vga_adapter:VGA
- 25. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
- 26. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
- 27. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
- 28. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
- 29. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
- 30. Parameter Settings for User Entity Instance: DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component
- 31. Parameter Settings for User Entity Instance: BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component
- 32. Parameter Settings for User Entity Instance: TargetROM:TargetROM_inst|altsyncram:altsyncram_component
- 33. Parameter Settings for User Entity Instance: FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component
- 34. Parameter Settings for User Entity Instance: EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component
- 35. Parameter Settings for User Entity Instance: moveInstances:stage5
- 36. Parameter Settings for User Entity Instance: moveInstances:stage5|main_clock:C0
- 37. Parameter Settings for User Entity Instance: NextState:stage2
- 38. Parameter Settings for User Entity Instance: flipflop:stage3
- 39. Parameter Settings for User Entity Instance: changeCoordinate:stage4
- 40. Parameter Settings for Inferred Entity Instance: moveInstances:stage5|lpm_mult:Mult0
- 41. altsyncram Parameter Settings by Entity Instance
- 42. altpll Parameter Settings by Entity Instance
- 43. lpm_mult Parameter Settings by Entity Instance
- 44. Port Connectivity Checks: "changeCoordinate:stage4"
- 45. Port Connectivity Checks: "NextState:stage2"
- 46. Port Connectivity Checks: "moveInstances:stage5|main_clock:C0"
- 47. Port Connectivity Checks: "moveInstances:stage5"
- 48. Port Connectivity Checks: "FallingDuckROM:FallingDuckROM_inst"
- 49. Port Connectivity Checks: "TargetROM:TargetROM_inst"
- 50. Port Connectivity Checks: "DuckROM1:DuckROM1_inst"
- 51. Elapsed Time Per Partition
- 52. Analysis & Synthesis Messages
- 53. Analysis & Synthesis Suppressed Messages
+ 12. State Machine - |animation|PS2_Demo:keyboard|PS2_Controller:PS2|s_ps2_transceiver
+ 13. State Machine - |animation|PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter
+ 14. State Machine - |animation|PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver
+ 15. User-Specified and Inferred Latches
+ 16. Registers Removed During Synthesis
+ 17. Removed Registers Triggering Further Register Optimizations
+ 18. General Register Statistics
+ 19. Inverted Register Statistics
+ 20. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 21. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_apf1:auto_generated
+ 22. Source assignments for vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_apf1:auto_generated|altsyncram_ajq1:altsyncram1
+ 23. Source assignments for DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component|altsyncram_is81:auto_generated
+ 24. Source assignments for BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component|altsyncram_jd81:auto_generated
+ 25. Source assignments for TargetROM:TargetROM_inst|altsyncram:altsyncram_component|altsyncram_dq71:auto_generated
+ 26. Source assignments for FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component|altsyncram_5d81:auto_generated
+ 27. Parameter Settings for User Entity Instance: vga_adapter:VGA
+ 28. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_address_translator:user_input_translator
+ 29. Parameter Settings for User Entity Instance: vga_adapter:VGA|altsyncram:VideoMemory
+ 30. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component
+ 31. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller
+ 32. Parameter Settings for User Entity Instance: vga_adapter:VGA|vga_controller:controller|vga_address_translator:controller_translator
+ 33. Parameter Settings for User Entity Instance: PS2_Demo:keyboard|PS2_Controller:PS2
+ 34. Parameter Settings for User Entity Instance: PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out
+ 35. Parameter Settings for User Entity Instance: DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component
+ 36. Parameter Settings for User Entity Instance: BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component
+ 37. Parameter Settings for User Entity Instance: TargetROM:TargetROM_inst|altsyncram:altsyncram_component
+ 38. Parameter Settings for User Entity Instance: FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component
+ 39. Parameter Settings for User Entity Instance: moveInstances:stage5
+ 40. Parameter Settings for User Entity Instance: moveInstances:stage5|main_clock:C0
+ 41. Parameter Settings for User Entity Instance: NextState:stage2
+ 42. Parameter Settings for User Entity Instance: flipflop:stage3
+ 43. Parameter Settings for User Entity Instance: changeCoordinate:stage4
+ 44. Parameter Settings for User Entity Instance: timer:timerInstance|counter_modk:C0
+ 45. Parameter Settings for User Entity Instance: timer:timerInstance|counter_modk:C1
+ 46. Parameter Settings for User Entity Instance: timer:timerInstance|counter_modk:C2
+ 47. Parameter Settings for User Entity Instance: timer:timerInstance|counter_modk:C3
+ 48. Parameter Settings for User Entity Instance: timer:timerInstance|counter_modk:C4
+ 49. Parameter Settings for User Entity Instance: timer:timerInstance|counter_modk:C5
+ 50. Parameter Settings for Inferred Entity Instance: moveInstances:stage5|lpm_mult:Mult0
+ 51. altsyncram Parameter Settings by Entity Instance
+ 52. altpll Parameter Settings by Entity Instance
+ 53. lpm_mult Parameter Settings by Entity Instance
+ 54. Port Connectivity Checks: "timer:timerInstance|twodigit_b2d_ssd:D3"
+ 55. Port Connectivity Checks: "timer:timerInstance|twodigit_b2d_ssd:D5"
+ 56. Port Connectivity Checks: "timer:timerInstance|twodigit_b2d_ssd:D7"
+ 57. Port Connectivity Checks: "timer:timerInstance"
+ 58. Port Connectivity Checks: "changeCoordinate:stage4"
+ 59. Port Connectivity Checks: "NextState:stage2"
+ 60. Port Connectivity Checks: "moveInstances:stage5|main_clock:C0"
+ 61. Port Connectivity Checks: "moveInstances:stage5"
+ 62. Port Connectivity Checks: "FallingDuckROM:FallingDuckROM_inst"
+ 63. Port Connectivity Checks: "TargetROM:TargetROM_inst"
+ 64. Port Connectivity Checks: "DuckROM1:DuckROM1_inst"
+ 65. Port Connectivity Checks: "PS2_Demo:keyboard|PS2_Controller:PS2"
+ 66. Elapsed Time Per Partition
+ 67. Analysis & Synthesis Messages
+ 68. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -84,18 +99,18 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Nov 24 23:01:08 2013         ;
+; Analysis & Synthesis Status        ; Successful - Wed Nov 27 20:23:11 2013         ;
 ; Quartus II 32-bit Version          ; 11.1 Build 216 11/23/2011 SP 1 SJ Web Edition ;
 ; Revision Name                      ; animation                                     ;
 ; Top-level Entity Name              ; animation                                     ;
 ; Family                             ; Cyclone II                                    ;
-; Total logic elements               ; 1,515                                         ;
-;     Total combinational functions  ; 1,505                                         ;
-;     Dedicated logic registers      ; 223                                           ;
-; Total registers                    ; 223                                           ;
-; Total pins                         ; 58                                            ;
+; Total logic elements               ; 2,495                                         ;
+;     Total combinational functions  ; 2,478                                         ;
+;     Dedicated logic registers      ; 323                                           ;
+; Total registers                    ; 323                                           ;
+; Total pins                         ; 102                                           ;
 ; Total virtual pins                 ; 0                                             ;
-; Total memory bits                  ; 165,504                                       ;
+; Total memory bits                  ; 165,888                                       ;
 ; Embedded Multiplier 9-bit elements ; 1                                             ;
 ; Total PLLs                         ; 1                                             ;
 +------------------------------------+-----------------------------------------------+
@@ -209,7 +224,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; BackgroundROM.v                      ; yes             ; User Wizard-Generated File             ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/BackgroundROM.v                      ;
 ; TargetROM.v                          ; yes             ; User Wizard-Generated File             ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/TargetROM.v                          ;
 ; FallingDuckROM.v                     ; yes             ; User Wizard-Generated File             ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/FallingDuckROM.v                     ;
-; EndGameROM.v                         ; yes             ; User Wizard-Generated File             ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/EndGameROM.v                         ;
 ; altsyncram.tdf                       ; yes             ; Megafunction                           ; c:/altera/11.1sp1/quartus/libraries/megafunctions/altsyncram.tdf                              ;
 ; stratix_ram_block.inc                ; yes             ; Megafunction                           ; c:/altera/11.1sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                       ;
 ; lpm_mux.inc                          ; yes             ; Megafunction                           ; c:/altera/11.1sp1/quartus/libraries/megafunctions/lpm_mux.inc                                 ;
@@ -227,18 +241,19 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; stratix_pll.inc                      ; yes             ; Megafunction                           ; c:/altera/11.1sp1/quartus/libraries/megafunctions/stratix_pll.inc                             ;
 ; stratixii_pll.inc                    ; yes             ; Megafunction                           ; c:/altera/11.1sp1/quartus/libraries/megafunctions/stratixii_pll.inc                           ;
 ; cycloneii_pll.inc                    ; yes             ; Megafunction                           ; c:/altera/11.1sp1/quartus/libraries/megafunctions/cycloneii_pll.inc                           ;
+; ps2_controller.v                     ; yes             ; Auto-Found Verilog HDL File            ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/ps2_controller.v                     ;
+; altera_up_ps2_data_in.v              ; yes             ; Auto-Found Verilog HDL File            ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/altera_up_ps2_data_in.v              ;
+; altera_up_ps2_command_out.v          ; yes             ; Auto-Found Verilog HDL File            ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/altera_up_ps2_command_out.v          ;
 ; db/altsyncram_is81.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/db/altsyncram_is81.tdf               ;
 ; duck transparent.mif                 ; yes             ; Auto-Found Memory Initialization File  ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/duck transparent.mif                 ;
 ; db/altsyncram_jd81.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/db/altsyncram_jd81.tdf               ;
 ; background2.mif                      ; yes             ; Auto-Found Memory Initialization File  ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/background2.mif                      ;
 ; db/decode_9oa.tdf                    ; yes             ; Auto-Generated Megafunction            ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/db/decode_9oa.tdf                    ;
 ; db/mux_kib.tdf                       ; yes             ; Auto-Generated Megafunction            ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/db/mux_kib.tdf                       ;
-; db/altsyncram_aq71.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/db/altsyncram_aq71.tdf               ;
+; db/altsyncram_dq71.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/db/altsyncram_dq71.tdf               ;
 ; target.mif                           ; yes             ; Auto-Found Memory Initialization File  ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/target.mif                           ;
 ; db/altsyncram_5d81.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/db/altsyncram_5d81.tdf               ;
 ; fallingduck.mif                      ; yes             ; Auto-Found Memory Initialization File  ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/fallingduck.mif                      ;
-; db/altsyncram_i181.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/db/altsyncram_i181.tdf               ;
-; endgame.mif                          ; yes             ; Auto-Found Memory Initialization File  ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/endgame.mif                          ;
 ; lpm_mult.tdf                         ; yes             ; Megafunction                           ; c:/altera/11.1sp1/quartus/libraries/megafunctions/lpm_mult.tdf                                ;
 ; lpm_add_sub.inc                      ; yes             ; Megafunction                           ; c:/altera/11.1sp1/quartus/libraries/megafunctions/lpm_add_sub.inc                             ;
 ; multcore.inc                         ; yes             ; Megafunction                           ; c:/altera/11.1sp1/quartus/libraries/megafunctions/multcore.inc                                ;
@@ -248,38 +263,38 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimated Total logic elements              ; 1,515    ;
-;                                             ;          ;
-; Total combinational functions               ; 1505     ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 563      ;
-;     -- 3 input functions                    ; 521      ;
-;     -- <=2 input functions                  ; 421      ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 865      ;
-;     -- arithmetic mode                      ; 640      ;
-;                                             ;          ;
-; Total registers                             ; 223      ;
-;     -- Dedicated logic registers            ; 223      ;
-;     -- I/O registers                        ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 58       ;
-; Total memory bits                           ; 165504   ;
-; Embedded Multiplier 9-bit elements          ; 1        ;
-; Total PLLs                                  ; 1        ;
-;     -- PLLs                                 ; 1        ;
-;                                             ;          ;
-; Maximum fan-out node                        ; CLOCK_50 ;
-; Maximum fan-out                             ; 240      ;
-; Total fan-out                               ; 6181     ;
-; Average fan-out                             ; 3.36     ;
-+---------------------------------------------+----------+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                  ;
++---------------------------------------------+--------------------------------+
+; Resource                                    ; Usage                          ;
++---------------------------------------------+--------------------------------+
+; Estimated Total logic elements              ; 2,495                          ;
+;                                             ;                                ;
+; Total combinational functions               ; 2478                           ;
+; Logic element usage by number of LUT inputs ;                                ;
+;     -- 4 input functions                    ; 1154                           ;
+;     -- 3 input functions                    ; 789                            ;
+;     -- <=2 input functions                  ; 535                            ;
+;                                             ;                                ;
+; Logic elements by mode                      ;                                ;
+;     -- normal mode                          ; 1649                           ;
+;     -- arithmetic mode                      ; 829                            ;
+;                                             ;                                ;
+; Total registers                             ; 323                            ;
+;     -- Dedicated logic registers            ; 323                            ;
+;     -- I/O registers                        ; 0                              ;
+;                                             ;                                ;
+; I/O pins                                    ; 102                            ;
+; Total memory bits                           ; 165888                         ;
+; Embedded Multiplier 9-bit elements          ; 1                              ;
+; Total PLLs                                  ; 1                              ;
+;     -- PLLs                                 ; 1                              ;
+;                                             ;                                ;
+; Maximum fan-out node                        ; moveInstances:stage5|firstTime ;
+; Maximum fan-out                             ; 443                            ;
+; Total fan-out                               ; 9862                           ;
+; Average fan-out                             ; 3.34                           ;
++---------------------------------------------+--------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -287,7 +302,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                               ; Library Name ;
 +---------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |animation                                              ; 1505 (26)         ; 223 (0)      ; 165504      ; 1            ; 1       ; 0         ; 58   ; 0            ; |animation                                                                                                                        ;              ;
+; |animation                                              ; 2478 (27)         ; 323 (0)      ; 165888      ; 1            ; 1       ; 0         ; 102  ; 0            ; |animation                                                                                                                        ;              ;
 ;    |BackgroundROM:BackgroundROM_inst|                   ; 23 (0)            ; 3 (0)        ; 98304       ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|BackgroundROM:BackgroundROM_inst                                                                                       ;              ;
 ;       |altsyncram:altsyncram_component|                 ; 23 (0)            ; 3 (0)        ; 98304       ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component                                                       ;              ;
 ;          |altsyncram_jd81:auto_generated|               ; 23 (0)            ; 3 (3)        ; 98304       ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component|altsyncram_jd81:auto_generated                        ;              ;
@@ -300,12 +315,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;       |altsyncram:altsyncram_component|                 ; 0 (0)             ; 0 (0)        ; 6144        ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component                                                     ;              ;
 ;          |altsyncram_5d81:auto_generated|               ; 0 (0)             ; 0 (0)        ; 6144        ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component|altsyncram_5d81:auto_generated                      ;              ;
 ;    |NextState:stage2|                                   ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|NextState:stage2                                                                                                       ;              ;
-;    |TargetROM:TargetROM_inst|                           ; 0 (0)             ; 0 (0)        ; 384         ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|TargetROM:TargetROM_inst                                                                                               ;              ;
-;       |altsyncram:altsyncram_component|                 ; 0 (0)             ; 0 (0)        ; 384         ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|TargetROM:TargetROM_inst|altsyncram:altsyncram_component                                                               ;              ;
-;          |altsyncram_aq71:auto_generated|               ; 0 (0)             ; 0 (0)        ; 384         ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|TargetROM:TargetROM_inst|altsyncram:altsyncram_component|altsyncram_aq71:auto_generated                                ;              ;
-;    |changeCoordinate:stage4|                            ; 191 (191)         ; 40 (40)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|changeCoordinate:stage4                                                                                                ;              ;
+;    |PS2_Demo:keyboard|                                  ; 42 (9)            ; 38 (8)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|PS2_Demo:keyboard                                                                                                      ;              ;
+;       |PS2_Controller:PS2|                              ; 33 (7)            ; 30 (5)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|PS2_Demo:keyboard|PS2_Controller:PS2                                                                                   ;              ;
+;          |Altera_UP_PS2_Data_In:PS2_Data_In|            ; 26 (26)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In                                                 ;              ;
+;    |TargetROM:TargetROM_inst|                           ; 0 (0)             ; 0 (0)        ; 768         ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|TargetROM:TargetROM_inst                                                                                               ;              ;
+;       |altsyncram:altsyncram_component|                 ; 0 (0)             ; 0 (0)        ; 768         ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|TargetROM:TargetROM_inst|altsyncram:altsyncram_component                                                               ;              ;
+;          |altsyncram_dq71:auto_generated|               ; 0 (0)             ; 0 (0)        ; 768         ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|TargetROM:TargetROM_inst|altsyncram:altsyncram_component|altsyncram_dq71:auto_generated                                ;              ;
+;    |changeCoordinate:stage4|                            ; 190 (190)         ; 40 (40)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|changeCoordinate:stage4                                                                                                ;              ;
 ;    |flipflop:stage3|                                    ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|flipflop:stage3                                                                                                        ;              ;
-;    |moveInstances:stage5|                               ; 1127 (1069)       ; 146 (120)    ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |animation|moveInstances:stage5                                                                                                   ;              ;
+;    |moveInstances:stage5|                               ; 2058 (2000)       ; 208 (182)    ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |animation|moveInstances:stage5                                                                                                   ;              ;
 ;       |lpm_mult:Mult0|                                  ; 0 (0)             ; 0 (0)        ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |animation|moveInstances:stage5|lpm_mult:Mult0                                                                                    ;              ;
 ;          |mult_m5t:auto_generated|                      ; 0 (0)             ; 0 (0)        ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |animation|moveInstances:stage5|lpm_mult:Mult0|mult_m5t:auto_generated                                                            ;              ;
 ;       |main_clock:C0|                                   ; 58 (58)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |animation|moveInstances:stage5|main_clock:C0                                                                                     ;              ;
@@ -334,7 +352,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; BackgroundROM:BackgroundROM_inst|altsyncram:altsyncram_component|altsyncram_jd81:auto_generated|ALTSYNCRAM   ; AUTO ; ROM            ; 32768        ; 3            ; --           ; --           ; 98304 ; background2.mif      ;
 ; DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component|altsyncram_is81:auto_generated|ALTSYNCRAM             ; AUTO ; ROM            ; 1024         ; 3            ; --           ; --           ; 3072  ; Duck transparent.mif ;
 ; FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component|altsyncram_5d81:auto_generated|ALTSYNCRAM ; AUTO ; ROM            ; 2048         ; 3            ; --           ; --           ; 6144  ; FallingDuck.mif      ;
-; TargetROM:TargetROM_inst|altsyncram:altsyncram_component|altsyncram_aq71:auto_generated|ALTSYNCRAM           ; AUTO ; ROM            ; 128          ; 3            ; --           ; --           ; 384   ; Target.mif           ;
+; TargetROM:TargetROM_inst|altsyncram:altsyncram_component|altsyncram_dq71:auto_generated|ALTSYNCRAM           ; AUTO ; ROM            ; 256          ; 3            ; --           ; --           ; 768   ; Target.mif           ;
 ; vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_apf1:auto_generated|altsyncram_ajq1:altsyncram1|ALTSYNCRAM ; AUTO ; True Dual Port ; 19200        ; 3            ; 19200        ; 3            ; 57600 ; Welcome1             ;
 +--------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+----------------------+
 
@@ -364,7 +382,6 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +--------+--------------+---------+--------------+--------------+-----------------------------------------------+--------------------------------------------------------------------------------+
 ; Altera ; ROM: 1-PORT  ; 11.1    ; N/A          ; N/A          ; |animation|BackgroundROM:BackgroundROM_inst   ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/BackgroundROM.v       ;
 ; Altera ; ROM: 1-PORT  ; 11.1    ; N/A          ; N/A          ; |animation|DuckROM1:DuckROM1_inst             ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/DuckROM1.v            ;
-; Altera ; ROM: 1-PORT  ; 11.1    ; N/A          ; N/A          ; |animation|EndGameROM:EndGameROM_inst         ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/EndGameROM.v          ;
 ; Altera ; ROM: 1-PORT  ; 11.1    ; N/A          ; N/A          ; |animation|FallingDuckROM:FallingDuckROM_inst ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/FallingDuckROM.v      ;
 ; Altera ; ROM: 1-PORT  ; 11.1    ; N/A          ; N/A          ; |animation|TargetROM:TargetROM_inst           ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/TargetROM.v           ;
 ; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |animation|vga_adapter:VGA|vga_pll:mypll      ; C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/vga_adapter/vga_pll.v ;
@@ -372,16 +389,64 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 
 
 Encoding Type:  One-Hot
-+----------------------------------------------------+
-; State Machine - |animation|moveInstances:stage5|ID ;
-+---------+---------+---------+---------+------------+
-; Name    ; ID.0011 ; ID.0010 ; ID.0001 ; ID.0000    ;
-+---------+---------+---------+---------+------------+
-; ID.0000 ; 0       ; 0       ; 0       ; 0          ;
-; ID.0001 ; 0       ; 0       ; 1       ; 1          ;
-; ID.0010 ; 0       ; 1       ; 0       ; 1          ;
-; ID.0011 ; 1       ; 0       ; 0       ; 1          ;
-+---------+---------+---------+---------+------------+
++-------------------------------------------------------------------------------+
+; State Machine - |animation|moveInstances:stage5|ID                            ;
++---------+---------+---------+---------+---------+---------+---------+---------+
+; Name    ; ID.0110 ; ID.0101 ; ID.0100 ; ID.0011 ; ID.0010 ; ID.0001 ; ID.0000 ;
++---------+---------+---------+---------+---------+---------+---------+---------+
+; ID.0000 ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ;
+; ID.0001 ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 1       ;
+; ID.0010 ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 1       ;
+; ID.0011 ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 1       ;
+; ID.0100 ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 1       ;
+; ID.0101 ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; ID.0110 ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
++---------+---------+---------+---------+---------+---------+---------+---------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |animation|PS2_Demo:keyboard|PS2_Controller:PS2|s_ps2_transceiver                                                                                                                                                                            ;
++--------------------------------------------+--------------------------------------------+-------------------------------------------+---------------------------------------+------------------------------------+-------------------------------------------+
+; Name                                       ; s_ps2_transceiver.PS2_STATE_3_END_TRANSFER ; s_ps2_transceiver.PS2_STATE_2_COMMAND_OUT ; s_ps2_transceiver.PS2_STATE_1_DATA_IN ; s_ps2_transceiver.PS2_STATE_0_IDLE ; s_ps2_transceiver.PS2_STATE_4_END_DELAYED ;
++--------------------------------------------+--------------------------------------------+-------------------------------------------+---------------------------------------+------------------------------------+-------------------------------------------+
+; s_ps2_transceiver.PS2_STATE_0_IDLE         ; 0                                          ; 0                                         ; 0                                     ; 0                                  ; 0                                         ;
+; s_ps2_transceiver.PS2_STATE_1_DATA_IN      ; 0                                          ; 0                                         ; 1                                     ; 1                                  ; 0                                         ;
+; s_ps2_transceiver.PS2_STATE_2_COMMAND_OUT  ; 0                                          ; 1                                         ; 0                                     ; 1                                  ; 0                                         ;
+; s_ps2_transceiver.PS2_STATE_3_END_TRANSFER ; 1                                          ; 0                                         ; 0                                     ; 1                                  ; 0                                         ;
+; s_ps2_transceiver.PS2_STATE_4_END_DELAYED  ; 0                                          ; 0                                         ; 0                                     ; 1                                  ; 1                                         ;
++--------------------------------------------+--------------------------------------------+-------------------------------------------+---------------------------------------+------------------------------------+-------------------------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |animation|PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter                                                                                                                                                                                                                                                                                                                         ;
++------------------------------------------------------+--------------------------------------------------+------------------------------------------------+-----------------------------------------------+-------------------------------------------------+---------------------------------------------+----------------------------------------------+------------------------------------------------------+------------------------------------+
+; Name                                                 ; s_ps2_transmitter.PS2_STATE_7_TRANSMISSION_ERROR ; s_ps2_transmitter.PS2_STATE_6_COMMAND_WAS_SENT ; s_ps2_transmitter.PS2_STATE_5_RECEIVE_ACK_BIT ; s_ps2_transmitter.PS2_STATE_4_TRANSMIT_STOP_BIT ; s_ps2_transmitter.PS2_STATE_3_TRANSMIT_DATA ; s_ps2_transmitter.PS2_STATE_2_WAIT_FOR_CLOCK ; s_ps2_transmitter.PS2_STATE_1_INITIATE_COMMUNICATION ; s_ps2_transmitter.PS2_STATE_0_IDLE ;
++------------------------------------------------------+--------------------------------------------------+------------------------------------------------+-----------------------------------------------+-------------------------------------------------+---------------------------------------------+----------------------------------------------+------------------------------------------------------+------------------------------------+
+; s_ps2_transmitter.PS2_STATE_0_IDLE                   ; 0                                                ; 0                                              ; 0                                             ; 0                                               ; 0                                           ; 0                                            ; 0                                                    ; 0                                  ;
+; s_ps2_transmitter.PS2_STATE_1_INITIATE_COMMUNICATION ; 0                                                ; 0                                              ; 0                                             ; 0                                               ; 0                                           ; 0                                            ; 1                                                    ; 1                                  ;
+; s_ps2_transmitter.PS2_STATE_2_WAIT_FOR_CLOCK         ; 0                                                ; 0                                              ; 0                                             ; 0                                               ; 0                                           ; 1                                            ; 0                                                    ; 1                                  ;
+; s_ps2_transmitter.PS2_STATE_3_TRANSMIT_DATA          ; 0                                                ; 0                                              ; 0                                             ; 0                                               ; 1                                           ; 0                                            ; 0                                                    ; 1                                  ;
+; s_ps2_transmitter.PS2_STATE_4_TRANSMIT_STOP_BIT      ; 0                                                ; 0                                              ; 0                                             ; 1                                               ; 0                                           ; 0                                            ; 0                                                    ; 1                                  ;
+; s_ps2_transmitter.PS2_STATE_5_RECEIVE_ACK_BIT        ; 0                                                ; 0                                              ; 1                                             ; 0                                               ; 0                                           ; 0                                            ; 0                                                    ; 1                                  ;
+; s_ps2_transmitter.PS2_STATE_6_COMMAND_WAS_SENT       ; 0                                                ; 1                                              ; 0                                             ; 0                                               ; 0                                           ; 0                                            ; 0                                                    ; 1                                  ;
+; s_ps2_transmitter.PS2_STATE_7_TRANSMISSION_ERROR     ; 1                                                ; 0                                              ; 0                                             ; 0                                               ; 0                                           ; 0                                            ; 0                                                    ; 1                                  ;
++------------------------------------------------------+--------------------------------------------------+------------------------------------------------+-----------------------------------------------+-------------------------------------------------+---------------------------------------------+----------------------------------------------+------------------------------------------------------+------------------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |animation|PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver                                                                                                                       ;
++------------------------------------------+--------------------------------------+------------------------------------+------------------------------------------+---------------------------------+------------------------------------+
+; Name                                     ; s_ps2_receiver.PS2_STATE_3_PARITY_IN ; s_ps2_receiver.PS2_STATE_2_DATA_IN ; s_ps2_receiver.PS2_STATE_1_WAIT_FOR_DATA ; s_ps2_receiver.PS2_STATE_0_IDLE ; s_ps2_receiver.PS2_STATE_4_STOP_IN ;
++------------------------------------------+--------------------------------------+------------------------------------+------------------------------------------+---------------------------------+------------------------------------+
+; s_ps2_receiver.PS2_STATE_0_IDLE          ; 0                                    ; 0                                  ; 0                                        ; 0                               ; 0                                  ;
+; s_ps2_receiver.PS2_STATE_1_WAIT_FOR_DATA ; 0                                    ; 0                                  ; 1                                        ; 1                               ; 0                                  ;
+; s_ps2_receiver.PS2_STATE_2_DATA_IN       ; 0                                    ; 1                                  ; 0                                        ; 1                               ; 0                                  ;
+; s_ps2_receiver.PS2_STATE_3_PARITY_IN     ; 1                                    ; 0                                  ; 0                                        ; 1                               ; 0                                  ;
+; s_ps2_receiver.PS2_STATE_4_STOP_IN       ; 0                                    ; 0                                  ; 0                                        ; 1                               ; 1                                  ;
++------------------------------------------+--------------------------------------+------------------------------------+------------------------------------------+---------------------------------+------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------+
@@ -390,27 +455,138 @@ Encoding Type:  One-Hot
 ; Latch Name                                         ; Latch Enable Signal       ; Free of Timing Hazards ;
 +----------------------------------------------------+---------------------------+------------------------+
 ; NextState:stage2|start                             ; NextState:stage2|Decoder0 ; yes                    ;
+; moveInstances:stage5|kill                          ; moveInstances:stage5|kill ; yes                    ;
 ; NextState:stage2|Y[0]                              ; NextState:stage2|Mux2     ; yes                    ;
 ; NextState:stage2|Y[1]                              ; NextState:stage2|Mux2     ; yes                    ;
 ; moveInstances:stage5|sizeY[3]                      ; VCC                       ; yes                    ;
 ; moveInstances:stage5|sizeY[0]                      ; VCC                       ; yes                    ;
-; Number of user-specified and inferred latches = 5  ;                           ;                        ;
+; Number of user-specified and inferred latches = 6  ;                           ;                        ;
 +----------------------------------------------------+---------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; moveInstances:stage5|currentCYCLE[0]  ; Stuck at GND due to stuck port data_in ;
-; moveInstances:stage5|ID~6             ; Lost fanout                            ;
-; moveInstances:stage5|ID~7             ; Lost fanout                            ;
-; moveInstances:stage5|ID~8             ; Lost fanout                            ;
-; moveInstances:stage5|ID~9             ; Lost fanout                            ;
-; Total Number of Removed Registers = 5 ;                                        ;
-+---------------------------------------+----------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                              ;
++-------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                       ; Reason for Removal                                                                                        ;
++-------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+; PS2_Demo:keyboard|PS2_Controller:PS2|idle_counter[0..7]                                                                             ; Lost fanout                                                                                               ;
+; moveInstances:stage5|currentCYCLE[0]                                                                                                ; Stuck at GND due to stuck port data_in                                                                    ;
+; timer:timerInstance|counter_modk:C5|Q[1..4]                                                                                         ; Merged with timer:timerInstance|counter_modk:C5|Q[0]                                                      ;
+; timer:timerInstance|counter_modk:C4|Q[1..5]                                                                                         ; Merged with timer:timerInstance|counter_modk:C4|Q[0]                                                      ;
+; timer:timerInstance|counter_modk:C3|Q[1..5]                                                                                         ; Merged with timer:timerInstance|counter_modk:C3|Q[0]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[23]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C0|Q[7]                                                                                            ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[0]                                                                                            ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[18]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C0|Q[23]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[9,25]                                                                                         ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[9]                                                                                            ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C0|Q[15,20]                                                                                        ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[15,19,28,37]                                                                                  ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[27..29]                                                                                       ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C0|Q[3,11,16]                                                                                      ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[7]                                                                                            ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C0|Q[14,19]                                                                                        ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[2,25]                                                                                         ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[26]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[5,22]                                                                                         ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[10]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[16]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[18]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[26]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[20,22,35]                                                                                     ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[7]                                                                                            ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C0|Q[1]                                                                                            ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[0,21]                                                                                         ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C0|Q[5,9,18]                                                                                       ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[6]                                                                                            ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C0|Q[13]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[13]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C0|Q[17]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[11]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C0|Q[12,21,25]                                                                                     ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[1,19]                                                                                         ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C0|Q[2]                                                                                            ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[24]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[2]                                                                                            ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[6,10]                                                                                         ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[4,24,27]                                                                                      ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[3,14,15]                                                                                      ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[11,21]                                                                                        ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[17]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[3,29]                                                                                         ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[20]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C0|Q[24]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[30]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[30]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[4]                                                                                            ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[1,16,31..33]                                                                                  ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[8]                                                                                            ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[17]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[13]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[34]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C0|Q[0]                                                                                            ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[8]                                                                                            ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C0|Q[4]                                                                                            ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[36]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C0|Q[6,8,10]                                                                                       ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[12,23]                                                                                        ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[31]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C2|Q[14]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C1|Q[12]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; timer:timerInstance|counter_modk:C0|Q[22]                                                                                           ; Merged with timer:timerInstance|counter_modk:C2|Q[5]                                                      ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|ps2_command[1..7]                                    ; Merged with PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|ps2_command[0] ;
+; timer:timerInstance|counter_modk:C5|Q[0]                                                                                            ; Stuck at GND due to stuck port data_in                                                                    ;
+; timer:timerInstance|counter_modk:C4|Q[0]                                                                                            ; Stuck at GND due to stuck port data_in                                                                    ;
+; timer:timerInstance|counter_modk:C3|Q[0]                                                                                            ; Stuck at GND due to stuck port data_in                                                                    ;
+; timer:timerInstance|counter_modk:C2|Q[5]                                                                                            ; Stuck at GND due to stuck port data_in                                                                    ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|ps2_command[0]                                       ; Stuck at GND due to stuck port data_in                                                                    ;
+; timer:timerInstance|sec                                                                                                             ; Stuck at GND due to stuck port data_in                                                                    ;
+; timer:timerInstance|min                                                                                                             ; Stuck at GND due to stuck port data_in                                                                    ;
+; timer:timerInstance|hour                                                                                                            ; Stuck at GND due to stuck port data_in                                                                    ;
+; moveInstances:stage5|ID~9                                                                                                           ; Lost fanout                                                                                               ;
+; moveInstances:stage5|ID~10                                                                                                          ; Lost fanout                                                                                               ;
+; moveInstances:stage5|ID~11                                                                                                          ; Lost fanout                                                                                               ;
+; moveInstances:stage5|ID~12                                                                                                          ; Lost fanout                                                                                               ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|s_ps2_transceiver~2                                                                            ; Lost fanout                                                                                               ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|s_ps2_transceiver~3                                                                            ; Lost fanout                                                                                               ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter~2                                  ; Lost fanout                                                                                               ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter~3                                  ; Lost fanout                                                                                               ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter~4                                  ; Lost fanout                                                                                               ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver~2                                             ; Lost fanout                                                                                               ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver~3                                             ; Lost fanout                                                                                               ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter.PS2_STATE_1_INITIATE_COMMUNICATION ; Stuck at GND due to stuck port data_in                                                                    ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_2_COMMAND_OUT                                                      ; Stuck at GND due to stuck port data_in                                                                    ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_4_END_DELAYED                                                      ; Stuck at GND due to stuck port data_in                                                                    ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|command_initiate_counter[1..13]                      ; Stuck at GND due to stuck port data_in                                                                    ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_3_END_TRANSFER                                                     ; Stuck at GND due to stuck port data_in                                                                    ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_1_WAIT_FOR_DATA                     ; Stuck at GND due to stuck port data_in                                                                    ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter.PS2_STATE_2_WAIT_FOR_CLOCK         ; Stuck at GND due to stuck port data_in                                                                    ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|waiting_counter[1..20]                               ; Stuck at GND due to stuck port data_in                                                                    ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter.PS2_STATE_3_TRANSMIT_DATA          ; Stuck at GND due to stuck port data_in                                                                    ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|cur_bit[0..3]                                        ; Stuck at GND due to stuck port data_in                                                                    ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter.PS2_STATE_4_TRANSMIT_STOP_BIT      ; Stuck at GND due to stuck port data_in                                                                    ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter.PS2_STATE_5_RECEIVE_ACK_BIT        ; Stuck at GND due to stuck port data_in                                                                    ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|transfer_counter[1..17]                              ; Stuck at GND due to stuck port data_in                                                                    ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter.PS2_STATE_6_COMMAND_WAS_SENT       ; Stuck at GND due to stuck port data_in                                                                    ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter.PS2_STATE_7_TRANSMISSION_ERROR     ; Stuck at GND due to stuck port data_in                                                                    ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|command_was_sent                                     ; Stuck at GND due to stuck port data_in                                                                    ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|error_communication_timed_out                        ; Stuck at GND due to stuck port data_in                                                                    ;
+; Total Number of Removed Registers = 211                                                                                             ;                                                                                                           ;
++-------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                                                                       ;
++-------------------------------------------------------------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                       ; Reason for Removal        ; Registers Removed due to This Register                                                                                          ;
++-------------------------------------------------------------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+; timer:timerInstance|counter_modk:C2|Q[5]                                                                                            ; Stuck at GND              ; timer:timerInstance|sec, timer:timerInstance|min, timer:timerInstance|hour                                                      ;
+;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                 ;
+; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter.PS2_STATE_1_INITIATE_COMMUNICATION ; Stuck at GND              ; PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter.PS2_STATE_7_TRANSMISSION_ERROR ;
+;                                                                                                                                     ; due to stuck port data_in ;                                                                                                                                 ;
++-------------------------------------------------------------------------------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -418,12 +594,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 223   ;
-; Number of registers using Synchronous Clear  ; 25    ;
+; Total registers                              ; 323   ;
+; Number of registers using Synchronous Clear  ; 31    ;
 ; Number of registers using Synchronous Load   ; 15    ;
 ; Number of registers using Asynchronous Clear ; 20    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 146   ;
+; Number of registers using Clock Enable       ; 231   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -433,42 +609,66 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; moveInstances:stage5|firstTime         ; 216     ;
-; moveInstances:stage5|Duck_1_alive      ; 5       ;
-; moveInstances:stage5|Duck_2_alive      ; 15      ;
+; moveInstances:stage5|firstTime         ; 443     ;
+; moveInstances:stage5|Duck_1_alive      ; 18      ;
+; moveInstances:stage5|Duck_2_alive      ; 2       ;
 ; moveInstances:stage5|Duck_3_dead       ; 1       ;
-; Total number of inverted registers = 4 ;         ;
+; moveInstances:stage5|Duck_4_dead       ; 1       ;
+; moveInstances:stage5|Duck_5_dead       ; 1       ;
+; moveInstances:stage5|Duck_6_dead       ; 1       ;
+; Total number of inverted registers = 7 ;         ;
 +----------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+----------------------------------------------------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                               ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+----------------------------------------------------------+----------------------------+
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; |animation|moveInstances:stage5|Duck_1_inputY[3]         ;                            ;
-; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; |animation|moveInstances:stage5|currentCYCLE[13]         ;                            ;
-; 3:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; |animation|moveInstances:stage5|main_clock:C0|CYCLES[16] ;                            ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; |animation|changeCoordinate:stage4|y[2]                  ;                            ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; |animation|changeCoordinate:stage4|address[9]            ;                            ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |animation|changeCoordinate:stage4|x[5]                  ;                            ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; |animation|moveInstances:stage5|Duck_2_inputX[5]         ;                            ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; |animation|changeCoordinate:stage4|addressBackground[7]  ;                            ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 15 LEs               ; 30 LEs                 ; |animation|moveInstances:stage5|Duck_3_inputX[1]         ;                            ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; |animation|moveInstances:stage5|Target_inputY[6]         ;                            ;
-; 12:1               ; 6 bits    ; 48 LEs        ; 36 LEs               ; 12 LEs                 ; |animation|moveInstances:stage5|inputY[3]                ;                            ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; |animation|moveInstances:stage5|color[0]                 ;                            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; |animation|moveInstances:stage5|Duck_1_falling           ;                            ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; |animation|moveInstances:stage5|Duck_2_falling           ;                            ;
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; |animation|moveInstances:stage5|inputX                   ;                            ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; |animation|moveInstances:stage5|sizeX[5]                 ;                            ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; |animation|moveInstances:stage5|sizeY[3]                 ;                            ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; |animation|moveInstances:stage5|Duck_3_alive             ;                            ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; |animation|moveInstances:stage5|Duck_2_falling           ;                            ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; |animation|moveInstances:stage5|Duck_3_falling           ;                            ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; |animation|moveInstances:stage5|ID                       ;                            ;
-; 10:1               ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; |animation|moveInstances:stage5|inputX                   ;                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+----------------------------------------------------------+----------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                                                                                            ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |animation|PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[7]                    ;                            ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; |animation|moveInstances:stage5|Duck_1_inputX[4]                                                                      ;                            ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; |animation|moveInstances:stage5|currentCYCLE[23]                                                                      ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |animation|PS2_Demo:keyboard|last_data_received[3]                                                                    ;                            ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; |animation|moveInstances:stage5|main_clock:C0|CYCLES[16]                                                              ;                            ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; |animation|PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|transfer_counter[9]         ;                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |animation|PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[7]                   ;                            ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; |animation|changeCoordinate:stage4|y[0]                                                                               ;                            ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; |animation|changeCoordinate:stage4|address[6]                                                                         ;                            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; |animation|changeCoordinate:stage4|x[2]                                                                               ;                            ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; |animation|moveInstances:stage5|Duck_2_inputX[3]                                                                      ;                            ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; |animation|changeCoordinate:stage4|addressBackground[5]                                                               ;                            ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 15 LEs               ; 30 LEs                 ; |animation|moveInstances:stage5|Duck_3_inputX[7]                                                                      ;                            ;
+; 4:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; |animation|PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|command_initiate_counter[5] ;                            ;
+; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; |animation|PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|waiting_counter[18]         ;                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |animation|PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|cur_bit[1]                  ;                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |animation|PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                       ;                            ;
+; 6:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; |animation|moveInstances:stage5|Duck_4_inputX[6]                                                                      ;                            ;
+; 7:1                ; 15 bits   ; 60 LEs        ; 15 LEs               ; 45 LEs                 ; |animation|moveInstances:stage5|Duck_5_inputY[5]                                                                      ;                            ;
+; 8:1                ; 15 bits   ; 75 LEs        ; 15 LEs               ; 60 LEs                 ; |animation|moveInstances:stage5|Duck_6_inputY[3]                                                                      ;                            ;
+; 9:1                ; 15 bits   ; 90 LEs        ; 15 LEs               ; 75 LEs                 ; |animation|moveInstances:stage5|Target_inputX[5]                                                                      ;                            ;
+; 17:1               ; 6 bits    ; 66 LEs        ; 60 LEs               ; 6 LEs                  ; |animation|moveInstances:stage5|inputY[2]                                                                             ;                            ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; |animation|moveInstances:stage5|color[2]                                                                              ;                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; |animation|moveInstances:stage5|Duck_1_falling                                                                        ;                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; |animation|moveInstances:stage5|Duck_2_dead                                                                           ;                            ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; |animation|moveInstances:stage5|inputY                                                                                ;                            ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; |animation|moveInstances:stage5|Duck_1_falling                                                                        ;                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; |animation|moveInstances:stage5|Duck_2_falling                                                                        ;                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; |animation|moveInstances:stage5|Duck_3_alive                                                                          ;                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; |animation|moveInstances:stage5|Duck_4_falling                                                                        ;                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; |animation|moveInstances:stage5|Duck_5_falling                                                                        ;                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; |animation|moveInstances:stage5|Duck_6_falling                                                                        ;                            ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; |animation|moveInstances:stage5|Duck_5_inputX                                                                         ;                            ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; |animation|moveInstances:stage5|Duck_5_inputY                                                                         ;                            ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; |animation|moveInstances:stage5|Duck_4_inputX                                                                         ;                            ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; |animation|moveInstances:stage5|Duck_4_inputY                                                                         ;                            ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; |animation|moveInstances:stage5|Duck_3_inputX                                                                         ;                            ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; |animation|moveInstances:stage5|sizeY[0]                                                                              ;                            ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; |animation|moveInstances:stage5|Duck_3_inputY                                                                         ;                            ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; |animation|moveInstances:stage5|Duck_6_inputX                                                                         ;                            ;
+; 10:1               ; 6 bits    ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; |animation|moveInstances:stage5|ID                                                                                    ;                            ;
+; 10:1               ; 6 bits    ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; |animation|moveInstances:stage5|Duck_6_inputY                                                                         ;                            ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 80 LEs               ; 32 LEs                 ; |animation|moveInstances:stage5|inputX                                                                                ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+-----------------------------------------------------------------------------------------------------------------------+----------------------------+
 
 
 +----------------------------------------------------------------------------------------------+
@@ -508,7 +708,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Source assignments for TargetROM:TargetROM_inst|altsyncram:altsyncram_component|altsyncram_aq71:auto_generated ;
+; Source assignments for TargetROM:TargetROM_inst|altsyncram:altsyncram_component|altsyncram_dq71:auto_generated ;
 +---------------------------------+--------------------+------+--------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                               ;
 +---------------------------------+--------------------+------+--------------------------------------------------+
@@ -523,15 +723,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------+--------------------+------+------------------------------------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                          ;
 +---------------------------------+--------------------+------+------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------+
-; Source assignments for EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated ;
-+---------------------------------+--------------------+------+----------------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                                 ;
-+---------------------------------+--------------------+------+----------------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                  ;
-+---------------------------------+--------------------+------+----------------------------------------------------+
 
 
 +--------------------------------------------------------------+
@@ -1021,6 +1212,42 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PS2_Demo:keyboard|PS2_Controller:PS2 ;
++------------------+-------+--------------------------------------------------------+
+; Parameter Name   ; Value ; Type                                                   ;
++------------------+-------+--------------------------------------------------------+
+; INITIALIZE_MOUSE ; 0     ; Signed Integer                                         ;
++------------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out ;
++------------------------------------+----------------------+-----------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                            ;
++------------------------------------+----------------------+-----------------------------------------------------------------+
+; CLOCK_CYCLES_FOR_101US             ; 5050                 ; Signed Integer                                                  ;
+; NUMBER_OF_BITS_FOR_101US           ; 13                   ; Signed Integer                                                  ;
+; COUNTER_INCREMENT_FOR_101US        ; 0000000000001        ; Unsigned Binary                                                 ;
+; CLOCK_CYCLES_FOR_15MS              ; 750000               ; Signed Integer                                                  ;
+; NUMBER_OF_BITS_FOR_15MS            ; 20                   ; Signed Integer                                                  ;
+; COUNTER_INCREMENT_FOR_15MS         ; 00000000000000000001 ; Unsigned Binary                                                 ;
+; CLOCK_CYCLES_FOR_2MS               ; 100000               ; Signed Integer                                                  ;
+; NUMBER_OF_BITS_FOR_2MS             ; 17                   ; Signed Integer                                                  ;
+; COUNTER_INCREMENT_FOR_2MS          ; 00000000000000001    ; Unsigned Binary                                                 ;
+; PS2_STATE_0_IDLE                   ; 000                  ; Unsigned Binary                                                 ;
+; PS2_STATE_1_INITIATE_COMMUNICATION ; 001                  ; Unsigned Binary                                                 ;
+; PS2_STATE_2_WAIT_FOR_CLOCK         ; 010                  ; Unsigned Binary                                                 ;
+; PS2_STATE_3_TRANSMIT_DATA          ; 011                  ; Unsigned Binary                                                 ;
+; PS2_STATE_4_TRANSMIT_STOP_BIT      ; 100                  ; Unsigned Binary                                                 ;
+; PS2_STATE_5_RECEIVE_ACK_BIT        ; 101                  ; Unsigned Binary                                                 ;
+; PS2_STATE_6_COMMAND_WAS_SENT       ; 110                  ; Unsigned Binary                                                 ;
+; PS2_STATE_7_TRANSMISSION_ERROR     ; 111                  ; Unsigned Binary                                                 ;
++------------------------------------+----------------------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component ;
 +------------------------------------+----------------------+-----------------------------------------+
@@ -1154,8 +1381,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; WIDTH_BYTEENA                      ; 1                    ; Untyped                                   ;
 ; OPERATION_MODE                     ; ROM                  ; Untyped                                   ;
 ; WIDTH_A                            ; 3                    ; Signed Integer                            ;
-; WIDTHAD_A                          ; 7                    ; Signed Integer                            ;
-; NUMWORDS_A                         ; 128                  ; Signed Integer                            ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer                            ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer                            ;
 ; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                   ;
 ; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                   ;
 ; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                   ;
@@ -1196,7 +1423,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ENABLE_ECC                         ; FALSE                ; Untyped                                   ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                   ;
 ; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                   ;
-; CBXI_PARAMETER                     ; altsyncram_aq71      ; Untyped                                   ;
+; CBXI_PARAMETER                     ; altsyncram_dq71      ; Untyped                                   ;
 +------------------------------------+----------------------+-------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1261,66 +1488,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+---------------------------------------------+
-; Parameter Name                     ; Value                ; Type                                        ;
-+------------------------------------+----------------------+---------------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                     ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                  ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                              ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                                     ;
-; OPERATION_MODE                     ; ROM                  ; Untyped                                     ;
-; WIDTH_A                            ; 3                    ; Signed Integer                              ;
-; WIDTHAD_A                          ; 15                   ; Signed Integer                              ;
-; NUMWORDS_A                         ; 32768                ; Signed Integer                              ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                     ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                     ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                     ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                     ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                                     ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                     ;
-; WIDTH_B                            ; 1                    ; Untyped                                     ;
-; WIDTHAD_B                          ; 1                    ; Untyped                                     ;
-; NUMWORDS_B                         ; 1                    ; Untyped                                     ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                                     ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                     ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                     ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                     ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                     ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                     ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                                     ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                     ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                     ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                     ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                     ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                     ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                              ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                     ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                     ;
-; BYTE_SIZE                          ; 8                    ; Untyped                                     ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                     ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                     ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                     ;
-; INIT_FILE                          ; endGame.mif          ; Untyped                                     ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                     ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                     ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                     ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                     ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                     ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                     ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                     ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                     ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                                     ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                     ;
-; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                     ;
-; CBXI_PARAMETER                     ; altsyncram_i181      ; Untyped                                     ;
-+------------------------------------+----------------------+---------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +-------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: moveInstances:stage5 ;
 +----------------------+---------+----------------------------------+
@@ -1330,9 +1497,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Duck_1_initialInputX ; 0       ; Signed Integer                   ;
 ; Duck_1_initialInputY ; 0       ; Signed Integer                   ;
 ; Duck_2_initialInputX ; 0       ; Signed Integer                   ;
-; Duck_2_initialInputY ; 0111100 ; Unsigned Binary                  ;
+; Duck_2_initialInputY ; 1010000 ; Unsigned Binary                  ;
 ; Duck_3_initialInputX ; 0       ; Signed Integer                   ;
-; Duck_3_initialInputY ; 0000000 ; Unsigned Binary                  ;
+; Duck_3_initialInputY ; 0011110 ; Unsigned Binary                  ;
+; Duck_4_initialInputX ; 0       ; Signed Integer                   ;
+; Duck_4_initialInputY ; 0001010 ; Unsigned Binary                  ;
+; Duck_5_initialInputX ; 0       ; Signed Integer                   ;
+; Duck_5_initialInputY ; 1011010 ; Unsigned Binary                  ;
+; Duck_6_initialInputX ; 0       ; Signed Integer                   ;
+; Duck_6_initialInputY ; 0000000 ; Unsigned Binary                  ;
 ; Target_initialInputX ; 75      ; Signed Integer                   ;
 ; Target_initialInputY ; 0110111 ; Unsigned Binary                  ;
 ; movementsPerSec      ; 48      ; Signed Integer                   ;
@@ -1388,6 +1561,72 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: timer:timerInstance|counter_modk:C0 ;
++----------------+----------+------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                 ;
++----------------+----------+------------------------------------------------------+
+; n              ; 26       ; Signed Integer                                       ;
+; k              ; 50000000 ; Signed Integer                                       ;
++----------------+----------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: timer:timerInstance|counter_modk:C1 ;
++----------------+-------------+---------------------------------------------------+
+; Parameter Name ; Value       ; Type                                              ;
++----------------+-------------+---------------------------------------------------+
+; n              ; 32          ; Signed Integer                                    ;
+; k              ; -1294967296 ; Signed Integer                                    ;
++----------------+-------------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: timer:timerInstance|counter_modk:C2 ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; n              ; 38    ; Signed Integer                                          ;
+; k              ; -1    ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: timer:timerInstance|counter_modk:C3 ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; n              ; 6     ; Signed Integer                                          ;
+; k              ; 60    ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: timer:timerInstance|counter_modk:C4 ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; n              ; 6     ; Signed Integer                                          ;
+; k              ; 60    ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: timer:timerInstance|counter_modk:C5 ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; n              ; 5     ; Signed Integer                                          ;
+; k              ; 24    ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +--------------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: moveInstances:stage5|lpm_mult:Mult0 ;
 +------------------------------------------------+------------+------------------------+
@@ -1428,7 +1667,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+--------------------------------------------------------------------+
 ; Name                                      ; Value                                                              ;
 +-------------------------------------------+--------------------------------------------------------------------+
-; Number of entity instances                ; 6                                                                  ;
+; Number of entity instances                ; 5                                                                  ;
 ; Entity Instance                           ; vga_adapter:VGA|altsyncram:VideoMemory                             ;
 ;     -- OPERATION_MODE                     ; DUAL_PORT                                                          ;
 ;     -- WIDTH_A                            ; 3                                                                  ;
@@ -1465,7 +1704,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Entity Instance                           ; TargetROM:TargetROM_inst|altsyncram:altsyncram_component           ;
 ;     -- OPERATION_MODE                     ; ROM                                                                ;
 ;     -- WIDTH_A                            ; 3                                                                  ;
-;     -- NUMWORDS_A                         ; 128                                                                ;
+;     -- NUMWORDS_A                         ; 256                                                                ;
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                       ;
 ;     -- WIDTH_B                            ; 1                                                                  ;
 ;     -- NUMWORDS_B                         ; 1                                                                  ;
@@ -1477,17 +1716,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- OPERATION_MODE                     ; ROM                                                                ;
 ;     -- WIDTH_A                            ; 3                                                                  ;
 ;     -- NUMWORDS_A                         ; 2048                                                               ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                       ;
-;     -- WIDTH_B                            ; 1                                                                  ;
-;     -- NUMWORDS_B                         ; 1                                                                  ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                             ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                       ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                               ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                          ;
-; Entity Instance                           ; EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component         ;
-;     -- OPERATION_MODE                     ; ROM                                                                ;
-;     -- WIDTH_A                            ; 3                                                                  ;
-;     -- NUMWORDS_A                         ; 32768                                                              ;
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                       ;
 ;     -- WIDTH_B                            ; 1                                                                  ;
 ;     -- NUMWORDS_B                         ; 1                                                                  ;
@@ -1535,6 +1763,43 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+-------------------------------------+
 
 
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "timer:timerInstance|twodigit_b2d_ssd:D3"                                                                                                 ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                   ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; X    ; Input ; Warning  ; Input port expression (6 bits) is smaller than the input port (7 bits) it drives.  Extra input bit(s) "X[6..6]" will be connected to GND. ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "timer:timerInstance|twodigit_b2d_ssd:D5"                                                                                                 ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                   ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; X    ; Input ; Warning  ; Input port expression (6 bits) is smaller than the input port (7 bits) it drives.  Extra input bit(s) "X[6..6]" will be connected to GND. ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "timer:timerInstance|twodigit_b2d_ssd:D7"                                                                                                 ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                   ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; X    ; Input ; Warning  ; Input port expression (5 bits) is smaller than the input port (7 bits) it drives.  Extra input bit(s) "X[6..5]" will be connected to GND. ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "timer:timerInstance"                                                                      ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; startTimer ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; stopTimer  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "changeCoordinate:stage4"                                                                                                                                                            ;
 +----------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1564,14 +1829,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "moveInstances:stage5"                                                                ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; sizeX ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; sizeY ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "moveInstances:stage5"                                                                                                                                                                    ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                                                                                            ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SW         ; Input  ; Warning  ; Input port expression (18 bits) is wider than the input port (17 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; sizeX      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
+; sizeY      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
+; startTimer ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                           ;
+; stopTimer  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                           ;
++------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1588,7 +1856,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
 +---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; address ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (7 bits) it drives.  The 25 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; address ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (8 bits) it drives.  The 24 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
 +---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1601,12 +1869,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PS2_Demo:keyboard|PS2_Controller:PS2"                                                                                                                                 ;
++-------------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                          ; Type   ; Severity ; Details                                                                                                                                      ;
++-------------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; the_command                   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; send_command                  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; command_was_sent              ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; error_communication_timed_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++-------------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:24     ;
+; Top            ; 00:01:35     ;
 +----------------+--------------+
 
 
@@ -1616,16 +1896,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 11.1 Build 216 11/23/2011 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Nov 24 23:00:47 2013
+    Info: Processing started: Wed Nov 27 20:22:07 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off animation -c animation
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 6 design units, including 6 entities, in source file animation.v
+Warning (10259): Verilog HDL error at animation.v(1365): constant value overflow
+Warning (10259): Verilog HDL error at animation.v(1384): constant value overflow
+Info (12021): Found 12 design units, including 12 entities, in source file animation.v
     Info (12023): Found entity 1: animation
     Info (12023): Found entity 2: moveInstances
     Info (12023): Found entity 3: flipflop
     Info (12023): Found entity 4: NextState
     Info (12023): Found entity 5: changeCoordinate
     Info (12023): Found entity 6: main_clock
+    Info (12023): Found entity 7: PS2_Demo
+    Info (12023): Found entity 8: timer
+    Info (12023): Found entity 9: b2d_ssd
+    Info (12023): Found entity 10: twodigit_b2d_ssd
+    Info (12023): Found entity 11: counter
+    Info (12023): Found entity 12: counter_modk
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_pll.v
     Info (12023): Found entity 1: vga_pll
 Info (12021): Found 1 design units, including 1 entities, in source file vga_adapter/vga_adapter.v
@@ -1651,9 +1939,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file falling
     Info (12023): Found entity 1: FallingDuckROM
 Info (12021): Found 1 design units, including 1 entities, in source file endgamerom.v
     Info (12023): Found entity 1: EndGameROM
+Warning (10236): Verilog HDL Implicit Net warning at animation.v(1392): created implicit net for "HEX1"
+Warning (10236): Verilog HDL Implicit Net warning at animation.v(1393): created implicit net for "HEX0"
 Info (12127): Elaborating entity "animation" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at animation.v(47): object "intialInputX" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at animation.v(48): object "intialInputY" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at animation.v(54): object "intialInputX" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at animation.v(55): object "intialInputY" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at animation.v(63): object "kill" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at animation.v(72): object "up" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at animation.v(72): object "down" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at animation.v(72): object "left" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at animation.v(72): object "right" assigned a value but never read
 Info (12128): Elaborating entity "vga_adapter" for hierarchy "vga_adapter:VGA"
 Info (12128): Elaborating entity "vga_address_translator" for hierarchy "vga_adapter:VGA|vga_address_translator:user_input_translator"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "vga_adapter:VGA|altsyncram:VideoMemory"
@@ -1704,6 +1999,16 @@ Info (12133): Instantiated megafunction "vga_adapter:VGA|vga_pll:mypll|altpll:al
     Info (12134): Parameter "clk0_multiply_by" = "1"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
 Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_adapter:VGA|vga_controller:controller"
+Info (12128): Elaborating entity "PS2_Demo" for hierarchy "PS2_Demo:keyboard"
+Warning (12125): Using design file ps2_controller.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: PS2_Controller
+Info (12128): Elaborating entity "PS2_Controller" for hierarchy "PS2_Demo:keyboard|PS2_Controller:PS2"
+Warning (12125): Using design file altera_up_ps2_data_in.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Altera_UP_PS2_Data_In
+Info (12128): Elaborating entity "Altera_UP_PS2_Data_In" for hierarchy "PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In"
+Warning (12125): Using design file altera_up_ps2_command_out.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Altera_UP_PS2_Command_Out
+Info (12128): Elaborating entity "Altera_UP_PS2_Command_Out" for hierarchy "PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out"
 Info (12128): Elaborating entity "DuckROM1" for hierarchy "DuckROM1:DuckROM1_inst"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component"
 Info (12130): Elaborated megafunction instantiation "DuckROM1:DuckROM1_inst|altsyncram:altsyncram_component"
@@ -1760,16 +2065,16 @@ Info (12133): Instantiated megafunction "TargetROM:TargetROM_inst|altsyncram:alt
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-    Info (12134): Parameter "numwords_a" = "128"
+    Info (12134): Parameter "numwords_a" = "256"
     Info (12134): Parameter "operation_mode" = "ROM"
     Info (12134): Parameter "outdata_aclr_a" = "NONE"
     Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
-    Info (12134): Parameter "widthad_a" = "7"
+    Info (12134): Parameter "widthad_a" = "8"
     Info (12134): Parameter "width_a" = "3"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_aq71.tdf
-    Info (12023): Found entity 1: altsyncram_aq71
-Info (12128): Elaborating entity "altsyncram_aq71" for hierarchy "TargetROM:TargetROM_inst|altsyncram:altsyncram_component|altsyncram_aq71:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_dq71.tdf
+    Info (12023): Found entity 1: altsyncram_dq71
+Info (12128): Elaborating entity "altsyncram_dq71" for hierarchy "TargetROM:TargetROM_inst|altsyncram:altsyncram_component|altsyncram_dq71:auto_generated"
 Info (12128): Elaborating entity "FallingDuckROM" for hierarchy "FallingDuckROM:FallingDuckROM_inst"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component"
 Info (12130): Elaborated megafunction instantiation "FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component"
@@ -1790,116 +2095,177 @@ Info (12133): Instantiated megafunction "FallingDuckROM:FallingDuckROM_inst|alts
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_5d81.tdf
     Info (12023): Found entity 1: altsyncram_5d81
 Info (12128): Elaborating entity "altsyncram_5d81" for hierarchy "FallingDuckROM:FallingDuckROM_inst|altsyncram:altsyncram_component|altsyncram_5d81:auto_generated"
-Info (12128): Elaborating entity "EndGameROM" for hierarchy "EndGameROM:EndGameROM_inst"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component"
-Info (12130): Elaborated megafunction instantiation "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component"
-Info (12133): Instantiated megafunction "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component" with the following parameter:
-    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
-    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
-    Info (12134): Parameter "init_file" = "endGame.mif"
-    Info (12134): Parameter "intended_device_family" = "Cyclone II"
-    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
-    Info (12134): Parameter "lpm_type" = "altsyncram"
-    Info (12134): Parameter "numwords_a" = "32768"
-    Info (12134): Parameter "operation_mode" = "ROM"
-    Info (12134): Parameter "outdata_aclr_a" = "NONE"
-    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
-    Info (12134): Parameter "widthad_a" = "15"
-    Info (12134): Parameter "width_a" = "3"
-    Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_i181.tdf
-    Info (12023): Found entity 1: altsyncram_i181
-Info (12128): Elaborating entity "altsyncram_i181" for hierarchy "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated"
 Info (12128): Elaborating entity "moveInstances" for hierarchy "moveInstances:stage5"
-Warning (10036): Verilog HDL or VHDL warning at animation.v(204): object "allDead" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at animation.v(199): truncated value with size 32 to match size of target (26)
-Warning (10230): Verilog HDL assignment warning at animation.v(258): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(261): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(262): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at animation.v(264): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(267): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(271): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(272): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at animation.v(399): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(404): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at animation.v(418): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(423): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at animation.v(436): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(441): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at animation.v(455): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(459): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(463): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at animation.v(467): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at animation.v(565): truncated value with size 32 to match size of target (26)
-Warning (10235): Verilog HDL Always Construct warning at animation.v(626): variable "proceed" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(628): variable "backgroundSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(629): variable "backgroundSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(631): variable "ID" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(633): variable "duckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(634): variable "duckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(636): variable "Duck_1_falling" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(638): variable "fallingDuckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(639): variable "fallingDuckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(642): variable "ID" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(644): variable "duckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(645): variable "duckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(647): variable "Duck_2_falling" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(649): variable "fallingDuckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(650): variable "fallingDuckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(653): variable "ID" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(655): variable "duckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(656): variable "duckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(658): variable "Duck_3_falling" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(660): variable "fallingDuckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(661): variable "fallingDuckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(665): variable "ID" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(667): variable "targetSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(668): variable "targetSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(671): variable "inputX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(672): variable "inputX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10230): Verilog HDL assignment warning at animation.v(672): truncated value with size 32 to match size of target (8)
-Warning (10235): Verilog HDL Always Construct warning at animation.v(676): variable "inputY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(677): variable "inputY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10240): Verilog HDL Always Construct warning at animation.v(624): inferring latch(es) for variable "sizeX", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at animation.v(624): inferring latch(es) for variable "sizeY", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "sizeY[0]" at animation.v(631)
-Info (10041): Inferred latch for "sizeY[1]" at animation.v(631)
-Info (10041): Inferred latch for "sizeY[2]" at animation.v(631)
-Info (10041): Inferred latch for "sizeY[3]" at animation.v(631)
-Info (10041): Inferred latch for "sizeY[4]" at animation.v(631)
-Info (10041): Inferred latch for "sizeY[5]" at animation.v(631)
-Info (10041): Inferred latch for "sizeY[6]" at animation.v(631)
-Info (10041): Inferred latch for "sizeX[0]" at animation.v(631)
-Info (10041): Inferred latch for "sizeX[1]" at animation.v(631)
-Info (10041): Inferred latch for "sizeX[2]" at animation.v(631)
-Info (10041): Inferred latch for "sizeX[3]" at animation.v(631)
-Info (10041): Inferred latch for "sizeX[4]" at animation.v(631)
-Info (10041): Inferred latch for "sizeX[5]" at animation.v(631)
-Info (10041): Inferred latch for "sizeX[6]" at animation.v(631)
-Info (10041): Inferred latch for "sizeX[7]" at animation.v(631)
+Warning (10036): Verilog HDL or VHDL warning at animation.v(296): object "Duck_6_move3" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at animation.v(297): object "Duck_6_move4" assigned a value but never read
+Warning (10235): Verilog HDL Always Construct warning at animation.v(152): variable "toggle" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(186): variable "KEY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(187): variable "KEY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(188): variable "KEY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(189): variable "KEY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(190): variable "SW" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at animation.v(150): inferring latch(es) for variable "kill", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at animation.v(309): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at animation.v(346): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(349): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(350): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(352): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(355): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(358): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(361): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(364): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(369): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(370): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(610): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(614): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(627): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(631): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(644): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(647): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(648): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(652): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(653): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(656): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(659): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(666): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(680): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(683): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(686): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(689): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(696): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(709): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(712): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(715): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(718): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(725): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(739): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(743): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(748): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(751): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(753): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(755): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(757): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(762): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(769): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(783): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(787): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(791): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(795): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(968): truncated value with size 32 to match size of target (26)
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1031): variable "proceed" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1033): variable "backgroundSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1034): variable "backgroundSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1036): variable "ID" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1038): variable "duckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1039): variable "duckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1041): variable "Duck_1_falling" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1043): variable "fallingDuckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1044): variable "fallingDuckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1047): variable "ID" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1049): variable "duckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1050): variable "duckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1052): variable "Duck_2_falling" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1054): variable "fallingDuckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1055): variable "fallingDuckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1058): variable "ID" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1060): variable "duckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1061): variable "duckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1063): variable "Duck_3_falling" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1065): variable "fallingDuckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1066): variable "fallingDuckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1070): variable "ID" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1072): variable "duckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1073): variable "duckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1075): variable "Duck_4_falling" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1077): variable "fallingDuckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1078): variable "fallingDuckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1082): variable "ID" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1084): variable "duckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1085): variable "duckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1087): variable "Duck_5_falling" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1089): variable "fallingDuckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1090): variable "fallingDuckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1094): variable "ID" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1096): variable "duckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1097): variable "duckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1099): variable "Duck_6_falling" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1101): variable "fallingDuckSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1102): variable "fallingDuckSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1106): variable "ID" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1108): variable "targetSizeX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1109): variable "targetSizeY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1112): variable "inputX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1113): variable "inputX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at animation.v(1113): truncated value with size 32 to match size of target (8)
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1117): variable "inputY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1118): variable "inputY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at animation.v(1029): inferring latch(es) for variable "sizeX", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at animation.v(1029): inferring latch(es) for variable "sizeY", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "sizeY[0]" at animation.v(1036)
+Info (10041): Inferred latch for "sizeY[1]" at animation.v(1036)
+Info (10041): Inferred latch for "sizeY[2]" at animation.v(1036)
+Info (10041): Inferred latch for "sizeY[3]" at animation.v(1036)
+Info (10041): Inferred latch for "sizeY[4]" at animation.v(1036)
+Info (10041): Inferred latch for "sizeY[5]" at animation.v(1036)
+Info (10041): Inferred latch for "sizeY[6]" at animation.v(1036)
+Info (10041): Inferred latch for "sizeX[0]" at animation.v(1036)
+Info (10041): Inferred latch for "sizeX[1]" at animation.v(1036)
+Info (10041): Inferred latch for "sizeX[2]" at animation.v(1036)
+Info (10041): Inferred latch for "sizeX[3]" at animation.v(1036)
+Info (10041): Inferred latch for "sizeX[4]" at animation.v(1036)
+Info (10041): Inferred latch for "sizeX[5]" at animation.v(1036)
+Info (10041): Inferred latch for "sizeX[6]" at animation.v(1036)
+Info (10041): Inferred latch for "sizeX[7]" at animation.v(1036)
+Info (10041): Inferred latch for "kill" at animation.v(186)
 Info (12128): Elaborating entity "main_clock" for hierarchy "moveInstances:stage5|main_clock:C0"
 Info (12128): Elaborating entity "NextState" for hierarchy "NextState:stage2"
-Warning (10036): Verilog HDL or VHDL warning at animation.v(718): object "counter" assigned a value but never read
-Warning (10235): Verilog HDL Always Construct warning at animation.v(724): variable "finalX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(724): variable "finalY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(726): variable "finalX" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(726): variable "finalY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at animation.v(728): variable "finalY" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10240): Verilog HDL Always Construct warning at animation.v(720): inferring latch(es) for variable "Y", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at animation.v(720): inferring latch(es) for variable "start", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "start" at animation.v(720)
-Info (10041): Inferred latch for "Y[0]" at animation.v(720)
-Info (10041): Inferred latch for "Y[1]" at animation.v(720)
+Warning (10036): Verilog HDL or VHDL warning at animation.v(1159): object "counter" assigned a value but never read
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1165): variable "finalX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1165): variable "finalY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1167): variable "finalX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1167): variable "finalY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at animation.v(1169): variable "finalY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at animation.v(1161): inferring latch(es) for variable "Y", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at animation.v(1161): inferring latch(es) for variable "start", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "start" at animation.v(1161)
+Info (10041): Inferred latch for "Y[0]" at animation.v(1161)
+Info (10041): Inferred latch for "Y[1]" at animation.v(1161)
 Info (12128): Elaborating entity "flipflop" for hierarchy "flipflop:stage3"
 Info (12128): Elaborating entity "changeCoordinate" for hierarchy "changeCoordinate:stage4"
-Warning (10230): Verilog HDL assignment warning at animation.v(773): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at animation.v(774): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at animation.v(777): truncated value with size 32 to match size of target (15)
-Warning (10230): Verilog HDL assignment warning at animation.v(779): truncated value with size 32 to match size of target (15)
-Warning (10230): Verilog HDL assignment warning at animation.v(784): truncated value with size 32 to match size of target (7)
-Warning (10230): Verilog HDL assignment warning at animation.v(785): truncated value with size 32 to match size of target (15)
-Warning (10230): Verilog HDL assignment warning at animation.v(786): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at animation.v(793): truncated value with size 32 to match size of target (15)
+Warning (10230): Verilog HDL assignment warning at animation.v(1214): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at animation.v(1215): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at animation.v(1218): truncated value with size 32 to match size of target (15)
+Warning (10230): Verilog HDL assignment warning at animation.v(1220): truncated value with size 32 to match size of target (15)
+Warning (10230): Verilog HDL assignment warning at animation.v(1225): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at animation.v(1226): truncated value with size 32 to match size of target (15)
+Warning (10230): Verilog HDL assignment warning at animation.v(1227): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at animation.v(1234): truncated value with size 32 to match size of target (15)
+Info (12128): Elaborating entity "timer" for hierarchy "timer:timerInstance"
+Warning (10036): Verilog HDL or VHDL warning at animation.v(1392): object "HEX1" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at animation.v(1393): object "HEX0" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at animation.v(1392): truncated value with size 7 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at animation.v(1393): truncated value with size 7 to match size of target (1)
+Info (12128): Elaborating entity "counter_modk" for hierarchy "timer:timerInstance|counter_modk:C0"
+Info (12128): Elaborating entity "counter_modk" for hierarchy "timer:timerInstance|counter_modk:C1"
+Info (12128): Elaborating entity "counter_modk" for hierarchy "timer:timerInstance|counter_modk:C2"
+Info (12128): Elaborating entity "counter_modk" for hierarchy "timer:timerInstance|counter_modk:C3"
+Info (12128): Elaborating entity "counter_modk" for hierarchy "timer:timerInstance|counter_modk:C5"
+Info (12128): Elaborating entity "twodigit_b2d_ssd" for hierarchy "timer:timerInstance|twodigit_b2d_ssd:D7"
+Warning (10230): Verilog HDL assignment warning at animation.v(1418): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at animation.v(1419): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "b2d_ssd" for hierarchy "timer:timerInstance|twodigit_b2d_ssd:D7|b2d_ssd:B1"
+Warning (10270): Verilog HDL Case Statement warning at animation.v(1399): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at animation.v(1399): inferring latch(es) for variable "SSD", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "SSD[6]" at animation.v(1399)
+Info (10041): Inferred latch for "SSD[5]" at animation.v(1399)
+Info (10041): Inferred latch for "SSD[4]" at animation.v(1399)
+Info (10041): Inferred latch for "SSD[3]" at animation.v(1399)
+Info (10041): Inferred latch for "SSD[2]" at animation.v(1399)
+Info (10041): Inferred latch for "SSD[1]" at animation.v(1399)
+Info (10041): Inferred latch for "SSD[0]" at animation.v(1399)
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "timer:timerInstance|startTimer" is missing source, defaulting to GND
+    Warning (12110): Net "timer:timerInstance|stopTimer" is missing source, defaulting to GND
 Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "Ynext[2]" is missing source, defaulting to GND
 Warning (12011): Net is missing source, defaulting to GND
@@ -1916,32 +2282,7 @@ Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "Ynext[2]" is missing source, defaulting to GND
 Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "Ynext[2]" is missing source, defaulting to GND
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a0"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a1"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a2"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a3"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a4"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a5"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a6"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a7"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a8"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a9"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a10"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a11"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a12"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a13"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a14"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a15"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a16"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a17"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a18"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a19"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a20"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a21"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a22"
-        Warning (14320): Synthesized away node "EndGameROM:EndGameROM_inst|altsyncram:altsyncram_component|altsyncram_i181:auto_generated|ram_block1a23"
+Info (13005): Duplicate registers merged to single register
 Info (278001): Inferred 1 megafunctions from design logic
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "moveInstances:stage5|Mult0"
 Info (12130): Elaborated megafunction instantiation "moveInstances:stage5|lpm_mult:Mult0"
@@ -1957,22 +2298,82 @@ Info (12133): Instantiated megafunction "moveInstances:stage5|lpm_mult:Mult0" wi
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_m5t.tdf
     Info (12023): Found entity 1: mult_m5t
-Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 11 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch moveInstances:stage5|kill has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[16]
 Warning (13012): Latch NextState:stage2|Y[0] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal flipflop:stage3|y[0]
 Warning (13012): Latch NextState:stage2|Y[1] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal flipflop:stage3|y[1]
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "VGA_SYNC" is stuck at VCC
-Info (17049): 4 registers lost all their fanouts during netlist optimizations. The first 4 are displayed below.
-    Info (17050): Register "moveInstances:stage5|ID~6" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "moveInstances:stage5|ID~7" lost all its fanouts during netlist optimizations.
-    Info (17050): Register "moveInstances:stage5|ID~8" lost all its fanouts during netlist optimizations.
+    Warning (13410): Pin "HEX7[6]" is stuck at VCC
+    Warning (13410): Pin "HEX7[5]" is stuck at GND
+    Warning (13410): Pin "HEX7[4]" is stuck at GND
+    Warning (13410): Pin "HEX7[3]" is stuck at GND
+    Warning (13410): Pin "HEX7[2]" is stuck at GND
+    Warning (13410): Pin "HEX7[1]" is stuck at GND
+    Warning (13410): Pin "HEX7[0]" is stuck at GND
+    Warning (13410): Pin "HEX6[6]" is stuck at VCC
+    Warning (13410): Pin "HEX6[5]" is stuck at GND
+    Warning (13410): Pin "HEX6[4]" is stuck at GND
+    Warning (13410): Pin "HEX6[3]" is stuck at GND
+    Warning (13410): Pin "HEX6[2]" is stuck at GND
+    Warning (13410): Pin "HEX6[1]" is stuck at GND
+    Warning (13410): Pin "HEX6[0]" is stuck at GND
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC
+    Warning (13410): Pin "HEX5[5]" is stuck at GND
+    Warning (13410): Pin "HEX5[4]" is stuck at GND
+    Warning (13410): Pin "HEX5[3]" is stuck at GND
+    Warning (13410): Pin "HEX5[2]" is stuck at GND
+    Warning (13410): Pin "HEX5[1]" is stuck at GND
+    Warning (13410): Pin "HEX5[0]" is stuck at GND
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC
+    Warning (13410): Pin "HEX4[5]" is stuck at GND
+    Warning (13410): Pin "HEX4[4]" is stuck at GND
+    Warning (13410): Pin "HEX4[3]" is stuck at GND
+    Warning (13410): Pin "HEX4[2]" is stuck at GND
+    Warning (13410): Pin "HEX4[1]" is stuck at GND
+    Warning (13410): Pin "HEX4[0]" is stuck at GND
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC
+    Warning (13410): Pin "HEX3[5]" is stuck at GND
+    Warning (13410): Pin "HEX3[4]" is stuck at GND
+    Warning (13410): Pin "HEX3[3]" is stuck at GND
+    Warning (13410): Pin "HEX3[2]" is stuck at GND
+    Warning (13410): Pin "HEX3[1]" is stuck at GND
+    Warning (13410): Pin "HEX3[0]" is stuck at GND
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC
+    Warning (13410): Pin "HEX2[5]" is stuck at GND
+    Warning (13410): Pin "HEX2[4]" is stuck at GND
+    Warning (13410): Pin "HEX2[3]" is stuck at GND
+    Warning (13410): Pin "HEX2[2]" is stuck at GND
+    Warning (13410): Pin "HEX2[1]" is stuck at GND
+    Warning (13410): Pin "HEX2[0]" is stuck at GND
+Info (17049): 19 registers lost all their fanouts during netlist optimizations. The first 19 are displayed below.
+    Info (17050): Register "PS2_Demo:keyboard|PS2_Controller:PS2|idle_counter[3]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "PS2_Demo:keyboard|PS2_Controller:PS2|idle_counter[2]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "PS2_Demo:keyboard|PS2_Controller:PS2|idle_counter[1]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "PS2_Demo:keyboard|PS2_Controller:PS2|idle_counter[0]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "PS2_Demo:keyboard|PS2_Controller:PS2|idle_counter[4]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "PS2_Demo:keyboard|PS2_Controller:PS2|idle_counter[5]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "PS2_Demo:keyboard|PS2_Controller:PS2|idle_counter[6]" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "PS2_Demo:keyboard|PS2_Controller:PS2|idle_counter[7]" lost all its fanouts during netlist optimizations.
     Info (17050): Register "moveInstances:stage5|ID~9" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "moveInstances:stage5|ID~10" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "moveInstances:stage5|ID~11" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "moveInstances:stage5|ID~12" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "PS2_Demo:keyboard|PS2_Controller:PS2|s_ps2_transceiver~2" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "PS2_Demo:keyboard|PS2_Controller:PS2|s_ps2_transceiver~3" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter~2" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter~3" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter~4" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver~2" lost all its fanouts during netlist optimizations.
+    Info (17050): Register "PS2_Demo:keyboard|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver~3" lost all its fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/altera/11.1sp1/quartus/Labs/Lab 7/Extra Stuff/Project/animation.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding node "vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|pll"
-Warning (21074): Design contains 15 input pin(s) that do not drive logic
+Warning (21074): Design contains 14 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[1]"
     Warning (15610): No output dependent on input pin "SW[2]"
     Warning (15610): No output dependent on input pin "SW[3]"
     Warning (15610): No output dependent on input pin "SW[4]"
@@ -1981,25 +2382,24 @@ Warning (21074): Design contains 15 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]"
     Warning (15610): No output dependent on input pin "SW[8]"
     Warning (15610): No output dependent on input pin "SW[9]"
-    Warning (15610): No output dependent on input pin "SW[10]"
     Warning (15610): No output dependent on input pin "SW[11]"
     Warning (15610): No output dependent on input pin "SW[12]"
     Warning (15610): No output dependent on input pin "SW[13]"
     Warning (15610): No output dependent on input pin "SW[14]"
     Warning (15610): No output dependent on input pin "SW[15]"
-    Warning (15610): No output dependent on input pin "SW[16]"
-Info (21057): Implemented 1632 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2672 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
-    Info (21059): Implemented 35 output pins
-    Info (21061): Implemented 1524 logic cells
+    Info (21059): Implemented 77 output pins
+    Info (21060): Implemented 2 bidirectional pins
+    Info (21061): Implemented 2520 logic cells
     Info (21064): Implemented 48 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 1 DSP elements
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 136 warnings
-    Info: Peak virtual memory: 332 megabytes
-    Info: Processing ended: Sun Nov 24 23:01:08 2013
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:21
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 230 warnings
+    Info: Peak virtual memory: 344 megabytes
+    Info: Processing ended: Wed Nov 27 20:23:11 2013
+    Info: Elapsed time: 00:01:04
+    Info: Total CPU time (on all processors): 00:01:04
 
 
 +------------------------------------------+
