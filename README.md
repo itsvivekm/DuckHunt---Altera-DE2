@@ -1,6 +1,6 @@
 DuckHunt---Altera-DE2
 =====================
-################################ AUTHORED BY VIVEK MOGALAPALLI AND TANVEER FUAD #####################################
+## AUTHORED BY VIVEK MOGALAPALLI AND TANVEER FUAD ##
 
 
 DuckHunt is a classic game which became very popular when it was first introduced by Nintendo. This is an 
