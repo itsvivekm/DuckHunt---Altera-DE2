@@ -1,5 +1,7 @@
 DuckHunt---Altera-DE2
 =====================
+################################ AUTHORED BY VIVEK MOGALAPALLI AND TANVEER FUAD #####################################
+
 
 DuckHunt is a classic game which became very popular when it was first introduced by Nintendo. This is an 
 implementation of the game using Verilog and Arduino on a Altera DE2 Board (FPGA) with an accelerometer as the primary input.
