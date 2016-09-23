@@ -13,3 +13,6 @@ This game is designed to work with three forms of inputs:
 3. DE2 controls
 
 The range of inputs can be easily extended without any modifications in the existing code.
+
+Video link:
+http://janders.eecg.toronto.edu/241_2013/
